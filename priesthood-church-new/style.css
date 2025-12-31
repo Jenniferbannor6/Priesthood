@@ -1,0 +1,2845 @@
+/* ===== CSS Reset & Base Styles ===== */
+:root {
+  --primary-color: #004080; /* Deep Blue */
+  --secondary-color: #000000; /* Black */
+  --accent-color: #FFD700; /* Gold */
+  --white-color: #ffffff;
+  --light-gray: #f5f5f5;
+  --medium-gray: #666666;
+  --dark-gray: #333333;
+  --success-color: #4CAF50;
+  --warning-color: #FF9800;
+  --error-color: #f44336;
+  --info-color: #2196F3;
+  --transition: all 0.3s ease;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-radius: 10px; /* FIXED: Removed syntax error */
+  --border-radius-lg: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--white-color);
+  background: var(--secondary-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== Accessibility ===== */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 10px;
+  background: var(--accent-color);
+  color: var(--secondary-color);
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: 600;
+  z-index: 9999;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+/* ===== Buttons ===== */
+.btn-primary, .btn-secondary, .btn-ministry {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 2px solid transparent;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-color), #ffed4e);
+  color: var(--secondary-color);
+  box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  background: linear-gradient(135deg, #ffed4e, var(--accent-color));
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--accent-color);
+  border: 2px solid var(--accent-color);
+}
+
+.btn-secondary:hover {
+  background: var(--accent-color);
+  color: var(--secondary-color);
+  transform: translateY(-3px);
+}
+
+.btn-ministry {
+  color: var(--secondary-color);
+  font-weight: 700;
+  margin-top: 20px;
+  width: 100%;
+  box-shadow: var(--shadow);
+}
+
+.btn-ministry:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  filter: brightness(1.1);
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.logo img {
+  height: 70px;
+  width: auto;
+  transition: var(--transition);
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+/* Search Container */
+.search-container {
+  display: flex;
+  align-items: center;
+  margin: 0 30px;
+  flex-grow: 1;
+  max-width: 400px;
+}
+
+#searchInput {
+  flex-grow: 1;
+  padding: 10px 20px;
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  border-radius: 25px 0 0 25px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white-color);
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+#searchInput:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+#searchBtn {
+  background: var(--accent-color);
+  border: none;
+  border-radius: 0 25px 25px 0;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: var(--secondary-color);
+  font-weight: bold;
+  transition: var(--transition);
+  min-height: 44px;
+}
+
+#searchBtn:hover {
+  background: #ffed4e;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: var(--white-color);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 8px 12px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent-color);
+  background: rgba(255, 215, 0, 0.1);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--accent-color);
+  transition: var(--transition);
+  transform: translateX(-50%);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 80%;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--white-color);
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 1001;
+}
+
+/* ===== Hero Sections ===== */
+.hero, .hero-bible {
+  height: 100vh;
+  min-height: 600px;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+/* FIXED: Changed from url('../images/hero-church.jpg') to url('images/hero-church.jpg') */
+.hero {
+  background-image: url('images/hero-church.jpg');
+}
+
+/* FIXED: Changed from url('../images/hero-bible.jpg') to url('images/hero-bible.jpg') */
+.hero-bible {
+  background-image: url('images/hero-bible.jpg');
+}
+
+/* Background Animation */
+.hero::before, .hero-bible::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  z-index: -1;
+  animation: zoomEffect 20s infinite alternate;
+}
+
+@keyframes zoomEffect {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+/* Overlay */
+.hero .overlay, .hero-bible .overlay {
+  background: linear-gradient(135deg, 
+              rgba(0, 0, 0, 0.9) 0%, 
+              rgba(0, 64, 128, 0.6) 50%, 
+              rgba(0, 0, 0, 0.9) 100%);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content {
+  max-width: 900px;
+  padding: 0 20px;
+  animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+  line-height: 1.8;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+/* ===== Events Slider ===== */
+.events-slider {
+  padding: 80px 20px;
+  background: var(--secondary-color);
+}
+
+.events-slider h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.8rem;
+  color: var(--accent-color);
+}
+
+.slider-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-xl);
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 600px;
+}
+
+.event-slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.event-slide.active {
+  opacity: 1;
+}
+
+.event-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background-color: #000;
+}
+
+.slide-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+.slide-caption h3 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.slide-caption p {
+  font-size: 1.3rem;
+  opacity: 0.9;
+}
+
+/* Slider Controls */
+.slider-prev, .slider-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 215, 0, 0.8);
+  border: none;
+  color: var(--secondary-color);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.slider-prev:hover, .slider-next:hover {
+  background: var(--accent-color);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.slider-prev {
+  left: 20px;
+}
+
+.slider-next {
+  right: 20px;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  z-index: 10;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.dot.active, .dot:hover {
+  background: var(--accent-color);
+  transform: scale(1.3);
+}
+
+/* ===== Services Section ===== */
+.services-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #001a33 0%, #000 100%);
+}
+
+.services-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.8rem;
+  color: var(--accent-color);
+}
+
+.services-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.service-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.service-tab {
+  padding: 15px 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  border-radius: 30px;
+  color: var(--white-color);
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.service-tab.active, .service-tab:hover {
+  background: var(--accent-color);
+  color: var(--secondary-color);
+  border-color: var(--accent-color);
+}
+
+.service-content {
+  display: none;
+}
+
+.service-content.active {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  transition: var(--transition);
+}
+
+.service-card:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.service-icon {
+  font-size: 3rem;
+  color: var(--accent-color);
+  flex-shrink: 0;
+}
+
+.service-details h3 {
+  color: var(--accent-color);
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.service-details p {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0.9;
+}
+
+.service-details i {
+  color: var(--accent-color);
+  width: 20px;
+}
+
+/* ===== Live Stream Section ===== */
+.livestream-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, rgba(0,64,128,0.1) 0%, rgba(0,0,0,0.1) 100%);
+}
+
+.livestream-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.8rem;
+  color: var(--accent-color);
+}
+
+.livestream-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-placeholder {
+  flex: 1;
+  min-width: 300px;
+  max-width: 700px;
+  height: 400px;
+  background: linear-gradient(135deg, #004080, #001a33);
+  border-radius: var(--border-radius-lg);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--accent-color);
+}
+
+.live-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #ff0000;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  animation: pulse 2s infinite;
+  z-index: 2;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.video-overlay {
+  text-align: center;
+  padding: 30px;
+  z-index: 2;
+  position: relative;
+}
+
+.video-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+  border-radius: var(--border-radius);
+}
+
+.video-overlay h3 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: var(--accent-color);
+}
+
+.video-overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.stream-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.stream-info {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.stream-info h3 {
+  color: var(--accent-color);
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.stream-info ul {
+  list-style: none;
+}
+
+.stream-info li {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.1rem;
+}
+
+.stream-info li:last-child {
+  border-bottom: none;
+}
+
+.stream-info i {
+  color: var(--accent-color);
+}
+
+/* ===== Pastor Section ===== */
+.pastor-section {
+  padding: 80px 20px;
+  background: rgba(0, 64, 128, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.pastor-images-container {
+  flex: 0 0 400px;
+  max-width: 100%;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius-lg);
+  border: 3px solid var(--accent-color);
+  box-shadow: var(--shadow-xl);
+}
+
+.pastor-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.pastor-image.active {
+  opacity: 1;
+}
+
+.pastor-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: var(--border-radius);
+}
+
+.pastor-controls {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  z-index: 10;
+}
+
+.pastor-prev, .pastor-next {
+  background: rgba(255, 215, 0, 0.8);
+  border: none;
+  color: var(--secondary-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pastor-prev:hover, .pastor-next:hover {
+  background: var(--accent-color);
+  transform: scale(1.1);
+}
+
+.pastor-dots {
+  display: flex;
+  gap: 10px;
+}
+
+.pastor-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.pastor-dot.active {
+  background: var(--accent-color);
+  transform: scale(1.2);
+}
+
+.pastor-message {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.pastor-message h2 {
+  color: var(--accent-color);
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+  text-align: left;
+}
+
+.pastor-title {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.pastor-bio {
+  margin-bottom: 30px;
+}
+
+.pastor-bio p {
+  margin-bottom: 15px;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+.pastor-quote {
+  background: rgba(255, 215, 0, 0.1);
+  border-left: 4px solid var(--accent-color);
+  padding: 20px;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  position: relative;
+}
+
+.pastor-quote i:first-child {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: var(--accent-color);
+  opacity: 0.5;
+}
+
+.pastor-quote i:last-child {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: var(--accent-color);
+  opacity: 0.5;
+}
+
+.pastor-quote p {
+  font-style: italic;
+  line-height: 1.6;
+  padding: 0 20px;
+}
+
+/* ===== Book Section ===== */
+.book-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, rgba(0,64,128,0.1) 0%, rgba(0,0,0,0.1) 100%);
+}
+
+.book-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.8rem;
+  color: var(--accent-color);
+}
+
+.book-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.book-container img {
+  width: 350px;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--border-radius);
+  border: 3px solid var(--accent-color);
+  box-shadow: var(--shadow-xl);
+  transition: var(--transition);
+}
+
+.book-container img:hover {
+  transform: scale(1.03) rotate(1deg);
+}
+
+.book-content {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.book-author {
+  font-size: 1.4rem;
+  color: var(--accent-color);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.book-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+.book-features {
+  margin-bottom: 30px;
+}
+
+.book-features p {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.book-features i {
+  color: var(--accent-color);
+}
+
+.book-actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* ===== Ministries Section ===== */
+.ministries-section {
+  padding: 80px 20px;
+  background: var(--secondary-color);
+}
+
+.ministries-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.8rem;
+  color: var(--accent-color);
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 700px;
+  margin: 0 auto 50px;
+  line-height: 1.6;
+}
+
+.ministry-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.ministry-card {
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(0,64,128,0.1) 100%);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  text-align: center;
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ministry-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent-color);
+  box-shadow: var(--shadow-xl);
+}
+
+.ministry-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+  box-shadow: var(--shadow-lg);
+}
+
+.ministry-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: var(--white-color);
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ministry-card p {
+  line-height: 1.6;
+  margin-bottom: 25px;
+  opacity: 0.9;
+  flex-grow: 1;
+}
+
+/* ===== Giving Section ===== */
+.giving-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, rgba(0,64,128,0.2) 0%, rgba(0,0,0,0.2) 100%);
+}
+
+.giving-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.8rem;
+  color: var(--accent-color);
+}
+
+.giving-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+.giving-options {
+  flex: 1;
+  min-width: 300px;
+}
+
+.giving-option {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius);
+  padding: 25px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  transition: var(--transition);
+}
+
+.giving-option:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-5px);
+}
+
+.giving-icon {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.giving-option h3 {
+  color: var(--accent-color);
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.giving-option p {
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.donation-form {
+  flex: 1;
+  min-width: 300px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.donation-form h3 {
+  color: var(--accent-color);
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.amount-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.amount-btn {
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 20px;
+  color: var(--white-color);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.amount-btn:hover, .amount-btn.active {
+  background: var(--accent-color);
+  color: var(--secondary-color);
+  border-color: var(--accent-color);
+}
+
+.custom-amount {
+  display: flex;
+  gap: 10px;
+}
+
+.custom-amount input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white-color);
+  font-size: 1rem;
+}
+
+.custom-amount input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.custom-amount select {
+  padding: 12px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+.custom-amount select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.payment-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.payment-method {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.payment-method:hover {
+  background: rgba(255, 215, 0, 0.1);
+  border-color: var(--accent-color);
+}
+
+.payment-method input {
+  margin-right: 15px;
+}
+
+.method-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.method-content i {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+}
+
+.btn-donate {
+  width: 100%;
+  margin-top: 20px;
+  padding: 15px;
+  font-size: 1.1rem;
+}
+
+.security-note {
+  text-align: center;
+  margin-top: 15px;
+  opacity: 0.8;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.security-note i {
+  color: var(--accent-color);
+}
+
+/* ===== Bible College Preview ===== */
+.bible-college-preview {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, rgba(0,64,128,0.3) 0%, rgba(0,0,0,0.3) 100%);
+  text-align: center;
+}
+
+.preview-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.preview-content h2 {
+  margin-bottom: 20px;
+  color: var(--accent-color);
+  font-size: 2.8rem;
+}
+
+.preview-content p {
+  font-size: 1.3rem;
+  margin-bottom: 40px;
+  opacity: 0.9;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.preview-stats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin: 50px 0;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: var(--accent-color);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  max-width: 150px;
+  line-height: 1.4;
+}
+
+.preview-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+/* ===== Why Choose Us Section (Bible College) ===== */
+.why-choose-section {
+  padding: 80px 20px;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.why-choose-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.8rem;
+  color: var(--accent-color);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 50px auto 0;
+}
+
+.feature-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(0,64,128,0.1) 100%);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  text-align: center;
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent-color);
+  box-shadow: var(--shadow-xl);
+}
+
+.feature-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 25px;
+  font-size: 2rem;
+  color: var(--secondary-color);
+  box-shadow: var(--shadow-lg);
+}
+
+.feature-card h3 {
+  color: var(--accent-color);
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-card p {
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* ===== Cohorts Section (Bible College) ===== */
+.cohorts-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, rgba(0,64,128,0.1) 0%, rgba(0,0,0,0.1) 100%);
+}
+
+.cohorts-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 50px auto 0;
+}
+
+.cohort-card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  background: linear-gradient(135deg, var(--primary-color), #00264d);
+  border-radius: var(--border-radius-lg);
+  padding: 35px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+}
+
+.cohort-card.open {
+  border-color: var(--success-color);
+}
+
+.cohort-card.upcoming {
+  border-color: var(--warning-color);
+}
+
+.cohort-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.cohort-badge.open {
+  background: var(--success-color);
+  color: white;
+}
+
+.cohort-badge.upcoming {
+  background: var(--warning-color);
+  color: white;
+}
+
+.cohort-header h3 {
+  color: var(--accent-color);
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.cohort-duration {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 25px;
+}
+
+.cohort-dates {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.date-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.date-item:last-child {
+  margin-bottom: 0;
+}
+
+.date-item i {
+  color: var(--accent-color);
+  font-size: 1.2rem;
+}
+
+.date-label {
+  font-weight: 600;
+  color: var(--accent-color);
+  display: block;
+  font-size: 0.9rem;
+}
+
+.date-value {
+  font-size: 1.1rem;
+}
+
+.cohort-features {
+  margin-bottom: 30px;
+}
+
+.cohort-features h4 {
+  color: var(--accent-color);
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cohort-features ul {
+  list-style: none;
+}
+
+.cohort-features li {
+  padding: 8px 0;
+  padding-left: 25px;
+  position: relative;
+  opacity: 0.9;
+}
+
+.cohort-features li::before {
+  content: '✓';
+  color: var(--accent-color);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.cohort-seats {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.seats-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.seats-progress {
+  height: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.seats-filled {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-color), #ffed4e);
+  border-radius: 5px;
+}
+
+.seats-text {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.cohort-notify {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.cohort-notify p {
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+
+.notify-form {
+  display: flex;
+  gap: 10px;
+}
+
+.notify-form input {
+  flex: 1;
+  padding: 10px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white-color);
+}
+
+.notify-form input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.btn-cohort, .btn-preorder {
+  width: 100%;
+}
+
+/* ===== Courses Section (Bible College) ===== */
+.courses-section {
+  padding: 80px 20px;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  max-width: 1400px;
+  margin: 50px auto 0;
+}
+
+.course-card {
+  background: linear-gradient(135deg, rgba(0,64,128,0.8) 0%, rgba(0,0,0,0.8) 100%);
+  border-radius: var(--border-radius);
+  padding: 25px;
+  transition: var(--transition);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.course-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent-color);
+  box-shadow: var(--shadow-xl);
+}
+
+.course-card.highlight {
+  border: 2px solid var(--accent-color);
+}
+
+.course-code {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 215, 0, 0.2);
+  color: var(--accent-color);
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.course-icon {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+}
+
+.course-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: var(--white-color);
+  min-height: 70px;
+}
+
+.course-card p {
+  opacity: 0.9;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.course-duration {
+  display: inline-block;
+  background: rgba(255, 215, 0, 0.2);
+  color: var(--accent-color);
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  align-self: flex-start;
+}
+
+.highlight-badge {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: var(--accent-color);
+  color: var(--secondary-color);
+  padding: 5px 15px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* ===== Lecturers Section (Bible College) ===== */
+.lecturers-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, rgba(0,64,128,0.1) 0%, rgba(0,0,0,0.1) 100%);
+}
+
+.lecturers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1400px;
+  margin: 50px auto 0;
+}
+
+.lecturer-card {
+  background: linear-gradient(135deg, var(--primary-color), #00264d);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  transition: var(--transition);
+}
+
+.lecturer-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent-color);
+  box-shadow: var(--shadow-xl);
+}
+
+.lecturer-image {
+  height: 250px;
+  overflow: hidden;
+}
+
+.lecturer-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.lecturer-card:hover .lecturer-image img {
+  transform: scale(1.05);
+}
+
+.lecturer-content {
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.lecturer-content h3 {
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.lecturer-title {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 15px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.lecturer-expertise {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.expertise-tag {
+  background: rgba(255, 215, 0, 0.2);
+  color: var(--accent-color);
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.lecturer-bio {
+  line-height: 1.6;
+  margin-bottom: 25px;
+  opacity: 0.9;
+  flex-grow: 1;
+}
+
+.lecturer-stats {
+  display: flex;
+  justify-content: space-around;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--border-radius);
+  padding: 15px;
+  margin-top: auto;
+}
+
+.lecturer-stats .stat {
+  text-align: center;
+}
+
+.lecturer-stats .stat-number {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent-color);
+  line-height: 1;
+}
+
+.lecturer-stats .stat-label {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* ===== Testimonials Section (Bible College) ===== */
+.testimonials-section {
+  padding: 80px 20px;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 50px auto 0;
+}
+
+.testimonial-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(0,64,128,0.1) 100%);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  transition: var(--transition);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent-color);
+  box-shadow: var(--shadow-xl);
+}
+
+.testimonial-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.testimonial-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  margin: 30px auto 0;
+  width: 150px;
+  height: 150px;
+  border: 4px solid var(--accent-color);
+  box-shadow: var(--shadow-lg);
+}
+
+.testimonial-content {
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-quote {
+  position: relative;
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+
+.testimonial-quote i:first-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--accent-color);
+  opacity: 0.5;
+  font-size: 1.5rem;
+}
+
+.testimonial-quote i:last-child {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: var(--accent-color);
+  opacity: 0.5;
+  font-size: 1.5rem;
+}
+
+.testimonial-quote p {
+  padding: 10px 25px;
+  font-style: italic;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+.testimonial-author h4 {
+  color: var(--accent-color);
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+
+.testimonial-author p {
+  opacity: 0.8;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.author-verification {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--success-color);
+  font-size: 0.9rem;
+}
+
+/* ===== Registration Section (Bible College) ===== */
+.registration-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, rgba(0,64,128,0.1) 0%, rgba(0,0,0,0.1) 100%);
+}
+
+.registration-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  max-width: 1400px;
+  margin: 50px auto 0;
+  align-items: flex-start;
+}
+
+.registration-form-container {
+  flex: 1;
+  min-width: 300px;
+}
+
+.registration-form {
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(0,64,128,0.1) 100%);
+  border-radius: var(--border-radius-lg);
+  padding: 35px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.form-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.form-header h3 {
+  color: var(--accent-color);
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.form-header p {
+  opacity: 0.8;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white-color);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.gender-options {
+  display: flex;
+  gap: 20px;
+}
+
+.gender-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.gender-option input {
+  width: auto;
+}
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.form-actions button {
+  flex: 1;
+}
+
+.form-note {
+  text-align: center;
+  margin-top: 25px;
+  opacity: 0.8;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.form-note i {
+  color: var(--accent-color);
+}
+
+.registration-info {
+  flex: 0 0 350px;
+}
+
+.info-card {
+  background: linear-gradient(135deg, var(--primary-color), #00264d);
+  border-radius: var(--border-radius-lg);
+  padding: 30px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.info-card h3 {
+  color: var(--accent-color);
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.info-section {
+  margin-bottom: 30px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.info-section h4 {
+  color: var(--accent-color);
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fee-options {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.fee-option {
+  flex: 1;
+  text-align: center;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--border-radius);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.fee-option.active, .fee-option:hover {
+  border-color: var(--accent-color);
+}
+
+.fee-amount {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--accent-color);
+  margin-bottom: 5px;
+}
+
+.fee-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.fee-note {
+  opacity: 0.8;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.schedule-table {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.schedule-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.schedule-row:last-child {
+  border-bottom: none;
+}
+
+.schedule-day {
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+.requirements-list {
+  list-style: none;
+}
+
+.requirements-list li {
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.requirements-list i {
+  color: var(--accent-color);
+}
+
+.note {
+  opacity: 0.8;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.payment-options {
+  display: flex;
+  gap: 15px;
+}
+
+.payment-option {
+  flex: 1;
+  text-align: center;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition);
+}
+
+.payment-option:hover {
+  background: rgba(255, 215, 0, 0.1);
+}
+
+.payment-option i {
+  font-size: 1.8rem;
+  color: var(--accent-color);
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-info i {
+  color: var(--accent-color);
+  width: 20px;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: linear-gradient(135deg, #001a33 0%, #000 100%);
+  padding: 60px 20px 30px;
+  border-top: 3px solid var(--accent-color);
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-section h3 {
+  color: var(--accent-color);
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-section p {
+  margin-bottom: 10px;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-section i {
+  color: var(--accent-color);
+  width: 20px;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0.9;
+  transition: var(--transition);
+}
+
+.footer-section ul a:hover {
+  color: var(--accent-color);
+  opacity: 1;
+  padding-left: 5px;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 10px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white-color);
+}
+
+.newsletter-form input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.social-links a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+.social-links a:hover {
+  background: var(--accent-color);
+  color: var(--secondary-color);
+  transform: translateY(-3px);
+}
+
+.accreditation {
+  opacity: 0.7;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* ===== Fade-in Animation ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 1200px) {
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+  
+  .slider-container {
+    height: 500px;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar {
+    padding: 15px 20px;
+    flex-wrap: wrap;
+  }
+  
+  .search-container {
+    order: 3;
+    margin: 15px 0 0;
+    width: 100%;
+    max-width: none;
+  }
+  
+  .nav-links {
+    order: 2;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+  
+  .pastor-section, .book-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .pastor-message h2 {
+    text-align: center;
+  }
+  
+  .giving-container {
+    flex-direction: column;
+  }
+  
+  .registration-container {
+    flex-direction: column;
+  }
+  
+  .registration-info {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+  
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    order: 3;
+    background: rgba(0, 0, 0, 0.95);
+    margin-top: 15px;
+    border-radius: var(--border-radius);
+  }
+  
+  .nav-links.active {
+    display: flex;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .slider-container {
+    height: 400px;
+  }
+  
+  .slider-prev, .slider-next {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+  
+  .service-tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .service-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .pastor-images-container {
+    height: 400px;
+  }
+  
+  .ministry-card, .course-card, .lecturer-card, .testimonial-card {
+    max-width: 100%;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .btn-primary, .btn-secondary {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .slider-container {
+    height: 300px;
+  }
+  
+  .slide-caption {
+    padding: 15px;
+  }
+  
+  .slide-caption h3 {
+    font-size: 1.5rem;
+  }
+  
+  .slide-caption p {
+    font-size: 1rem;
+  }
+  
+  .pastor-images-container {
+    height: 300px;
+  }
+  
+  .book-container img {
+    height: 400px;
+  }
+  
+  .fee-options, .payment-options {
+    flex-direction: column;
+  }
+  
+  .footer-section {
+    min-width: 100%;
+  }
+}
+
+/* ===== CRITICAL FIXES ===== */
+
+/* Fix Lecturer Images - Show Faces */
+.lecturer-image img {
+  object-position: top center !important;
+}
+
+.testimonial-image img {
+  object-position: top center !important;
+}
+
+/* Quick Join Floating Button */
+.quick-join {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+}
+
+.quick-join-btn {
+  background: linear-gradient(135deg, #FF0000, #FF6B6B);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 30px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(255, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.quick-join-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4);
+}
+
+.quick-join-dropdown {
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.95);
+  border: 2px solid #FF0000;
+  border-radius: 15px;
+  padding: 20px;
+  width: 300px;
+  display: none;
+  backdrop-filter: blur(10px);
+}
+
+.quick-join-dropdown.show {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+.dropdown-header {
+  text-align: center;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dropdown-header h4 {
+  color: #FF6B6B;
+  margin-bottom: 5px;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background: rgba(255, 107, 107, 0.2);
+  transform: translateX(-5px);
+}
+
+.dropdown-item i {
+  font-size: 1.5rem;
+}
+
+.dropdown-item strong {
+  display: block;
+  margin-bottom: 3px;
+}
+
+.dropdown-item small {
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.dropdown-footer {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Visit Us Section */
+.visit-us-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, rgba(0,64,128,0.1) 0%, rgba(0,0,0,0.1) 100%);
+}
+
+.map-container {
+  border-radius: 15px;
+  overflow: hidden;
+  height: 400px;
+  margin-bottom: 30px;
+  border: 3px solid var(--accent-color);
+}
+
+.visit-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.visit-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.visit-card h3 {
+  color: var(--accent-color);
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Event Calendar */
+.calendar-section {
+  padding: 80px 20px;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.calendar-container {
+  max-width: 1000px;
+  margin: 40px auto 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 30px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.calendar-day {
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+  color: var(--accent-color);
+}
+
+.calendar-date {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.calendar-date:hover {
+  background: rgba(255, 215, 0, 0.1);
+}
+
+.calendar-date.event {
+  background: rgba(255, 107, 107, 0.2);
+  border: 2px solid #FF6B6B;
+}
+
+.event-details {
+  margin-top: 40px;
+  padding: 25px;
+  background: rgba(0, 64, 128, 0.2);
+  border-radius: 15px;
+  border-left: 4px solid var(--accent-color);
+}
+
+/* Social Media Feed */
+.social-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, rgba(0,64,128,0.1) 0%, rgba(0,0,0,0.1) 100%);
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.social-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-header i {
+  font-size: 2rem;
+}
+
+.facebook i { color: #1877F2; }
+.youtube i { color: #FF0000; }
+.instagram i { color: #E4405F; }
+.zoom i { color: #2D8CFF; }
+
+/* Bible College Resources */
+.resources-section {
+  padding: 80px 20px;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.resource-card {
+  background: linear-gradient(135deg, rgba(0,64,128,0.8) 0%, rgba(0,0,0,0.8) 100%);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent-color);
+}
+
+.resource-icon {
+  font-size: 3rem;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+}
+
+/* Gallery Filters */
+.gallery-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 40px 0;
+}
+
+.filter-btn {
+  padding: 10px 25px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn.active, .filter-btn:hover {
+  background: var(--accent-color);
+  color: var(--secondary-color);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  border-radius: 10px;
+  overflow: hidden;
+  height: 250px;
+  position: relative;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-category {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+}

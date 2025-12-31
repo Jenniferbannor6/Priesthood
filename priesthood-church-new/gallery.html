@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Priesthood Family Chapel</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Gallery Specific Styles */
+    .gallery-section {
+      padding: 80px 20px;
+      background: linear-gradient(135deg, rgba(0,64,128,0.1) 0%, rgba(0,0,0,0.1) 100%);
+      min-height: 80vh;
+    }
+    
+    .gallery-filters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 40px 0;
+    }
+    
+    .filter-btn {
+      padding: 12px 30px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 215, 0, 0.3);
+      border-radius: 30px;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    
+    .filter-btn.active, .filter-btn:hover {
+      background: #FFD700;
+      color: #000;
+      transform: translateY(-3px);
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+    
+    .gallery-item {
+      border-radius: 15px;
+      overflow: hidden;
+      height: 280px;
+      position: relative;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(255, 215, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+    
+    .gallery-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      border-color: #FFD700;
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    
+    .gallery-category {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      background: rgba(0, 0, 0, 0.85);
+      color: #FFD700;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      z-index: 2;
+      border: 1px solid rgba(255, 215, 0, 0.3);
+    }
+    
+    .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+    
+    .gallery-overlay h4 {
+      color: #FFD700;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    
+    .gallery-overlay p {
+      color: white;
+      opacity: 0.9;
+    }
+    
+    .no-images {
+      text-align: center;
+      padding: 80px 20px;
+      grid-column: 1 / -1;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      border: 2px dashed rgba(255, 215, 0, 0.3);
+    }
+    
+    .no-images i {
+      font-size: 4rem;
+      color: #FFD700;
+      margin-bottom: 20px;
+      opacity: 0.7;
+    }
+    
+    .no-images h3 {
+      color: #FFD700;
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+    }
+    
+    .no-images p {
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    
+    /* Loading State */
+    .loading {
+      text-align: center;
+      padding: 60px;
+      grid-column: 1 / -1;
+    }
+    
+    .loading-spinner {
+      border: 4px solid rgba(255, 215, 0, 0.3);
+      border-top: 4px solid #FFD700;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 20px;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+      }
+      
+      .gallery-item {
+        height: 250px;
+      }
+      
+      .filter-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .gallery-section {
+        padding: 60px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="hero">
+    <div class="overlay">
+      <nav class="navbar">
+        <div class="logo">
+          <img src="images/logo.png" alt="Church Logo">
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="bible-college.html"><i class="fas fa-graduation-cap"></i> Bible College</a></li>
+          <li><a href="gallery.html" class="active"><i class="fas fa-images"></i> Gallery</a></li>
+        </ul>
+      </nav>
+      <div class="hero-content">
+        <h1>Church Gallery</h1>
+        <p>Capturing moments of worship, fellowship, and ministry</p>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="gallery-section">
+      <div class="container">
+        <h2>Photo Gallery</h2>
+        <p class="section-subtitle">Browse photos from our various ministries and events</p>
+        
+        <div class="gallery-filters">
+          <button class="filter-btn active" data-filter="all">All Photos</button>
+          <button class="filter-btn" data-filter="SW">Sunday Worship</button>
+          <button class="filter-btn" data-filter="NG">Night of Glory</button>
+          <button class="filter-btn" data-filter="BC">Bible College</button>
+          <button class="filter-btn" data-filter="EV">Events</button>
+          <button class="filter-btn" data-filter="MN">Ministries</button>
+        </div>
+        
+        <div class="gallery-grid" id="galleryGrid">
+          <div class="loading">
+            <div class="loading-spinner"></div>
+            <p>Loading gallery images...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3><i class="fas fa-church"></i> Priesthood Family Chapel International</h3>
+        <p><i class="fas fa-map-marker-alt"></i> Kumasi, Washington</p>
+        <p><i class="fas fa-envelope"></i> info@priesthoodchapel.org</p>
+        <p><i class="fas fa-phone"></i> +233 123 456 789</p>
+      </div>
+      
+      <div class="footer-section">
+        <h3><i class="fas fa-clock"></i> Service Times</h3>
+        <p><strong>Online:</strong> Tue-Fri 9:30-11:30 AM</p>
+        <p><strong>Online Sunday:</strong> 9:30 AM-12:00 AM</p>
+        <p><strong>In-person Sunday:</strong> 8:30-11:30 AM</p>
+      </div>
+      
+      <div class="footer-section">
+        <h3><i class="fas fa-link"></i> Quick Links</h3>
+        <ul>
+          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="bible-college.html"><i class="fas fa-graduation-cap"></i> Bible College</a></li>
+          <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 Priesthood Family Chapel International. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Gallery JavaScript -->
+  <script>
+    // SIMPLE GALLERY - No dependencies, just works
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('Gallery page loaded');
+      
+      // Define your gallery images
+      const galleryImages = [
+        // Use ONLY the images you actually have
+        { src: 'images/SW_001.jpg', category: 'SW', title: 'Sunday Worship Service' },
+        { src: 'images/NG_001.jpg', category: 'NG', title: 'Night of Glory' },
+        { src: 'images/BC_001.jpg', category: 'BC', title: 'Bible College Class' },
+        { src: 'images/EV_001.jpg', category: 'EV', title: 'Church Event' },
+        { src: 'images/MN_001.jpg', category: 'MN', title: 'Ministry Outreach' },
+        
+        // Add more if you have them
+        { src: 'images/SW_002.jpg', category: 'SW', title: 'Sunday Congregation' },
+        { src: 'images/NG_002.jpg', category: 'NG', title: 'Night of Glory Worship' },
+        { src: 'images/BC_002.jpg', category: 'BC', title: 'Bible College Graduation' },
+        { src: 'images/EV_002.jpg', category: 'EV', title: 'Special Service' },
+        { src: 'images/MN_002.jpg', category: 'MN', title: 'Ministry Meeting' }
+      ];
+      
+      const galleryGrid = document.getElementById('galleryGrid');
+      
+      // Clear loading message
+      galleryGrid.innerHTML = '';
+      
+      // Create gallery items
+      galleryImages.forEach(image => {
+        createGalleryItem(image);
+      });
+      
+      // Setup filter buttons
+      setupFilters();
+      
+      function createGalleryItem(image) {
+        const item = document.createElement('div');
+        item.className = 'gallery-item';
+        item.dataset.category = image.category;
+        
+        const img = document.createElement('img');
+        img.src = image.src;
+        img.alt = image.title;
+        img.loading = 'lazy';
+        
+        // Handle image errors
+        img.onerror = function() {
+          console.warn('Image failed to load:', image.src);
+          this.style.display = 'none';
+          item.style.background = 'linear-gradient(135deg, #004080, #001a33)';
+          item.innerHTML += `
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #FFD700;">
+              <i class="fas fa-image" style="font-size: 2rem; margin-bottom: 10px;"></i>
+              <p>${image.title}</p>
+              <small>(Image not found)</small>
+            </div>
+          `;
+        };
+        
+        const category = document.createElement('div');
+        category.className = 'gallery-category';
+        category.textContent = getCategoryName(image.category);
+        
+        const overlay = document.createElement('div');
+        overlay.className = 'gallery-overlay';
+        overlay.innerHTML = `<h4>${image.title}</h4>`;
+        
+        item.appendChild(img);
+        item.appendChild(category);
+        item.appendChild(overlay);
+        
+        galleryGrid.appendChild(item);
+      }
+      
+      function getCategoryName(code) {
+        const names = {
+          'SW': 'Sunday Worship',
+          'NG': 'Night of Glory', 
+          'BC': 'Bible College',
+          'EV': 'Events',
+          'MN': 'Ministries',
+          'all': 'All Photos'
+        };
+        return names[code] || code;
+      }
+      
+      function setupFilters() {
+        const buttons = document.querySelectorAll('.filter-btn');
+        
+        buttons.forEach(button => {
+          button.addEventListener('click', function() {
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Filter items
+            const filter = this.dataset.filter;
+            const items = document.querySelectorAll('.gallery-item');
+            
+            let visibleCount = 0;
+            
+            items.forEach(item => {
+              if (filter === 'all' || item.dataset.category === filter) {
+                item.style.display = 'block';
+                visibleCount++;
+              } else {
+                item.style.display = 'none';
+              }
+            });
+            
+            // Show message if no items
+            if (visibleCount === 0) {
+              showNoItemsMessage(filter);
+            }
+          });
+        });
+      }
+      
+      function showNoItemsMessage(filter) {
+        galleryGrid.innerHTML = `
+          <div class="no-images">
+            <i class="fas fa-search"></i>
+            <h3>No images in "${getCategoryName(filter)}" category</h3>
+            <p>Add images named: ${filter}_001.jpg, ${filter}_002.jpg, etc. to your images folder.</p>
+            <p>Current images in gallery: ${galleryImages.length}</p>
+            <button onclick="location.reload()" style="margin-top: 20px; padding: 10px 20px; background: #FFD700; color: #000; border: none; border-radius: 5px; cursor: pointer;">
+              <i class="fas fa-redo"></i> Refresh Gallery
+            </button>
+          </div>
+        `;
+      }
+      
+      // Log gallery status
+      console.log(`Gallery initialized with ${galleryImages.length} images`);
+      console.log('Available categories:', [...new Set(galleryImages.map(img => img.category))]);
+    });
+  </script>
+</body>
+</html>

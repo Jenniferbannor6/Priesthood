@@ -1,422 +1,846 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery | Priesthood Family Chapel</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="images/logo.png">
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    /* Gallery Specific Styles */
-    .gallery-section {
-      padding: 80px 20px;
-      background: linear-gradient(135deg, rgba(0,64,128,0.1) 0%, rgba(0,0,0,0.1) 100%);
-      min-height: 80vh;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Priesthood Family Chapel International</title>
     
-    .gallery-filters {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin: 40px 0;
-    }
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
     
-    .filter-btn {
-      padding: 12px 30px;
-      background: rgba(255, 255, 255, 0.1);
-      border: 2px solid rgba(255, 215, 0, 0.3);
-      border-radius: 30px;
-      color: white;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
-      font-size: 1rem;
-    }
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     
-    .filter-btn.active, .filter-btn:hover {
-      background: #FFD700;
-      color: #000;
-      transform: translateY(-3px);
-    }
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 25px;
-      margin-top: 40px;
-    }
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo.png" type="image/png">
     
-    .gallery-item {
-      border-radius: 15px;
-      overflow: hidden;
-      height: 280px;
-      position: relative;
-      cursor: pointer;
-      background: rgba(255, 255, 255, 0.05);
-      border: 2px solid rgba(255, 215, 0, 0.2);
-      transition: all 0.3s ease;
-    }
-    
-    .gallery-item:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-      border-color: #FFD700;
-    }
-    
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-    
-    .gallery-item:hover img {
-      transform: scale(1.1);
-    }
-    
-    .gallery-category {
-      position: absolute;
-      bottom: 15px;
-      left: 15px;
-      background: rgba(0, 0, 0, 0.85);
-      color: #FFD700;
-      padding: 8px 20px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      z-index: 2;
-      border: 1px solid rgba(255, 215, 0, 0.3);
-    }
-    
-    .gallery-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      padding: 20px;
-      text-align: center;
-    }
-    
-    .gallery-item:hover .gallery-overlay {
-      opacity: 1;
-    }
-    
-    .gallery-overlay h4 {
-      color: #FFD700;
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-    }
-    
-    .gallery-overlay p {
-      color: white;
-      opacity: 0.9;
-    }
-    
-    .no-images {
-      text-align: center;
-      padding: 80px 20px;
-      grid-column: 1 / -1;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 15px;
-      border: 2px dashed rgba(255, 215, 0, 0.3);
-    }
-    
-    .no-images i {
-      font-size: 4rem;
-      color: #FFD700;
-      margin-bottom: 20px;
-      opacity: 0.7;
-    }
-    
-    .no-images h3 {
-      color: #FFD700;
-      margin-bottom: 15px;
-      font-size: 1.8rem;
-    }
-    
-    .no-images p {
-      color: rgba(255, 255, 255, 0.8);
-      max-width: 600px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
-    
-    /* Loading State */
-    .loading {
-      text-align: center;
-      padding: 60px;
-      grid-column: 1 / -1;
-    }
-    
-    .loading-spinner {
-      border: 4px solid rgba(255, 215, 0, 0.3);
-      border-top: 4px solid #FFD700;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      animation: spin 1s linear infinite;
-      margin: 0 auto 20px;
-    }
-    
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    
-    /* Responsive */
-    @media (max-width: 768px) {
-      .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 20px;
-      }
-      
-      .gallery-item {
-        height: 250px;
-      }
-      
-      .filter-btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .gallery-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .gallery-section {
-        padding: 60px 15px;
-      }
-    }
-  </style>
+    <!-- Gallery Specific Styles -->
+    <style>
+        .gallery-section {
+            padding: 100px 0 80px;
+            min-height: 100vh;
+        }
+        
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 40px 0 30px;
+            padding: 0 20px;
+        }
+        
+        .filter-btn {
+            padding: 12px 25px;
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: 30px;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--accent-color);
+            color: var(--black-color);
+            border-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            height: 280px;
+            position: relative;
+            cursor: pointer;
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--accent-color);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.6s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-category {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background: rgba(0, 0, 0, 0.85);
+            color: var(--accent-color);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            z-index: 2;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            backdrop-filter: blur(5px);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.3) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-overlay h4 {
+            color: var(--accent-color);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            font-family: 'Merriweather', serif;
+        }
+        
+        .gallery-overlay p {
+            color: white;
+            opacity: 0.9;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .no-images {
+            text-align: center;
+            padding: 80px 30px;
+            grid-column: 1 / -1;
+            background: var(--bg-card);
+            border-radius: 20px;
+            border: 2px dashed var(--border-color);
+            margin: 20px;
+        }
+        
+        .no-images i {
+            font-size: 4rem;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+            opacity: 0.7;
+        }
+        
+        .no-images h3 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .no-images p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 25px;
+            line-height: 1.6;
+        }
+        
+        .gallery-loading {
+            text-align: center;
+            padding: 60px;
+            grid-column: 1 / -1;
+        }
+        
+        .loading-spinner {
+            border: 4px solid rgba(255, 215, 0, 0.3);
+            border-top: 4px solid var(--accent-color);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 25px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Category colors */
+        .category-SW { border-left: 4px solid #FF0000; }
+        .category-NG { border-left: 4px solid #FFD700; }
+        .category-BC { border-left: 4px solid #004080; }
+        .category-EV { border-left: 4px solid #9C27B0; }
+        .category-CM { border-left: 4px solid #4CAF50; }
+        .category-CHOIR { border-left: 4px solid #E91E63; }
+        .category-LOVE { border-left: 4px solid #FF6B6B; }
+        .category-GRACE { border-left: 4px solid #2196F3; }
+        .category-YOUTH { border-left: 4px solid #FF9800; }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 20px;
+                padding: 15px;
+            }
+            
+            .gallery-item {
+                height: 260px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 15px;
+            }
+            
+            .gallery-item {
+                height: 240px;
+            }
+            
+            .filter-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .gallery-section {
+                padding: 80px 0 60px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 10px;
+            }
+            
+            .gallery-item {
+                height: 220px;
+            }
+            
+            .gallery-filters {
+                gap: 8px;
+            }
+            
+            .filter-btn {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
+        }
+        
+        /* TikTok Streaming Button Styles */
+        .platform-btn.tiktok {
+            background: #000000;
+            color: white;
+        }
+        
+        .platform-btn.tiktok:hover {
+            background: #333333;
+            transform: translateX(5px);
+        }
+        
+        .dropdown-item.tiktok-item i {
+            color: #000000;
+        }
+    </style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
-  <header class="hero">
-    <div class="overlay">
-      <nav class="navbar">
-        <div class="logo">
-          <img src="images/logo.png" alt="Church Logo">
-        </div>
-        <ul class="nav-links">
-          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-          <li><a href="bible-college.html"><i class="fas fa-graduation-cap"></i> Bible College</a></li>
-          <li><a href="gallery.html" class="active"><i class="fas fa-images"></i> Gallery</a></li>
-        </ul>
-      </nav>
-      <div class="hero-content">
-        <h1>Church Gallery</h1>
-        <p>Capturing moments of worship, fellowship, and ministry</p>
-      </div>
-    </div>
-  </header>
-
-  <main id="main-content">
-    <section class="gallery-section">
-      <div class="container">
-        <h2>Photo Gallery</h2>
-        <p class="section-subtitle">Browse photos from our various ministries and events</p>
-        
-        <div class="gallery-filters">
-          <button class="filter-btn active" data-filter="all">All Photos</button>
-          <button class="filter-btn" data-filter="SW">Sunday Worship</button>
-          <button class="filter-btn" data-filter="NG">Night of Glory</button>
-          <button class="filter-btn" data-filter="BC">Bible College</button>
-          <button class="filter-btn" data-filter="EV">Events</button>
-          <button class="filter-btn" data-filter="MN">Ministries</button>
-        </div>
-        
-        <div class="gallery-grid" id="galleryGrid">
-          <div class="loading">
-            <div class="loading-spinner"></div>
-            <p>Loading gallery images...</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3><i class="fas fa-church"></i> Priesthood Family Chapel International</h3>
-        <p><i class="fas fa-map-marker-alt"></i> Kumasi, Washington</p>
-        <p><i class="fas fa-envelope"></i> info@priesthoodchapel.org</p>
-        <p><i class="fas fa-phone"></i> +233 123 456 789</p>
-      </div>
-      
-      <div class="footer-section">
-        <h3><i class="fas fa-clock"></i> Service Times</h3>
-        <p><strong>Online:</strong> Tue-Fri 9:30-11:30 AM</p>
-        <p><strong>Online Sunday:</strong> 9:30 AM-12:00 AM</p>
-        <p><strong>In-person Sunday:</strong> 8:30-11:30 AM</p>
-      </div>
-      
-      <div class="footer-section">
-        <h3><i class="fas fa-link"></i> Quick Links</h3>
-        <ul>
-          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-          <li><a href="bible-college.html"><i class="fas fa-graduation-cap"></i> Bible College</a></li>
-          <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
-        </ul>
-      </div>
+    <!-- Skip to Content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle">
+        <button id="darkModeToggle" aria-label="Toggle dark/light mode">
+            <i class="fas fa-moon"></i>
+        </button>
     </div>
     
-    <div class="footer-bottom">
-      <p>&copy; 2025 Priesthood Family Chapel International. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <!-- Gallery JavaScript -->
-  <script>
-    // SIMPLE GALLERY - No dependencies, just works
-    document.addEventListener('DOMContentLoaded', function() {
-      console.log('Gallery page loaded');
-      
-      // Define your gallery images
-      const galleryImages = [
-        // Use ONLY the images you actually have
-        { src: 'images/SW_001.jpg', category: 'SW', title: 'Sunday Worship Service' },
-        { src: 'images/NG_001.jpg', category: 'NG', title: 'Night of Glory' },
-        { src: 'images/BC_001.jpg', category: 'BC', title: 'Bible College Class' },
-        { src: 'images/EV_001.jpg', category: 'EV', title: 'Church Event' },
-        { src: 'images/MN_001.jpg', category: 'MN', title: 'Ministry Outreach' },
-        
-        // Add more if you have them
-        { src: 'images/SW_002.jpg', category: 'SW', title: 'Sunday Congregation' },
-        { src: 'images/NG_002.jpg', category: 'NG', title: 'Night of Glory Worship' },
-        { src: 'images/BC_002.jpg', category: 'BC', title: 'Bible College Graduation' },
-        { src: 'images/EV_002.jpg', category: 'EV', title: 'Special Service' },
-        { src: 'images/MN_002.jpg', category: 'MN', title: 'Ministry Meeting' }
-      ];
-      
-      const galleryGrid = document.getElementById('galleryGrid');
-      
-      // Clear loading message
-      galleryGrid.innerHTML = '';
-      
-      // Create gallery items
-      galleryImages.forEach(image => {
-        createGalleryItem(image);
-      });
-      
-      // Setup filter buttons
-      setupFilters();
-      
-      function createGalleryItem(image) {
-        const item = document.createElement('div');
-        item.className = 'gallery-item';
-        item.dataset.category = image.category;
-        
-        const img = document.createElement('img');
-        img.src = image.src;
-        img.alt = image.title;
-        img.loading = 'lazy';
-        
-        // Handle image errors
-        img.onerror = function() {
-          console.warn('Image failed to load:', image.src);
-          this.style.display = 'none';
-          item.style.background = 'linear-gradient(135deg, #004080, #001a33)';
-          item.innerHTML += `
-            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #FFD700;">
-              <i class="fas fa-image" style="font-size: 2rem; margin-bottom: 10px;"></i>
-              <p>${image.title}</p>
-              <small>(Image not found)</small>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo and Church Name -->
+            <div class="logo-section">
+                <img src="images/logo.png" alt="Priesthood Family Chapel Logo" class="logo">
+                <div class="church-name">
+                    <h1>Church Gallery</h1>
+                    <p>Priesthood Family Chapel International</p>
+                </div>
             </div>
-          `;
-        };
-        
-        const category = document.createElement('div');
-        category.className = 'gallery-category';
-        category.textContent = getCategoryName(image.category);
-        
-        const overlay = document.createElement('div');
-        overlay.className = 'gallery-overlay';
-        overlay.innerHTML = `<h4>${image.title}</h4>`;
-        
-        item.appendChild(img);
-        item.appendChild(category);
-        item.appendChild(overlay);
-        
-        galleryGrid.appendChild(item);
-      }
-      
-      function getCategoryName(code) {
-        const names = {
-          'SW': 'Sunday Worship',
-          'NG': 'Night of Glory', 
-          'BC': 'Bible College',
-          'EV': 'Events',
-          'MN': 'Ministries',
-          'all': 'All Photos'
-        };
-        return names[code] || code;
-      }
-      
-      function setupFilters() {
-        const buttons = document.querySelectorAll('.filter-btn');
-        
-        buttons.forEach(button => {
-          button.addEventListener('click', function() {
-            // Update active button
-            buttons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
             
-            // Filter items
-            const filter = this.dataset.filter;
-            const items = document.querySelectorAll('.gallery-item');
+            <!-- Desktop Navigation -->
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="bible-college.html" class="nav-link"><i class="fas fa-graduation-cap"></i> Bible College</a></li>
+                <li><a href="gallery.html" class="nav-link active"><i class="fas fa-images"></i> Gallery</a></li>
+                <li><a href="index.html#ministries" class="nav-link"><i class="fas fa-hands-helping"></i> Ministries</a></li>
+                <li><a href="index.html#services" class="nav-link"><i class="fas fa-church"></i> Services</a></li>
+                <li><a href="index.html#prayer" class="nav-link prayer-btn" id="openPrayerBtn"><i class="fas fa-hands-praying"></i> Request Prayer</a></li>
+            </ul>
             
-            let visibleCount = 0;
+            <!-- Mobile Menu Button -->
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav" id="mobileNav">
+            <a href="index.html" class="mobile-link"><i class="fas fa-home"></i> Home</a>
+            <a href="bible-college.html" class="mobile-link"><i class="fas fa-graduation-cap"></i> Bible College</a>
+            <a href="gallery.html" class="mobile-link active"><i class="fas fa-images"></i> Gallery</a>
+            <a href="index.html#ministries" class="mobile-link"><i class="fas fa-hands-helping"></i> Ministries</a>
+            <a href="index.html#services" class="mobile-link"><i class="fas fa-church"></i> Services</a>
+            <a href="index.html#prayer" class="mobile-link prayer-btn" id="openPrayerBtnMobile"><i class="fas fa-hands-praying"></i> Request Prayer</a>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">Church Gallery</h1>
+            <p class="hero-subtitle">Capturing moments of worship, fellowship, and ministry at Priesthood Family Chapel</p>
+            <div class="hero-buttons">
+                <a href="#gallery-filters" class="btn btn-primary">
+                    <i class="fas fa-images"></i> Browse Photos
+                </a>
+                <a href="index.html" class="btn btn-secondary">
+                    <i class="fas fa-home"></i> Back to Home
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Gallery Section -->
+        <section class="gallery-section" id="gallery">
+            <div class="container">
+                <h2 class="section-title">Photo Gallery</h2>
+                <p class="section-subtitle">Browse photos from our various ministries, services, and events</p>
+                
+                <!-- Gallery Filters -->
+                <div class="gallery-filters" id="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">
+                        <i class="fas fa-layer-group"></i> All Photos
+                    </button>
+                    <button class="filter-btn" data-filter="SW">
+                        <i class="fas fa-church"></i> Sunday Worship
+                    </button>
+                    <button class="filter-btn" data-filter="NG">
+                        <i class="fas fa-star"></i> Night of Glory
+                    </button>
+                    <button class="filter-btn" data-filter="BC">
+                        <i class="fas fa-graduation-cap"></i> Bible College
+                    </button>
+                    <button class="filter-btn" data-filter="EV">
+                        <i class="fas fa-calendar-alt"></i> Events
+                    </button>
+                    <button class="filter-btn" data-filter="CM">
+                        <i class="fas fa-child"></i> Children Ministry
+                    </button>
+                    <button class="filter-btn" data-filter="CHOIR">
+                        <i class="fas fa-music"></i> Choir & Music
+                    </button>
+                    <button class="filter-btn" data-filter="LOVE">
+                        <i class="fas fa-heart"></i> Love Ministry
+                    </button>
+                    <button class="filter-btn" data-filter="GRACE">
+                        <i class="fas fa-hands-praying"></i> Grace Ministry
+                    </button>
+                    <button class="filter-btn" data-filter="YOUTH">
+                        <i class="fas fa-users"></i> Youth Ministry
+                    </button>
+                </div>
+                
+                <!-- Gallery Grid -->
+                <div class="gallery-grid" id="galleryGrid">
+                    <!-- Images will be loaded here by JavaScript -->
+                </div>
+                
+                <!-- Upload Note -->
+                <div class="momo-section" style="margin-top: 50px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    <h3><i class="fas fa-info-circle"></i> How to Add Photos</h3>
+                    <div class="momo-details">
+                        <div class="momo-info">
+                            <p><i class="fas fa-folder"></i> <strong>Folder:</strong> Save images in the "images" folder</p>
+                            <p><i class="fas fa-tag"></i> <strong>Naming:</strong> Use category codes (SW, NG, BC, etc.)</p>
+                            <p><i class="fas fa-file-image"></i> <strong>Examples:</strong> SW_001.jpg, CM_001.jpg, CHOIR_001.jpg</p>
+                            <p><i class="fas fa-image"></i> <strong>Formats:</strong> JPG, PNG, or WebP recommended</p>
+                            <p><i class="fas fa-sync-alt"></i> <strong>Refresh:</strong> Refresh page after adding new images</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Gallery Instructions -->
+        <section class="section" style="padding: 60px 0; background: var(--bg-section);">
+            <div class="container">
+                <h2 class="section-title">Gallery Categories</h2>
+                <p class="section-subtitle">Our photo collection organized by ministry and events</p>
+                
+                <div class="ministries-grid">
+                    <div class="ministry-card">
+                        <div class="ministry-icon" style="background: linear-gradient(135deg, #FF0000, #FF6B6B);">
+                            <i class="fas fa-church"></i>
+                        </div>
+                        <h3>Sunday Worship (SW)</h3>
+                        <p>Photos from our weekly Sunday services, worship sessions, and congregational gatherings.</p>
+                        <span style="background: #FF0000; color: white; padding: 5px 15px; border-radius: 15px; font-size: 0.9rem;">Code: SW</span>
+                    </div>
+                    
+                    <div class="ministry-card">
+                        <div class="ministry-icon" style="background: linear-gradient(135deg, #FFD700, #FFED4E);">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Night of Glory (NG)</h3>
+                        <p>Special Friday night services, deliverance sessions, and powerful worship nights.</p>
+                        <span style="background: #FFD700; color: black; padding: 5px 15px; border-radius: 15px; font-size: 0.9rem;">Code: NG</span>
+                    </div>
+                    
+                    <div class="ministry-card">
+                        <div class="ministry-icon" style="background: linear-gradient(135deg, #004080, #0066CC);">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Bible College (BC)</h3>
+                        <p>Classroom sessions, graduations, lectures, and student activities from our Bible College.</p>
+                        <span style="background: #004080; color: white; padding: 5px 15px; border-radius: 15px; font-size: 0.9rem;">Code: BC</span>
+                    </div>
+                    
+                    <div class="ministry-card">
+                        <div class="ministry-icon" style="background: linear-gradient(135deg, #4CAF50, #81C784);">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <h3>Children Ministry (CM)</h3>
+                        <p>Children's church, Sunday school, kids activities, and youth programs.</p>
+                        <span style="background: #4CAF50; color: white; padding: 5px 15px; border-radius: 15px; font-size: 0.9rem;">Code: CM</span>
+                    </div>
+                    
+                    <div class="ministry-card">
+                        <div class="ministry-icon" style="background: linear-gradient(135deg, #E91E63, #F48FB1);">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <h3>Choir & Music (CHOIR)</h3>
+                        <p>Choir rehearsals, musical performances, praise team sessions, and instrumentals.</p>
+                        <span style="background: #E91E63; color: white; padding: 5px 15px; border-radius: 15px; font-size: 0.9rem;">Code: CHOIR</span>
+                    </div>
+                    
+                    <div class="ministry-card">
+                        <div class="ministry-icon" style="background: linear-gradient(135deg, #9C27B0, #BA68C8);">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3>Events (EV)</h3>
+                        <p>Special events, conferences, crusades, and church anniversary celebrations.</p>
+                        <span style="background: #9C27B0; color: white; padding: 5px 15px; border-radius: 15px; font-size: 0.9rem;">Code: EV</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-church"></i> Priesthood Family Chapel</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Kumasi, Ohwim School Junction</p>
+                    <p><i class="fas fa-envelope"></i> priesthoodfamilybiblecollege@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> 0547367600 (Main)</p>
+                    <p><i class="fab fa-whatsapp"></i> 0249392178 (Prayer & Bible College)</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fas fa-clock"></i> Service Times</h3>
+                    <p><strong>Online:</strong> Tue-Fri 9:30-11:30 AM</p>
+                    <p><strong>Sunday Worship:</strong> 8:30-11:30 AM</p>
+                    <p><strong>Thursday Deliverance:</strong> 10 PM-1:30 AM</p>
+                    <p><strong>Bible College:</strong> Sat 12-5 PM, Tue/Thu 6-8 PM</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fas fa-link"></i> Quick Links</h3>
+                    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                    <a href="bible-college.html"><i class="fas fa-graduation-cap"></i> Bible College</a>
+                    <a href="gallery.html"><i class="fas fa-images"></i> Gallery</a>
+                    <a href="index.html#ministries"><i class="fas fa-hands-helping"></i> Ministries</a>
+                    <button class="prayer-footer-btn" style="background: none; border: none; color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 10px; font-size: 1rem; padding: 0; margin-top: 10px;" data-modal="prayerModal">
+                        <i class="fas fa-hands-praying"></i> Request Prayer
+                    </button>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fas fa-camera"></i> Photo Contributions</h3>
+                    <p>Have photos to share from our services or events?</p>
+                    <p><i class="fab fa-whatsapp"></i> Send to: 0249392178</p>
+                    <p><i class="fas fa-envelope"></i> Email to: priesthoodfamilybiblecollege@gmail.com</p>
+                    <p>Please include category code with photos</p>
+                </div>
+            </div>
             
-            items.forEach(item => {
-              if (filter === 'all' || item.dataset.category === filter) {
-                item.style.display = 'block';
-                visibleCount++;
-              } else {
-                item.style.display = 'none';
-              }
+            <div class="footer-bottom">
+                <p>&copy; 2025 Priesthood Family Chapel International. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/v/1AQWzoCUdF/" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://youtube.com/@priesthoodtv547" target="_blank" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@priesthoodfamilychapel" target="_blank" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://us06web.zoom.us/j/2547367600" target="_blank" aria-label="Zoom">
+                        <i class="fas fa-video"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Quick Join Button - WITH TIKTOK ADDED -->
+    <div class="quick-join">
+        <button class="quick-join-btn" id="quickJoinBtn">
+            <i class="fas fa-video"></i>
+            <span>Join Online Service</span>
+        </button>
+        <div class="quick-join-dropdown" id="quickJoinDropdown">
+            <div class="dropdown-header">
+                <h4><i class="fas fa-broadcast-tower"></i> Live Now</h4>
+                <p>Sunday Worship Service</p>
+            </div>
+            <a href="https://us06web.zoom.us/j/2547367600" target="_blank" class="dropdown-item">
+                <i class="fas fa-video"></i>
+                <div>
+                    <strong>Join on Zoom</strong>
+                    <small>ID: 2547367600 | Passcode: JESUS</small>
+                </div>
+            </a>
+            <a href="https://youtube.com/@priesthoodtv547" target="_blank" class="dropdown-item">
+                <i class="fab fa-youtube"></i>
+                <div>
+                    <strong>YouTube Live</strong>
+                    <small>Watch on YouTube</small>
+                </div>
+            </a>
+            <a href="https://www.facebook.com/share/v/1AQWzoCUdF/" target="_blank" class="dropdown-item">
+                <i class="fab fa-facebook"></i>
+                <div>
+                    <strong>Facebook Live</strong>
+                    <small>Watch on Facebook</small>
+                </div>
+            </a>
+            <a href="https://www.tiktok.com/@priesthoodfamilychapel" target="_blank" class="dropdown-item tiktok-item">
+                <i class="fab fa-tiktok"></i>
+                <div>
+                    <strong>TikTok Live</strong>
+                    <small>Watch on TikTok</small>
+                </div>
+            </a>
+            <div class="dropdown-footer">
+                <p><i class="far fa-clock"></i> Sunday 8:30 AM | Tue-Fri 9:30-11:30 AM</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Prayer Modal - WITH CORRECT GOOGLE FORM LINK -->
+    <div class="modal" id="prayerModal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header">
+                <h2><i class="fas fa-hands-praying"></i> Request Prayer</h2>
+                <p>Choose how you'd like to submit your prayer request</p>
+            </div>
+            
+            <div class="modal-options" id="prayerOptions">
+                <div class="modal-option">
+                    <div class="option-icon whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp Prayer Line</h3>
+                    <p><i class="fas fa-clock"></i> 24/7 Response</p>
+                    <p><i class="fas fa-check-circle"></i> Immediate attention</p>
+                    <p><i class="fas fa-phone"></i> 0249392178</p>
+                    <button class="btn btn-primary" id="whatsappPrayer" style="width: 100%; margin-top: 15px;">
+                        <i class="fab fa-whatsapp"></i> Request via WhatsApp
+                    </button>
+                </div>
+                
+                <div class="modal-option">
+                    <div class="option-icon email">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Prayer Request</h3>
+                    <p><i class="fas fa-clock"></i> Response within 24 hours</p>
+                    <p><i class="fas fa-check-circle"></i> Formal documentation</p>
+                    <p><i class="fas fa-at"></i> priesthoodfamilybiblecollege@gmail.com</p>
+                    <button class="btn btn-primary" id="emailPrayer" style="width: 100%; margin-top: 15px;">
+                        <i class="fas fa-envelope"></i> Request via Email
+                    </button>
+                </div>
+                
+                <div class="modal-option">
+                    <div class="option-icon form">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Online Prayer Form</h3>
+                    <p><i class="fas fa-check-circle"></i> Email confirmation</p>
+                    <p><i class="fas fa-shield-alt"></i> Secure & confidential</p>
+                    <p><i class="fas fa-database"></i> Added to prayer list</p>
+                    <button class="btn btn-primary" id="formPrayer" style="width: 100%; margin-top: 15px;">
+                        <i class="fas fa-file-alt"></i> Fill Prayer Form
+                    </button>
+                </div>
+            </div>
+            
+            <div class="form-container" id="prayerFormContainer" style="display: none;">
+                <button class="back-btn" id="backToPrayerOptions">&larr; Back to Options</button>
+                <div class="form-wrapper">
+                    <h3><i class="fas fa-file-alt"></i> Prayer Request Form</h3>
+                    <iframe 
+                        src="https://docs.google.com/forms/d/e/1FAIpQLScn8c4_bMjHRKBWLlph8uQ-qPoc31Z6UF2iibFcRMDgVfkqIw/viewform?embedded=true"
+                        width="100%" 
+                        height="500" 
+                        frameborder="0"
+                        title="Prayer Request Form">
+                        Loading…
+                    </iframe>
+                    <div class="form-note">
+                        <p><i class="fas fa-info-circle"></i> Your prayer request will be added to our prayer list</p>
+                        <p><i class="fas fa-clock"></i> Our prayer team prays daily for all requests</p>
+                        <p><i class="fas fa-heart"></i> All requests are kept confidential</p>
+                        <p><i class="fab fa-whatsapp"></i> Need urgent prayer? WhatsApp: 0249392178</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    
+    <!-- Gallery Specific JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gallery images data - Add your actual images here
+            const galleryImages = [
+                // Sunday Worship (SW)
+                { src: 'images/SW_001.jpg', category: 'SW', title: 'Sunday Worship Service', description: 'Morning worship session with the congregation' },
+                { src: 'images/SW_002.jpg', category: 'SW', title: 'Sunday Congregation', description: 'Church members in worship and praise' },
+                { src: 'images/SW_003.jpg', category: 'SW', title: 'Sunday Sermon', description: 'Pastor delivering the word of God' },
+                
+                // Night of Glory (NG)
+                { src: 'images/NG_001.jpg', category: 'NG', title: 'Night of Glory', description: 'Powerful Friday night deliverance service' },
+                { src: 'images/NG_002.jpg', category: 'NG', title: 'Night Worship', description: 'Intense worship and prayer session' },
+                { src: 'images/NG_003.jpg', category: 'NG', title: 'Glory Night', description: 'Special night of miracles and healing' },
+                
+                // Bible College (BC)
+                { src: 'images/BC_001.jpg', category: 'BC', title: 'Bible College Class', description: 'Students in classroom learning session' },
+                { src: 'images/BC_002.jpg', category: 'BC', title: 'Bible College Graduation', description: 'Graduation ceremony for Bible College students' },
+                { src: 'images/BC_003.jpg', category: 'BC', title: 'Practical Ministry', description: 'Hands-on ministry training session' },
+                
+                // Children Ministry (CM)
+                { src: 'images/CM_001.jpg', category: 'CM', title: 'Children Ministry', description: 'Kids Sunday school and activities' },
+                { src: 'images/CM_002.jpg', category: 'CM', title: 'Children\'s Church', description: 'Young worshippers in service' },
+                { src: 'images/CM_003.jpg', category: 'CM', title: 'Kids Activity', description: 'Children engaged in learning activities' },
+                
+                // Choir & Music (CHOIR)
+                { src: 'images/CHOIR_001.jpg', category: 'CHOIR', title: 'Choir Performance', description: 'Choir ministering during service' },
+                { src: 'images/CHOIR_002.jpg', category: 'CHOIR', title: 'Music Ministry', description: 'Praise team leading worship' },
+                { src: 'images/CHOIR_003.jpg', category: 'CHOIR', title: 'Choir Rehearsal', description: 'Choir practice session' },
+                
+                // Love Ministry (LOVE)
+                { src: 'images/LOVE_001.jpg', category: 'LOVE', title: 'Love Ministry Outreach', description: 'Community service and outreach program' },
+                { src: 'images/LOVE_002.jpg', category: 'LOVE', title: 'Community Service', description: 'Helping the needy in the community' },
+                { src: 'images/LOVE_003.jpg', category: 'LOVE', title: 'Outreach Program', description: 'Sharing love with the community' },
+                
+                // Grace Ministry (GRACE)
+                { src: 'images/GRACE_001.jpg', category: 'GRACE', title: 'Grace Ministry', description: 'Teaching and discipleship sessions' },
+                { src: 'images/GRACE_002.jpg', category: 'GRACE', title: 'Discipleship Class', description: 'Training believers in grace' },
+                
+                // Events (EV)
+                { src: 'images/EV_001.jpg', category: 'EV', title: 'Church Event', description: 'Special church program and gathering' },
+                { src: 'images/EV_002.jpg', category: 'EV', title: 'Special Service', description: 'Anniversary or celebration service' },
+                { src: 'images/EV_003.jpg', category: 'EV', title: 'Conference', description: 'Church conference or seminar' },
+                
+                // Youth Ministry (YOUTH)
+                { src: 'images/YOUTH_001.jpg', category: 'YOUTH', title: 'Youth Ministry', description: 'Young people in fellowship and worship' },
+                { src: 'images/YOUTH_002.jpg', category: 'YOUTH', title: 'Youth Program', description: 'Youth activities and programs' },
+                { src: 'images/YOUTH_003.jpg', category: 'YOUTH', title: 'Youth Fellowship', description: 'Young believers gathering together' }
+            ];
+            
+            const galleryGrid = document.getElementById('galleryGrid');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            
+            // Function to get category full name
+            function getCategoryName(code) {
+                const categories = {
+                    'SW': 'Sunday Worship',
+                    'NG': 'Night of Glory',
+                    'BC': 'Bible College',
+                    'EV': 'Events',
+                    'CM': 'Children Ministry',
+                    'CHOIR': 'Choir & Music',
+                    'LOVE': 'Love Ministry',
+                    'GRACE': 'Grace Ministry',
+                    'YOUTH': 'Youth Ministry',
+                    'all': 'All Photos'
+                };
+                return categories[code] || code;
+            }
+            
+            // Function to get category icon
+            function getCategoryIcon(code) {
+                const icons = {
+                    'SW': 'fas fa-church',
+                    'NG': 'fas fa-star',
+                    'BC': 'fas fa-graduation-cap',
+                    'EV': 'fas fa-calendar-alt',
+                    'CM': 'fas fa-child',
+                    'CHOIR': 'fas fa-music',
+                    'LOVE': 'fas fa-heart',
+                    'GRACE': 'fas fa-hands-praying',
+                    'YOUTH': 'fas fa-users'
+                };
+                return icons[code] || 'fas fa-image';
+            }
+            
+            // Function to create gallery item
+            function createGalleryItem(image) {
+                const item = document.createElement('div');
+                item.className = `gallery-item category-${image.category}`;
+                item.dataset.category = image.category;
+                
+                const img = document.createElement('img');
+                img.src = image.src;
+                img.alt = image.title;
+                img.loading = 'lazy';
+                
+                // Handle image loading errors
+                img.onerror = function() {
+                    console.log(`Image failed to load: ${image.src}`);
+                    this.style.display = 'none';
+                    
+                    // Create fallback content
+                    const fallback = document.createElement('div');
+                    fallback.style.cssText = `
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        background: linear-gradient(135deg, #004080, #001a33);
+                        color: white;
+                        padding: 20px;
+                        text-align: center;
+                    `;
+                    fallback.innerHTML = `
+                        <i class="${getCategoryIcon(image.category)}" style="font-size: 3rem; margin-bottom: 15px; color: #FFD700;"></i>
+                        <h3 style="margin-bottom: 10px; font-size: 1.2rem;">${image.title}</h3>
+                        <p style="font-size: 0.9rem; opacity: 0.8;">${image.description}</p>
+                        <p style="font-size: 0.8rem; margin-top: 10px; color: #FFD700;">(Add image: ${image.src})</p>
+                    `;
+                    
+                    item.appendChild(fallback);
+                };
+                
+                const category = document.createElement('div');
+                category.className = 'gallery-category';
+                category.innerHTML = `<i class="${getCategoryIcon(image.category)}"></i> ${getCategoryName(image.category)}`;
+                
+                const overlay = document.createElement('div');
+                overlay.className = 'gallery-overlay';
+                overlay.innerHTML = `
+                    <h4>${image.title}</h4>
+                    <p>${image.description}</p>
+                `;
+                
+                item.appendChild(img);
+                item.appendChild(category);
+                item.appendChild(overlay);
+                
+                return item;
+            }
+            
+            // Load gallery images
+            function loadGalleryImages(filter = 'all') {
+                galleryGrid.innerHTML = '';
+                
+                const filteredImages = filter === 'all' 
+                    ? galleryImages 
+                    : galleryImages.filter(img => img.category === filter);
+                
+                if (filteredImages.length === 0) {
+                    galleryGrid.innerHTML = `
+                        <div class="no-images">
+                            <i class="fas fa-images"></i>
+                            <h3>No Photos Found</h3>
+                            <p>No images available for the "${getCategoryName(filter)}" category yet.</p>
+                            <p>Add images to the "images" folder with the correct naming convention.</p>
+                            <div style="margin-top: 20px;">
+                                <button class="btn btn-primary" onclick="loadGalleryImages('all')">
+                                    <i class="fas fa-layer-group"></i> View All Photos
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                filteredImages.forEach(image => {
+                    const galleryItem = createGalleryItem(image);
+                    galleryGrid.appendChild(galleryItem);
+                });
+            }
+            
+            // Initialize filter buttons
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Update active button
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter images
+                    const filter = this.getAttribute('data-filter');
+                    loadGalleryImages(filter);
+                });
             });
             
-            // Show message if no items
-            if (visibleCount === 0) {
-              showNoItemsMessage(filter);
-            }
-          });
+            // Load initial gallery
+            loadGalleryImages('all');
         });
-      }
-      
-      function showNoItemsMessage(filter) {
-        galleryGrid.innerHTML = `
-          <div class="no-images">
-            <i class="fas fa-search"></i>
-            <h3>No images in "${getCategoryName(filter)}" category</h3>
-            <p>Add images named: ${filter}_001.jpg, ${filter}_002.jpg, etc. to your images folder.</p>
-            <p>Current images in gallery: ${galleryImages.length}</p>
-            <button onclick="location.reload()" style="margin-top: 20px; padding: 10px 20px; background: #FFD700; color: #000; border: none; border-radius: 5px; cursor: pointer;">
-              <i class="fas fa-redo"></i> Refresh Gallery
-            </button>
-          </div>
-        `;
-      }
-      
-      // Log gallery status
-      console.log(`Gallery initialized with ${galleryImages.length} images`);
-      console.log('Available categories:', [...new Set(galleryImages.map(img => img.category))]);
-    });
-  </script>
+    </script>
 </body>
 </html>

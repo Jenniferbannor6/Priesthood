@@ -1,689 +1,930 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Priesthood Family Chapel International</title>
-  <!-- FIXED: Changed from css/style.css to style.css -->
-  <link rel="stylesheet" href="style.css">
-  <!-- FIXED: Added ./ before images path -->
-  <link rel="icon" href="./images/logo.png">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Priesthood Family Chapel International - Empowering lives through God's Word. Join our Bible College for theological education.">
-  <meta name="keywords" content="church, bible college, ministry, worship, Kumasi, Washington">
-  <meta name="author" content="Priesthood Family Chapel International">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priesthood Family Chapel International - Home</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo.png" type="image/png">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9M0M79KLED"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-9M0M79KLED');
+    </script>
 </head>
 <body>
-  <!-- Skip Link -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="overlay">
-      <nav class="navbar">
-        <div class="logo">
-          <!-- FIXED: Added ./ before images path -->
-          <img src="./images/logo.png" alt="Church Logo">
-        </div>
-        
-        <!-- Search Container -->
-        <div class="search-container">
-          <input type="text" id="searchInput" placeholder="Search courses, events...">
-          <button id="searchBtn"><i class="fas fa-search"></i></button>
-        </div>
-        
-        <!-- Navigation Links -->
-        <ul class="nav-links">
-          <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
-          <li><a href="bible-college.html"><i class="fas fa-graduation-cap"></i> Bible College</a></li>
-          <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
-          <li><a href="#ministries"><i class="fas fa-hands-helping"></i> Ministries</a></li>
-          <li><a href="#services"><i class="fas fa-church"></i> Services</a></li>
-          <li><a href="#giving"><i class="fas fa-donate"></i> Giving</a></li>
-          <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-        </ul>
-      </nav>
-
-      <div class="hero-content fade-in">
-        <h1>Welcome to Priesthood Family Chapel International</h1>
-        <p>Empowering lives through the Word of God and nurturing future leaders through our Bible College.</p>
-        <div class="hero-actions">
-          <a href="bible-college.html" class="btn-primary"><i class="fas fa-graduation-cap"></i> Register for Bible College</a>
-          <a href="#services" class="btn-secondary"><i class="fas fa-calendar-alt"></i> View Services</a>
-        </div>
-      </div>
+    <!-- Skip to Content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle">
+        <button id="darkModeToggle" aria-label="Toggle dark/light mode">
+            <i class="fas fa-moon"></i>
+        </button>
     </div>
-  </header>
-
-  <main id="main-content">
-    <!-- Events Slider -->
-    <section class="events-slider fade-in" id="events">
-      <h2>Upcoming Events</h2>
-      <div class="slider-container">
-        <div class="slider-track">
-          <div class="event-slide active">
-            <!-- FIXED: Added ./ before images path -->
-            <img src="./images/event-praise.jpg" alt="Praise and Worship Night" loading="lazy">
-            <div class="slide-caption">
-              <h3>Praise & Worship Night</h3>
-              <p>Every Friday at 6 PM | Main Sanctuary</p>
-            </div>
-          </div>
-          <div class="event-slide">
-            <!-- FIXED: Added ./ before images path -->
-            <img src="./images/event-glory.jpg" alt="Night of Glory" loading="lazy">
-            <div class="slide-caption">
-              <h3>Night of Glory</h3>
-              <p>Monthly Healing & Deliverance Service</p>
-            </div>
-          </div>
-          <div class="event-slide">
-            <!-- FIXED: Added ./ before images path -->
-            <img src="./images/event-31st.jpg" alt="31st Night Evangelism" loading="lazy">
-            <div class="slide-caption">
-              <h3>31st Night Evangelism</h3>
-              <p>Cross Over Service with Prophetic Declarations</p>
-            </div>
-          </div>
-        </div>
-        
-        <button class="slider-prev" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
-        <button class="slider-next" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
-        
-        <div class="slider-dots">
-          <span class="dot active" data-slide="0"></span>
-          <span class="dot" data-slide="1"></span>
-          <span class="dot" data-slide="2"></span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services-section fade-in" id="services">
-      <h2>Our Services</h2>
-      <div class="services-container">
-        <div class="service-tabs">
-          <button class="service-tab active" data-service="online">
-            <i class="fas fa-globe"></i> Online Services
-          </button>
-          <button class="service-tab" data-service="in-person">
-            <i class="fas fa-church"></i> In-Person Services
-          </button>
-        </div>
-        
-        <div class="service-content active" id="online-services">
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-laptop"></i>
-            </div>
-            <div class="service-details">
-              <h3>Tuesday - Friday Online Services</h3>
-              <p><i class="far fa-clock"></i> <strong>Time:</strong> 9:30 AM - 11:30 AM (Ghana Time)</p>
-              <p><i class="fas fa-broadcast-tower"></i> <strong>Platform:</strong> YouTube Live & Facebook Live</p>
-            </div>
-          </div>
-          
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-video"></i>
-            </div>
-            <div class="service-details">
-              <h3>Sunday Online Service</h3>
-              <p><i class="far fa-clock"></i> <strong>Time:</strong> 9:30 AM - 12:00 Midnight (Ghana Time)</p>
-              <p><i class="fas fa-broadcast-tower"></i> <strong>Platform:</strong> YouTube Live & Facebook Live</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="service-content" id="in-person-services">
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-users"></i>
-            </div>
-            <div class="service-details">
-              <h3>Sunday Church Service</h3>
-              <p><i class="far fa-clock"></i> <strong>Time:</strong> 8:30 AM - 11:30 AM</p>
-              <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Church Premises</p>
-              <p><i class="fas fa-user-friends"></i> <strong>Type:</strong> Main Worship Service</p>
-            </div>
-          </div>
-          
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-pray"></i>
-            </div>
-            <div class="service-details">
-              <h3>Thursday Deliverance Service</h3>
-              <p><i class="far fa-clock"></i> <strong>Time:</strong> 10:00 PM - 1:30 AM</p>
-              <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Church Premises</p>
-              <p><i class="fas fa-hands"></i> <strong>Type:</strong> Pre-year & Deliverance Service</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Live Stream Section -->
-    <section class="livestream-section fade-in">
-      <h2>Join Our Live Stream</h2>
-      <div class="livestream-container">
-        <div class="video-placeholder">
-          <div class="live-badge">LIVE NOW</div>
-          <div class="video-overlay">
-            <h3>Sunday Worship Service</h3>
-            <p>Currently Streaming - Join Now!</p>
-            <div class="stream-actions">
-              <a href="https://youtube.com" target="_blank" class="btn-primary">
-                <i class="fab fa-youtube"></i> Watch on YouTube
-              </a>
-              <a href="https://facebook.com" target="_blank" class="btn-secondary">
-                <i class="fab fa-facebook"></i> Watch on Facebook
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="stream-info">
-          <h3><i class="fas fa-info-circle"></i> Streaming Information</h3>
-          <ul>
-            <li><i class="fas fa-check-circle"></i> High Quality 1080p Stream</li>
-            <li><i class="fas fa-check-circle"></i> Live Chat with Prayer Team</li>
-            <li><i class="fas fa-check-circle"></i> Downloadable Sermon Notes</li>
-            <li><i class="fas fa-check-circle"></i> Replay Available for 7 Days</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pastor Section -->
-    <section class="pastor-section fade-in">
-      <div class="pastor-images-container">
-        <div class="pastor-image active">
-          <!-- FIXED: Added ./ before images path -->
-          <img src="./images/pastor.jpg" alt="Apostle Emmanuel Amankwah" loading="lazy">
-        </div>
-        <div class="pastor-image">
-          <!-- FIXED: Added ./ before images path -->
-          <img src="./images/pastor1.jpg" alt="Apostle Emmanuel Amankwah Ministering" loading="lazy">
-        </div>
-        <div class="pastor-controls">
-          <button class="pastor-prev"><i class="fas fa-chevron-left"></i></button>
-          <div class="pastor-dots">
-            <span class="pastor-dot active" data-index="0"></span>
-            <span class="pastor-dot" data-index="1"></span>
-          </div>
-          <button class="pastor-next"><i class="fas fa-chevron-right"></i></button>
-        </div>
-      </div>
-      <div class="pastor-message">
-        <h2>Apostle Emmanuel Amankwah</h2>
-        <p class="pastor-title">Founder & Lead Pastor</p>
-        <div class="pastor-bio">
-          <p>Welcome to our church family. We are committed to teaching and spreading the Word of God, nurturing future leaders through our Bible College.</p>
-          <p>With over 20 years of ministry experience, Apostle Amankwah has dedicated his life to equipping believers for effective ministry and leadership.</p>
-        </div>
-        <div class="pastor-quote">
-          <i class="fas fa-quote-left"></i>
-          <p>My passion is to see every believer walking in their God-given purpose and authority.</p>
-          <i class="fas fa-quote-right"></i>
-        </div>
-      </div>
-    </section>
-
-    <!-- Featured Book Section -->
-    <section class="book-section fade-in">
-      <h2>New Release: Understanding Apostleship</h2>
-      <div class="book-container">
-        <!-- FIXED: Added ./ before images path -->
-        <img src="./images/book-cover.jpg" alt="Understanding Apostleship by Apostle Emmanuel Amankwah" loading="lazy">
-        <div class="book-content">
-          <p class="book-author">By Apostle Emmanuel Amankwah</p>
-          <p class="book-description">A comprehensive guide to apostolic ministry, covering biblical foundations, practical applications, and spiritual insights.</p>
-          <div class="book-actions">
-            <a href="#" class="btn-primary"><i class="fas fa-shopping-cart"></i> Buy Now ($19.99)</a>
-            <a href="#" class="btn-secondary"><i class="fas fa-book-open"></i> Read Sample</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Ministries Section -->
-    <section class="ministries-section fade-in" id="ministries">
-      <h2>Our Ministries</h2>
-      <p class="section-subtitle">Serving God by serving people through our specialized ministries</p>
-      
-      <div class="ministry-cards">
-        <div class="ministry-card">
-          <div class="ministry-icon" style="background: linear-gradient(135deg, #FFD700, #FFED4E);">
-            <i class="fas fa-hands-praying"></i>
-          </div>
-          <h3>Grace Ministry</h3>
-          <p>Teaching believers to walk in grace and extend it to others through discipleship programs.</p>
-          <a href="#" class="btn-ministry" style="background: linear-gradient(135deg, #FFD700, #FFED4E);">Join Grace Ministry</a>
-        </div>
-        
-        <div class="ministry-card">
-          <div class="ministry-icon" style="background: linear-gradient(135deg, #FF6B6B, #FF8E8E);">
-            <i class="fas fa-heart"></i>
-          </div>
-          <h3>Love Ministry</h3>
-          <p>Demonstrating Christ's love through practical acts of service and community outreach.</p>
-          <a href="#" class="btn-ministry" style="background: linear-gradient(135deg, #FF6B6B, #FF8E8E);">Join Love Ministry</a>
-        </div>
-        
-        <div class="ministry-card">
-          <div class="ministry-icon" style="background: linear-gradient(135deg, #9C27B0, #BA68C8);">
-            <i class="fas fa-music"></i>
-          </div>
-          <h3>Choir & Music</h3>
-          <p>Worshipping God through music and choir performances in our weekly services.</p>
-          <a href="#" class="btn-ministry" style="background: linear-gradient(135deg, #9C27B0, #BA68C8);">Join Choir & Music</a>
-        </div>
-        
-        <div class="ministry-card">
-          <div class="ministry-icon" style="background: linear-gradient(135deg, #009688, #4DB6AC);">
-            <i class="fas fa-tower"></i>
-          </div>
-          <h3>Priya Tower</h3>
-          <p>Building prayer warriors who stand in the gap for the church and community.</p>
-          <a href="#" class="btn-ministry" style="background: linear-gradient(135deg, #009688, #4DB6AC);">Join Priya Tower</a>
-        </div>
-        
-        <div class="ministry-card">
-          <div class="ministry-icon" style="background: linear-gradient(135deg, #4CAF50, #81C784);">
-            <i class="fas fa-child"></i>
-          </div>
-          <h3>Children Ministry</h3>
-          <p>Nurturing the next generation through age-appropriate teaching and fun activities.</p>
-          <a href="#" class="btn-ministry" style="background: linear-gradient(135deg, #4CAF50, #81C784);">Join Children Ministry</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Giving Section -->
-    <section class="giving-section fade-in" id="giving">
-      <h2>Online Giving & Offerings</h2>
-      <p class="section-subtitle">Support the ministry and missions through your generous giving</p>
-      
-      <div class="giving-container">
-        <div class="giving-options">
-          <div class="giving-option">
-            <div class="giving-icon">
-              <i class="fas fa-hand-holding-heart"></i>
-            </div>
-            <h3>Tithes & Offerings</h3>
-            <p>Your faithful giving supports our local church operations and ministry programs.</p>
-          </div>
-          
-          <div class="giving-option">
-            <div class="giving-icon">
-              <i class="fas fa-globe-africa"></i>
-            </div>
-            <h3>Missions Support</h3>
-            <p>Support our missionary work both locally and internationally to spread the Gospel.</p>
-          </div>
-          
-          <div class="giving-option">
-            <div class="giving-icon">
-              <i class="fas fa-hands-helping"></i>
-            </div>
-            <h3>Benevolence Fund</h3>
-            <p>Help support families in need within our church and community.</p>
-          </div>
-        </div>
-        
-        <div class="donation-form">
-          <h3>Make a Donation</h3>
-          <form id="donationForm">
-            <div class="form-group">
-              <label for="donationAmount">Select Amount</label>
-              <div class="amount-buttons">
-                <button type="button" class="amount-btn" data-amount="20">$20</button>
-                <button type="button" class="amount-btn" data-amount="50">$50</button>
-                <button type="button" class="amount-btn" data-amount="100">$100</button>
-              </div>
-              <div class="custom-amount">
-                <input type="number" id="customAmount" placeholder="Custom Amount">
-                <select id="currency">
-                  <option value="USD">USD ($)</option>
-                  <option value="GHS">Ghana Cedis (₵)</option>
-                </select>
-              </div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo and Church Name -->
+            <div class="logo-section">
+                <img src="images/logo.png" alt="Priesthood Family Chapel Logo" class="logo">
+                <div class="church-name">
+                    <h1>Priesthood Family Chapel</h1>
+                    <p>International - Kumasi, Ohwim School Junction</p>
+                </div>
             </div>
             
-            <div class="form-group">
-              <label for="paymentMethod">Payment Method</label>
-              <div class="payment-methods">
-                <label class="payment-method">
-                  <input type="radio" name="paymentMethod" value="card" checked>
-                  <div class="method-content">
-                    <i class="fab fa-cc-visa"></i>
-                    <span>Credit/Debit Card</span>
-                  </div>
-                </label>
-                <label class="payment-method">
-                  <input type="radio" name="paymentMethod" value="mobile">
-                  <div class="method-content">
-                    <i class="fas fa-mobile-alt"></i>
-                    <span>Mobile Money</span>
-                  </div>
-                </label>
-              </div>
-            </div>
+            <!-- Desktop Navigation -->
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="bible-college.html" class="nav-link"><i class="fas fa-graduation-cap"></i> Bible College</a></li>
+                <li><a href="gallery.html" class="nav-link"><i class="fas fa-images"></i> Gallery</a></li>
+                <li><a href="#ministries" class="nav-link"><i class="fas fa-hands-helping"></i> Ministries</a></li>
+                <li><a href="#services" class="nav-link"><i class="fas fa-church"></i> Services</a></li>
+                <li><a href="#giving" class="nav-link"><i class="fas fa-donate"></i> Giving</a></li>
+                <li><a href="#contact" class="nav-link"><i class="fas fa-phone"></i> Contact</a></li>
+                <li><a href="#prayer" class="nav-link prayer-btn" id="openPrayerBtn"><i class="fas fa-hands-praying"></i> Request Prayer</a></li>
+            </ul>
             
-            <button type="submit" class="btn-primary btn-donate">
-              <i class="fas fa-lock"></i> Donate Securely
+            <!-- Mobile Menu Button -->
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
             </button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- Bible College Preview -->
-    <section class="bible-college-preview fade-in">
-      <div class="preview-content">
-        <h2>Ready for Ministry Training?</h2>
-        <p>Our Bible College offers comprehensive theological education with practical ministry training.</p>
-        <div class="preview-stats">
-          <div class="stat">
-            <span class="stat-number">11+</span>
-            <span class="stat-label">Courses</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">4</span>
-            <span class="stat-label">Lecturers</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">2</span>
-            <span class="stat-label">Cohorts/Year</span>
-          </div>
-        </div>
-        <div class="preview-actions">
-          <a href="bible-college.html" class="btn-primary"><i class="fas fa-book-open"></i> Explore Bible College</a>
-          <a href="bible-college.html#registration" class="btn-secondary"><i class="fas fa-user-plus"></i> Register Now</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Visit Us Section -->
-    <section class="visit-us-section fade-in">
-      <h2>Visit Us</h2>
-      <p class="section-subtitle">Join us in person or connect online</p>
-      
-      <div class="map-container">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.952912260219!2d-1.6293964!3d6.465326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMjcnNTUuMiJOIDHCsDM3JzQ1LjgiVw!5e0!3m2!1sen!2sgh!4v1629261234567!5m2!1sen!2sgh" 
-          width="100%" 
-          height="100%" 
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy">
-        </iframe>
-      </div>
-      
-      <div class="visit-details">
-        <div class="visit-card">
-          <h3><i class="fas fa-map-marker-alt"></i> Location</h3>
-          <p>Priesthood Family Chapel International</p>
-          <p>Kumasi, Washington</p>
-          <p>Ghana</p>
         </div>
         
-        <div class="visit-card">
-          <h3><i class="fas fa-clock"></i> Service Times</h3>
-          <p><strong>Sunday Worship:</strong> 8:30 AM - 11:30 AM</p>
-          <p><strong>Tuesday Bible Study:</strong> 6:00 PM - 8:00 PM</p>
-          <p><strong>Thursday Deliverance:</strong> 10:00 PM - 1:30 AM</p>
-          <p><strong>Night of Glory:</strong> Last Friday Monthly</p>
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav" id="mobileNav">
+            <a href="index.html" class="mobile-link active"><i class="fas fa-home"></i> Home</a>
+            <a href="bible-college.html" class="mobile-link"><i class="fas fa-graduation-cap"></i> Bible College</a>
+            <a href="gallery.html" class="mobile-link"><i class="fas fa-images"></i> Gallery</a>
+            <a href="#ministries" class="mobile-link"><i class="fas fa-hands-helping"></i> Ministries</a>
+            <a href="#services" class="mobile-link"><i class="fas fa-church"></i> Services</a>
+            <a href="#giving" class="mobile-link"><i class="fas fa-donate"></i> Giving</a>
+            <a href="#contact" class="mobile-link"><i class="fas fa-phone"></i> Contact</a>
+            <a href="#prayer" class="mobile-link prayer-btn" id="openPrayerBtnMobile"><i class="fas fa-hands-praying"></i> Request Prayer</a>
         </div>
-        
-        <div class="visit-card">
-          <h3><i class="fas fa-car"></i> Parking & Directions</h3>
-          <p>Ample parking available</p>
-          <p>Public transportation accessible</p>
-          <p>Wheelchair friendly facility</p>
-        </div>
-        
-        <div class="visit-card">
-          <h3><i class="fas fa-phone"></i> Contact Info</h3>
-          <p><strong>Phone:</strong> +233 123 456 789</p>
-          <p><strong>Email:</strong> info@priesthoodchapel.org</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Event Calendar -->
-    <section class="calendar-section fade-in">
-      <h2>Church Calendar</h2>
-      <p class="section-subtitle">Upcoming events and services</p>
-      
-      <div class="calendar-container">
-        <div class="calendar-header">
-          <button class="btn-secondary"><i class="fas fa-chevron-left"></i> Prev</button>
-          <h3>December 2024</h3>
-          <button class="btn-secondary">Next <i class="fas fa-chevron-right"></i></button>
-        </div>
-        
-        <div class="calendar-grid">
-          <div class="calendar-day">Sun</div>
-          <div class="calendar-day">Mon</div>
-          <div class="calendar-day">Tue</div>
-          <div class="calendar-day">Wed</div>
-          <div class="calendar-day">Thu</div>
-          <div class="calendar-day">Fri</div>
-          <div class="calendar-day">Sat</div>
-          
-          <div class="calendar-date">1</div>
-          <div class="calendar-date">2</div>
-          <div class="calendar-date event">3</div>
-          <div class="calendar-date">4</div>
-          <div class="calendar-date">5</div>
-          <div class="calendar-date event">6</div>
-          <div class="calendar-date">7</div>
-          <div class="calendar-date">8</div>
-          <div class="calendar-date">9</div>
-          <div class="calendar-date">10</div>
-          <div class="calendar-date">11</div>
-          <div class="calendar-date">12</div>
-          <div class="calendar-date">13</div>
-          <div class="calendar-date event">14</div>
-          <div class="calendar-date">15</div>
-          <div class="calendar-date">16</div>
-          <div class="calendar-date">17</div>
-          <div class="calendar-date">18</div>
-          <div class="calendar-date">19</div>
-          <div class="calendar-date">20</div>
-          <div class="calendar-date event">21</div>
-          <div class="calendar-date">22</div>
-          <div class="calendar-date">23</div>
-          <div class="calendar-date">24</div>
-          <div class="calendar-date">25</div>
-          <div class="calendar-date">26</div>
-          <div class="calendar-date event">27</div>
-          <div class="calendar-date">28</div>
-          <div class="calendar-date">29</div>
-          <div class="calendar-date">30</div>
-          <div class="calendar-date">31</div>
-        </div>
-        
-        <div class="event-details">
-          <h4><i class="fas fa-calendar-check"></i> Today's Events</h4>
-          <div class="event-list">
-            <div class="event-item">
-              <strong>Sunday Worship Service</strong>
-              <p>8:30 AM - 11:30 AM | Main Sanctuary</p>
+    </nav>
+    
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">Priesthood Family Chapel International</h1>
+            <p class="hero-subtitle">Empowering lives through God's Word at Kumasi, Ohwim School Junction</p>
+            <div class="hero-buttons">
+                <a href="bible-college.html" class="btn btn-primary">
+                    <i class="fas fa-graduation-cap"></i> Register for Bible College
+                </a>
+                <a href="#services" class="btn btn-secondary">
+                    <i class="fas fa-calendar-alt"></i> View Services
+                </a>
             </div>
-            <div class="event-item">
-              <strong>Youth Bible Study</strong>
-              <p>2:00 PM - 4:00 PM | Youth Hall</p>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Social Media Integration -->
-    <section class="social-section fade-in">
-      <h2>Connect With Us</h2>
-      <p class="section-subtitle">Stay updated through our social channels</p>
-      
-      <div class="social-grid">
-        <div class="social-card facebook">
-          <div class="social-header">
-            <i class="fab fa-facebook"></i>
-            <div>
-              <h3>Facebook</h3>
-              <p>Latest updates & live streams</p>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Events Slider - FIXED -->
+        <section class="section" id="events">
+            <div class="container">
+                <h2 class="section-title">Upcoming Events</h2>
+                <p class="section-subtitle">Join us for our special services and events</p>
+                
+                <div class="events-slider" id="eventsSlider">
+                    <div class="slider-wrapper">
+                        <div class="event-slide active">
+                            <img src="images/event-praise.jpg" alt="Praise and Worship Night">
+                            <div class="event-info">
+                                <h3>Praise & Worship Night</h3>
+                                <p><i class="fas fa-calendar"></i> Every Friday at 6 PM</p>
+                                <p><i class="fas fa-map-marker-alt"></i> Main Sanctuary</p>
+                                <p>Experience powerful worship and intimate encounters with God</p>
+                            </div>
+                        </div>
+                        
+                        <div class="event-slide">
+                            <img src="images/event-glory.jpg" alt="Night of Glory">
+                            <div class="event-info">
+                                <h3>Night of Glory</h3>
+                                <p><i class="fas fa-calendar"></i> Last Friday of Each Month</p>
+                                <p><i class="fas fa-map-marker-alt"></i> Church Premises</p>
+                                <p>Miracles, deliverance and supernatural encounters</p>
+                            </div>
+                        </div>
+                        
+                        <div class="event-slide">
+                            <img src="images/event-31st.jpg" alt="31st Night Evangelism">
+                            <div class="event-info">
+                                <h3>31st Night Evangelism</h3>
+                                <p><i class="fas fa-calendar"></i> December 31st</p>
+                                <p><i class="fas fa-map-marker-alt"></i> Cross Over Service</p>
+                                <p>Cross into the New Year with prayer, praise and prophecies</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="slider-btn prev-btn" id="prevEventBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-btn next-btn" id="nextEventBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    
+                    <div class="slider-dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                    </div>
+                </div>
             </div>
-          </div>
-          <a href="https://facebook.com" target="_blank" class="btn-secondary">Follow on Facebook</a>
-        </div>
+        </section>
         
-        <div class="social-card youtube">
-          <div class="social-header">
-            <i class="fab fa-youtube"></i>
-            <div>
-              <h3>YouTube</h3>
-              <p>Sermons & worship videos</p>
+        <!-- Services Section -->
+        <section class="section services-section" id="services">
+            <div class="container">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Join us online or in person</p>
+                
+                <div class="services-tabs">
+                    <button class="tab-btn active" data-tab="online">Online Services</button>
+                    <button class="tab-btn" data-tab="in-person">In-Person Services</button>
+                </div>
+                
+                <div class="tab-content active" id="online-tab">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <div class="service-details">
+                            <h3>Tuesday - Friday Online Services</h3>
+                            <p><i class="far fa-clock"></i> 9:30 AM - 11:30 AM (Ghana Time)</p>
+                            <p><i class="fas fa-broadcast-tower"></i> YouTube Live & Facebook Live</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="service-details">
+                            <h3>Sunday Online Service</h3>
+                            <p><i class="far fa-clock"></i> 9:30 AM - 12:00 Midnight (Ghana Time)</p>
+                            <p><i class="fas fa-broadcast-tower"></i> YouTube Live & Facebook Live</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="in-person-tab">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="service-details">
+                            <h3>Sunday Church Service</h3>
+                            <p><i class="far fa-clock"></i> 8:30 AM - 11:30 AM</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Kumasi, Ohwim School Junction</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-pray"></i>
+                        </div>
+                        <div class="service-details">
+                            <h3>Thursday Deliverance Service</h3>
+                            <p><i class="far fa-clock"></i> 10:00 PM - 1:30 AM</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Church Premises</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <a href="https://youtube.com" target="_blank" class="btn-secondary">Subscribe on YouTube</a>
-        </div>
+        </section>
         
-        <div class="social-card instagram">
-          <div class="social-header">
-            <i class="fab fa-instagram"></i>
-            <div>
-              <h3>Instagram</h3>
-              <p>Photos & daily inspiration</p>
+        <!-- Live Stream Section - WITH TIKTOK ADDED -->
+        <section class="section livestream-section">
+            <div class="container">
+                <h2 class="section-title">Join Our Live Stream</h2>
+                <div class="livestream-container">
+                    <div class="stream-info">
+                        <div class="stream-status">
+                            <span class="live-badge">LIVE NOW</span>
+                            <h3>Sunday Worship Service</h3>
+                            <p>Currently Streaming - Join Now!</p>
+                        </div>
+                        
+                        <div class="stream-platforms">
+                            <a href="https://youtube.com/@priesthoodtv547" target="_blank" class="platform-btn youtube">
+                                <i class="fab fa-youtube"></i> Watch on YouTube
+                            </a>
+                            <a href="https://www.facebook.com/share/v/1AQWzoCUdF/" target="_blank" class="platform-btn facebook">
+                                <i class="fab fa-facebook"></i> Watch on Facebook
+                            </a>
+                            <a href="https://www.tiktok.com/@priesthoodfamilychapel" target="_blank" class="platform-btn tiktok">
+                                <i class="fab fa-tiktok"></i> Watch on TikTok
+                            </a>
+                            <a href="https://us06web.zoom.us/j/2547367600" target="_blank" class="platform-btn zoom">
+                                <i class="fas fa-video"></i> Join on Zoom
+                            </a>
+                        </div>
+                        
+                        <div class="stream-details">
+                            <p><i class="fas fa-key"></i> <strong>Zoom ID:</strong> 2547367600</p>
+                            <p><i class="fas fa-lock"></i> <strong>Passcode:</strong> JESUS</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stream-features">
+                        <h3><i class="fas fa-info-circle"></i> Streaming Features</h3>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check-circle"></i> High Quality 1080p Stream</li>
+                            <li><i class="fas fa-check-circle"></i> Live Chat with Prayer Team</li>
+                            <li><i class="fas fa-check-circle"></i> Downloadable Sermon Notes</li>
+                            <li><i class="fas fa-check-circle"></i> Replay Available for 7 Days</li>
+                            <li><i class="fas fa-check-circle"></i> Multiple Platform Access</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-          </div>
-          <a href="https://instagram.com" target="_blank" class="btn-secondary">Follow on Instagram</a>
-        </div>
+        </section>
         
-        <div class="social-card zoom">
-          <div class="social-header">
+        <!-- Founder & Lead Pastor Section - FIXED LAYOUT -->
+        <section class="section pastor-section">
+            <div class="container">
+                <h2 class="section-title">Our Founder & Lead Pastor</h2>
+                <p class="section-subtitle">Meet Apostle Emmanuel Amankwah</p>
+                
+                <div class="pastor-container">
+                    <div class="pastor-left">
+                        <div class="pastor-image-slider" id="pastorSlider">
+                            <div class="pastor-slide active">
+                                <img src="images/pastor.jpg" alt="Apostle Emmanuel Amankwah">
+                            </div>
+                            <div class="pastor-slide">
+                                <img src="images/pastor1.jpg" alt="Apostle Emmanuel Amankwah">
+                            </div>
+                            <div class="slider-controls">
+                                <button class="slider-nav prev-pastor"><i class="fas fa-chevron-left"></i></button>
+                                <div class="slider-indicators">
+                                    <span class="indicator active"></span>
+                                    <span class="indicator"></span>
+                                </div>
+                                <button class="slider-nav next-pastor"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pastor-right">
+                        <h2>Apostle Emmanuel Amankwah</h2>
+                        <p class="pastor-title">Founder & Lead Pastor</p>
+                        
+                        <div class="pastor-bio">
+                            <p>Welcome to Priesthood Family Chapel International. We are committed to teaching and spreading the Word of God, nurturing future leaders through our Bible College.</p>
+                            <p>With over 20 years of ministry experience, Apostle Amankwah has dedicated his life to equipping believers for effective ministry and leadership. His apostolic insight and practical teaching have transformed countless lives across Ghana and beyond.</p>
+                            <p>"My passion is to see every believer walking in their God-given purpose and authority, fully equipped to fulfill the Great Commission."</p>
+                        </div>
+                        
+                        <div class="pastor-quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"My passion is to see every believer walking in their God-given purpose and authority."</p>
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        
+                        <div class="pastor-contact">
+                            <p><i class="fas fa-phone"></i> 0547367600</p>
+                            <p><i class="fas fa-envelope"></i> priesthoodschoolofministry@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Book Advertisement - FIXED LAYOUT -->
+                <div class="book-advertisement">
+                    <div class="book-left">
+                        <img src="images/book-cover.jpg" alt="Understanding Apostleship Book Cover" class="book-cover-img">
+                    </div>
+                    <div class="book-right">
+                        <h3>Understanding Apostleship</h3>
+                        <p class="book-author">By Apostle Emmanuel Amankwah</p>
+                        <p class="book-description">This groundbreaking book explores the apostolic ministry in the 21st century, providing deep insights into apostolic authority, office, and function in the modern church. Essential reading for every minister and believer called to leadership.</p>
+                        <div class="book-price">$19.99</div>
+                        <a href="https://wa.me/233547367600?text=I%20want%20to%20purchase%20your%20book%20'Understanding%20Apostleship'" target="_blank" class="btn btn-primary">
+                            <i class="fab fa-whatsapp"></i> Purchase via WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Ministries Section -->
+        <section class="section ministries-section" id="ministries">
+            <div class="container">
+                <h2 class="section-title">Our Ministries</h2>
+                <p class="section-subtitle">Serving through specialized ministries</p>
+                
+                <div class="ministries-grid">
+                    <div class="ministry-card">
+                        <div class="ministry-icon" style="background: linear-gradient(135deg, #FFD700, #FFED4E);">
+                            <i class="fas fa-hands-praying"></i>
+                        </div>
+                        <h3>Grace Ministry</h3>
+                        <p>Teaching believers to walk in grace and extend it to others through discipleship programs.</p>
+                        <a href="gallery.html?category=GRACE" class="ministry-link">View Gallery</a>
+                    </div>
+                    
+                    <div class="ministry-card">
+                        <div class="ministry-icon" style="background: linear-gradient(135deg, #FF6B6B, #FF8E8E);">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Love Ministry</h3>
+                        <p>Demonstrating Christ's love through practical acts of service and community outreach.</p>
+                        <a href="gallery.html?category=LOVE" class="ministry-link">View Gallery</a>
+                    </div>
+                    
+                    <div class="ministry-card">
+                        <div class="ministry-icon" style="background: linear-gradient(135deg, #9C27B0, #BA68C8);">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <h3>Choir & Music</h3>
+                        <p>Worshipping God through music and choir performances in our weekly services.</p>
+                        <a href="gallery.html?category=CHOIR" class="ministry-link">View Gallery</a>
+                    </div>
+                    
+                    <div class="ministry-card">
+                        <div class="ministry-icon" style="background: linear-gradient(135deg, #009688, #4DB6AC);">
+                            <i class="fas fa-tower"></i>
+                        </div>
+                        <h3>Prayer Tower</h3>
+                        <p>Building prayer warriors who stand in the gap for the church and community.</p>
+                        <button class="ministry-link prayer-request-btn" data-modal="prayerModal">
+                            <i class="fas fa-hands-praying"></i> Request Prayer
+                        </button>
+                    </div>
+                    
+                    <div class="ministry-card">
+                        <div class="ministry-icon" style="background: linear-gradient(135deg, #4CAF50, #81C784);">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <h3>Children Ministry</h3>
+                        <p>Nurturing the next generation through age-appropriate teaching and fun activities.</p>
+                        <a href="gallery.html?category=CM" class="ministry-link">View Gallery</a>
+                    </div>
+                    
+                    <div class="ministry-card">
+                        <div class="ministry-icon" style="background: linear-gradient(135deg, #2196F3, #64B5F6);">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h3>Youth Ministry</h3>
+                        <p>Engaging and empowering young people to live out their faith in practical ways.</p>
+                        <a href="gallery.html?category=YOUTH" class="ministry-link">View Gallery</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Giving Section -->
+        <section class="section giving-section" id="giving">
+            <div class="container">
+                <h2 class="section-title">Online Giving</h2>
+                <p class="section-subtitle">Support the ministry through your giving</p>
+                
+                <div class="giving-container">
+                    <div class="giving-options">
+                        <div class="giving-card">
+                            <div class="giving-icon">
+                                <i class="fas fa-hand-holding-heart"></i>
+                            </div>
+                            <h3>Tithes & Offerings</h3>
+                            <p>Your faithful giving supports our local church operations and ministry programs.</p>
+                        </div>
+                        
+                        <div class="giving-card">
+                            <div class="giving-icon">
+                                <i class="fas fa-globe-africa"></i>
+                            </div>
+                            <h3>Missions Support</h3>
+                            <p>Support our missionary work both locally and internationally to spread the Gospel.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="momo-section">
+                        <h3><i class="fas fa-mobile-alt"></i> MTN MoMo Giving</h3>
+                        <div class="momo-details">
+                            <div class="momo-info">
+                                <p><i class="fas fa-user"></i> <strong>Account Name:</strong> Emmanuel Amankwah</p>
+                                <p><i class="fas fa-phone"></i> <strong>MoMo Number:</strong> 0547367600</p>
+                            </div>
+                            <div class="momo-actions">
+                                <button class="btn copy-btn" data-number="0547367600">
+                                    <i class="fas fa-copy"></i> Copy Number
+                                </button>
+                                <a href="tel:*170#" class="btn dial-btn">
+                                    <i class="fas fa-phone-alt"></i> Dial *170#
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Bible College Preview - REDUCED SIZE -->
+        <section class="section college-preview" id="college-preview">
+            <div class="container">
+                <div class="preview-content">
+                    <h2>Ready for Ministry Training?</h2>
+                    <p>Our Bible College offers comprehensive theological education with practical ministry training, ordination, and certification.</p>
+                    
+                    <div class="preview-stats">
+                        <div class="stat">
+                            <div class="stat-number">11+</div>
+                            <div class="stat-label">Comprehensive Courses</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">4</div>
+                            <div class="stat-label">Expert Lecturers</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">6</div>
+                            <div class="stat-label">Months Program</div>
+                        </div>
+                    </div>
+                    
+                    <div class="preview-actions">
+                        <a href="bible-college.html" class="btn btn-primary">
+                            <i class="fas fa-book-open"></i> Explore Bible College
+                        </a>
+                        <button class="btn btn-secondary enroll-btn" data-modal="registrationModal">
+                            <i class="fas fa-user-plus"></i> Enroll Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Visit Us Section -->
+        <section class="section visit-section" id="contact">
+            <div class="container">
+                <h2 class="section-title">Visit Us</h2>
+                <p class="section-subtitle">Join us in person or connect online</p>
+                
+                <div class="visit-container">
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.952912260219!2d-1.6293964!3d6.465326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMjcnNTUuMiJOIDHCsDM3JzQ1LjgiVw!5e0!3m2!1sen!2sgh!4v1629261234567!5m2!1sen!2sgh"
+                            width="100%" 
+                            height="300" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy"
+                            title="Church Location - Kumasi, Ohwim School Junction">
+                        </iframe>
+                    </div>
+                    
+                    <div class="contact-cards">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="service-details">
+                                <h3>Location</h3>
+                                <p>Priesthood Family Chapel International</p>
+                                <p><strong>Address:</strong> Kumasi, Ohwim School Junction</p>
+                                <p>Ghana</p>
+                            </div>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="service-details">
+                                <h3>Service Times</h3>
+                                <p><strong>Sunday:</strong> 8:30 AM - 11:30 AM</p>
+                                <p><strong>Tuesday-Friday:</strong> 9:30 AM - 11:30 AM (Online)</p>
+                                <p><strong>Thursday:</strong> 10:00 PM - 1:30 AM</p>
+                            </div>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="service-details">
+                                <h3>Contact</h3>
+                                <p><strong>Main:</strong> 0547367600</p>
+                                <p><strong>Prayer/WhatsApp:</strong> 0249392178</p>
+                                <p><strong>Email:</strong> priesthoodfamilybiblecollege@gmail.com</p>
+                                <p><strong>Bible College:</strong> priesthoodfamilybiblecollege@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-church"></i> Priesthood Family Chapel</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Kumasi, Ohwim School Junction</p>
+                    <p><i class="fas fa-envelope"></i> priesthoodfamilybiblecollege@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> 0547367600 (Main)</p>
+                    <p><i class="fab fa-whatsapp"></i> 0249392178 (Prayer & Bible College)</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fas fa-clock"></i> Service Times</h3>
+                    <p><strong>Online:</strong> Tue-Fri 9:30-11:30 AM</p>
+                    <p><strong>Sunday Worship:</strong> 8:30-11:30 AM</p>
+                    <p><strong>Thursday Deliverance:</strong> 10 PM-1:30 AM</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fas fa-link"></i> Quick Links</h3>
+                    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                    <a href="bible-college.html"><i class="fas fa-graduation-cap"></i> Bible College</a>
+                    <a href="gallery.html"><i class="fas fa-images"></i> Gallery</a>
+                    <a href="#ministries"><i class="fas fa-hands-helping"></i> Ministries</a>
+                    <button class="prayer-footer-btn" style="background: none; border: none; color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 10px; font-size: 1rem; padding: 0; margin-top: 10px;" data-modal="prayerModal">
+                        <i class="fas fa-hands-praying"></i> Request Prayer
+                    </button>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fas fa-donate"></i> Giving</h3>
+                    <p><strong>MTN MoMo:</strong> 0547367600</p>
+                    <p><strong>Account Name:</strong> Emmanuel Amankwah</p>
+                    <button class="copy-momo-btn" data-number="0547367600" style="background: var(--accent-color); color: var(--black-color); border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 8px; margin-top: 10px;">
+                        <i class="fas fa-copy"></i> Copy MoMo Number
+                    </button>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Priesthood Family Chapel International. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/v/1AQWzoCUdF/" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://youtube.com/@priesthoodtv547" target="_blank" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@priesthoodfamilychapel" target="_blank" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://us06web.zoom.us/j/2547367600" target="_blank" aria-label="Zoom">
+                        <i class="fas fa-video"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Quick Join Button - WITH TIKTOK ADDED -->
+    <div class="quick-join">
+        <button class="quick-join-btn" id="quickJoinBtn">
             <i class="fas fa-video"></i>
-            <div>
-              <h3>Zoom Meetings</h3>
-              <p>Join our online services</p>
+            <span>Join Online Service</span>
+        </button>
+        <div class="quick-join-dropdown" id="quickJoinDropdown">
+            <div class="dropdown-header">
+                <h4><i class="fas fa-broadcast-tower"></i> Live Now</h4>
+                <p>Sunday Worship Service</p>
             </div>
-          </div>
-          <a href="https://zoom.us" target="_blank" class="btn-primary">Join Zoom Meeting</a>
-          <p style="margin-top: 10px; font-size: 0.9rem;">Meeting ID: 123 456 7890</p>
+            <a href="https://us06web.zoom.us/j/2547367600" target="_blank" class="dropdown-item">
+                <i class="fas fa-video"></i>
+                <div>
+                    <strong>Join on Zoom</strong>
+                    <small>ID: 2547367600 | Passcode: JESUS</small>
+                </div>
+            </a>
+            <a href="https://youtube.com/@priesthoodtv547" target="_blank" class="dropdown-item">
+                <i class="fab fa-youtube"></i>
+                <div>
+                    <strong>YouTube Live</strong>
+                    <small>Watch on YouTube</small>
+                </div>
+            </a>
+            <a href="https://www.facebook.com/share/v/1AQWzoCUdF/" target="_blank" class="dropdown-item">
+                <i class="fab fa-facebook"></i>
+                <div>
+                    <strong>Facebook Live</strong>
+                    <small>Watch on Facebook</small>
+                </div>
+            </a>
+            <a href="https://www.tiktok.com/@priesthoodfamilychapel" target="_blank" class="dropdown-item tiktok-item">
+                <i class="fab fa-tiktok"></i>
+                <div>
+                    <strong>TikTok Live</strong>
+                    <small>Watch on TikTok</small>
+                </div>
+            </a>
+            <div class="dropdown-footer">
+                <p><i class="far fa-clock"></i> Sunday 8:30 AM | Tue-Fri 9:30-11:30 AM</p>
+            </div>
         </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer id="contact">
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3><i class="fas fa-church"></i> Priesthood Family Chapel International</h3>
-        <p><i class="fas fa-map-marker-alt"></i> Kumasi,Ohwim Scholl Junction</p>
-        <p><i class="fas fa-envelope"></i> info@priesthoodchapel.org</p>
-        <p><i class="fas fa-phone"></i> +233 123 456 789</p>
-      </div>
-      
-      <div class="footer-section">
-        <h3><i class="fas fa-clock"></i> Service Times</h3>
-        <p><strong>Online:</strong> Tue-Fri 9:30-11:30 AM</p>
-        <p><strong>Online Sunday:</strong> 9:30 AM-12:00 AM</p>
-        <p><strong>In-person Sunday:</strong> 8:30-11:30 AM</p>
-      </div>
-      
-      <div class="footer-section">
-        <h3><i class="fas fa-link"></i> Quick Links</h3>
-        <ul>
-          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-          <li><a href="bible-college.html"><i class="fas fa-graduation-cap"></i> Bible College</a></li>
-          <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
-          <li><a href="#ministries"><i class="fas fa-hands-helping"></i> Ministries</a></li>
-        </ul>
-      </div>
-      
-      <div class="footer-section">
-        <h3><i class="fas fa-newspaper"></i> Newsletter</h3>
-        <p>Subscribe for updates and spiritual insights</p>
-        <form class="newsletter-form">
-          <input type="email" placeholder="Your email address" required>
-          <button type="submit" class="btn-primary">Subscribe</button>
-        </form>
-      </div>
     </div>
     
-    <div class="footer-bottom">
-      <p>&copy; 2025 Priesthood Family Chapel International. All rights reserved.</p>
-      <div class="social-links">
-        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      </div>
+    <!-- Prayer Modal - WITH SWAPPED GOOGLE FORM LINK -->
+    <div class="modal" id="prayerModal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header">
+                <h2><i class="fas fa-hands-praying"></i> Request Prayer</h2>
+                <p>Choose how you'd like to submit your prayer request</p>
+            </div>
+            
+            <div class="modal-options" id="prayerOptions">
+                <div class="modal-option">
+                    <div class="option-icon whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp Prayer Line</h3>
+                    <p><i class="fas fa-clock"></i> 24/7 Response</p>
+                    <p><i class="fas fa-check-circle"></i> Immediate attention</p>
+                    <p><i class="fas fa-phone"></i> 0249392178</p>
+                    <button class="btn btn-primary" id="whatsappPrayer" style="width: 100%; margin-top: 15px;">
+                        <i class="fab fa-whatsapp"></i> Request via WhatsApp
+                    </button>
+                </div>
+                
+                <div class="modal-option">
+                    <div class="option-icon email">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Prayer Request</h3>
+                    <p><i class="fas fa-clock"></i> Response within 24 hours</p>
+                    <p><i class="fas fa-check-circle"></i> Formal documentation</p>
+                    <p><i class="fas fa-at"></i> priesthoodfamilybiblecollege@gmail.com</p>
+                    <button class="btn btn-primary" id="emailPrayer" style="width: 100%; margin-top: 15px;">
+                        <i class="fas fa-envelope"></i> Request via Email
+                    </button>
+                </div>
+                
+                <div class="modal-option">
+                    <div class="option-icon form">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Online Prayer Form</h3>
+                    <p><i class="fas fa-check-circle"></i> Email confirmation</p>
+                    <p><i class="fas fa-shield-alt"></i> Secure & confidential</p>
+                    <p><i class="fas fa-database"></i> Added to prayer list</p>
+                    <button class="btn btn-primary" id="formPrayer" style="width: 100%; margin-top: 15px;">
+                        <i class="fas fa-file-alt"></i> Fill Prayer Form
+                    </button>
+                </div>
+            </div>
+            
+            <div class="form-container" id="prayerFormContainer" style="display: none;">
+                <button class="back-btn" id="backToPrayerOptions">&larr; Back to Options</button>
+                <div class="form-wrapper">
+                    <h3><i class="fas fa-file-alt"></i> Prayer Request Form</h3>
+                    <!-- SWAPPED: This should be the REGISTRATION form -->
+                    <iframe 
+                        src="https://docs.google.com/forms/d/e/1FAIpQLSe5tq91EfL9LHYUjvLfqg8L3cb1nunTNlMxe7yYSExCI_HWyw/viewform?embedded=true"
+                        width="100%" 
+                        height="500" 
+                        frameborder="0"
+                        title="Prayer Request Form">
+                        Loading…
+                    </iframe>
+                    <div class="form-note">
+                        <p><i class="fas fa-info-circle"></i> Your prayer request will be added to our prayer list</p>
+                        <p><i class="fas fa-clock"></i> Our prayer team prays daily for all requests</p>
+                        <p><i class="fas fa-heart"></i> All requests are kept confidential</p>
+                        <p><i class="fab fa-whatsapp"></i> Need urgent prayer? WhatsApp: 0249392178</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </footer>
-
-  <!-- Quick Join Button -->
-  <div class="quick-join">
-    <button class="quick-join-btn" id="quickJoinBtn">
-      <i class="fas fa-video"></i>
-      <span>Join Online Service</span>
-    </button>
-    <div class="quick-join-dropdown" id="quickJoinDropdown">
-      <div class="dropdown-header">
-        <h4><i class="fas fa-broadcast-tower"></i> Live Now</h4>
-        <p>Sunday Worship Service</p>
-      </div>
-      <a href="https://zoom.us" target="_blank" class="dropdown-item">
-        <i class="fas fa-video"></i>
-        <div>
-          <strong>Join on Zoom</strong>
-          <small>Meeting ID: 123 456 7890</small>
-        </div>
-      </a>
-      <a href="https://youtube.com" target="_blank" class="dropdown-item">
-        <i class="fab fa-youtube"></i>
-        <div>
-          <strong>YouTube Live</strong>
-          <small>Watch on YouTube</small>
-        </div>
-      </a>
-      <a href="https://facebook.com" target="_blank" class="dropdown-item">
-        <i class="fab fa-facebook"></i>
-        <div>
-          <strong>Facebook Live</strong>
-          <small>Watch on Facebook</small>
-        </div>
-      </a>
-      <div class="dropdown-footer">
-        <p><i class="far fa-clock"></i> Every Sunday 9:30 AM</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- JavaScript -->
-  <!-- FIXED: Changed from js/main.js to script.js -->
-  <script src="script.js"></script>
-  
-  <script>
-    // Quick Join Dropdown Toggle
-    const quickJoinBtn = document.getElementById('quickJoinBtn');
-    const quickJoinDropdown = document.getElementById('quickJoinDropdown');
     
-    if (quickJoinBtn) {
-      quickJoinBtn.addEventListener('click', () => {
-        quickJoinDropdown.classList.toggle('show');
-      });
-      
-      document.addEventListener('click', (e) => {
-        if (!quickJoinBtn.contains(e.target) && !quickJoinDropdown.contains(e.target)) {
-          quickJoinDropdown.classList.remove('show');
-        }
-      });
-    }
-  </script>
+    <!-- Registration Modal - WITH SWAPPED GOOGLE FORM LINK -->
+    <div class="modal" id="registrationModal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header">
+                <h2><i class="fas fa-user-plus"></i> Register for Bible College</h2>
+                <p>Choose your preferred registration method</p>
+            </div>
+            
+            <div class="modal-options" id="registrationOptions">
+                <div class="modal-option">
+                    <div class="option-icon whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp Registration</h3>
+                    <p><i class="fas fa-clock"></i> Response within 1 hour</p>
+                    <p><i class="fas fa-user"></i> Chat directly with Rev Paul</p>
+                    <p><i class="fas fa-check-circle"></i> Personal guidance</p>
+                    <button class="btn btn-primary" id="whatsappRegistration" style="width: 100%; margin-top: 15px;">
+                        <i class="fab fa-whatsapp"></i> Register via WhatsApp
+                    </button>
+                </div>
+                
+                <div class="modal-option">
+                    <div class="option-icon form">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Online Registration Form</h3>
+                    <p><i class="fas fa-check-circle"></i> Email confirmation</p>
+                    <p><i class="fas fa-upload"></i> Document upload option</p>
+                    <p><i class="fas fa-shield-alt"></i> Secure registration</p>
+                    <button class="btn btn-primary" id="showRegistrationForm" style="width: 100%; margin-top: 15px;">
+                        <i class="fas fa-file-alt"></i> Fill Registration Form
+                    </button>
+                </div>
+                
+                <div class="modal-option">
+                    <div class="option-icon email">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Registration</h3>
+                    <p><i class="fas fa-clock"></i> Response within 24 hours</p>
+                    <p><i class="fas fa-file-contract"></i> Send documents directly</p>
+                    <p><i class="fas fa-at"></i> priesthoodfamilybiblecollege@gmail.com</p>
+                    <button class="btn btn-primary" id="emailRegistrationBible" style="width: 100%; margin-top: 15px;">
+                        <i class="fas fa-envelope"></i> Send Registration Email
+                    </button>
+                </div>
+            </div>
+            
+            <div class="form-container" id="registrationFormContainer" style="display: none;">
+                <button class="back-btn" id="backToRegistrationOptions">&larr; Back to Options</button>
+                <div class="form-wrapper">
+                    <h3><i class="fas fa-file-alt"></i> Bible College Registration Form</h3>
+                    <!-- SWAPPED: This should be the PRAYER form -->
+                    <iframe 
+                        src="https://docs.google.com/forms/d/e/1FAIpQLScn8c4_bMjHRKBWLlph8uQ-qPoc31Z6UF2iibFcRMDgVfkqIw/viewform?embedded=true" 
+                        width="100%" 
+                        height="600" 
+                        frameborder="0" 
+                        marginheight="0" 
+                        marginwidth="0"
+                        title="Bible College Registration Form">
+                        Loading…
+                    </iframe>
+                    <div class="form-note">
+                        <h4><i class="fas fa-info-circle"></i> Important Information</h4>
+                        <p><i class="fas fa-graduation-cap"></i> <strong>Program:</strong> 6-Month Intensive Bible College</p>
+                        <p><i class="fas fa-money-bill-wave"></i> <strong>Ghanaian Students:</strong> ₵100 Registration + ₵1,500 Tuition = ₵1,600 Total</p>
+                        <p><i class="fas fa-money-bill-wave"></i> <strong>International Students:</strong> ₵100 Registration + $150 Tuition = $250 Total</p>
+                        <p><i class="fas fa-mobile-alt"></i> <strong>MoMo Payment:</strong> 0547367600 (Emmanuel Amankwah)</p>
+                        <p><i class="fab fa-whatsapp"></i> <strong>WhatsApp Assistance:</strong> 0249392178 (Rev Paul)</p>
+                        <p><i class="fas fa-clock"></i> <strong>Processing:</strong> Within 24 hours after form submission</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Toast Notification -->
+    <div class="toast-container" id="toastContainer"></div>
+    
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    
+    <!-- Slider Fix Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Events Slider Fix
+            const eventSlides = document.querySelectorAll('.event-slide');
+            const eventDots = document.querySelectorAll('.dot');
+            const prevEventBtn = document.getElementById('prevEventBtn');
+            const nextEventBtn = document.getElementById('nextEventBtn');
+            
+            if (eventSlides.length > 1) {
+                let currentEventSlide = 0;
+                let eventInterval;
+                
+                function showEventSlide(index) {
+                    eventSlides.forEach(slide => slide.classList.remove('active'));
+                    eventDots.forEach(dot => dot.classList.remove('active'));
+                    
+                    currentEventSlide = index;
+                    eventSlides[currentEventSlide].classList.add('active');
+                    eventDots[currentEventSlide].classList.add('active');
+                }
+                
+                function nextEvent() {
+                    let nextIndex = currentEventSlide + 1;
+                    if (nextIndex >= eventSlides.length) nextIndex = 0;
+                    showEventSlide(nextIndex);
+                }
+                
+                function prevEvent() {
+                    let prevIndex = currentEventSlide - 1;
+                    if (prevIndex < 0) prevIndex = eventSlides.length - 1;
+                    showEventSlide(prevIndex);
+                }
+                
+                // Navigation buttons
+                if (prevEventBtn) prevEventBtn.addEventListener('click', prevEvent);
+                if (nextEventBtn) nextEventBtn.addEventListener('click', nextEvent);
+                
+                // Dot navigation
+                eventDots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => showEventSlide(index));
+                });
+                
+                // Auto slide every 5 seconds
+                function startEventAutoSlide() {
+                    eventInterval = setInterval(nextEvent, 5000);
+                }
+                
+                function stopEventAutoSlide() {
+                    clearInterval(eventInterval);
+                }
+                
+                // Pause on hover
+                const eventsSlider = document.getElementById('eventsSlider');
+                if (eventsSlider) {
+                    eventsSlider.addEventListener('mouseenter', stopEventAutoSlide);
+                    eventsSlider.addEventListener('mouseleave', startEventAutoSlide);
+                }
+                
+                // Start auto slide
+                showEventSlide(0);
+                startEventAutoSlide();
+            }
+            
+            // Pastor Slider Fix
+            const pastorSlides = document.querySelectorAll('.pastor-slide');
+            const pastorIndicators = document.querySelectorAll('.indicator');
+            const prevPastorBtn = document.querySelector('.prev-pastor');
+            const nextPastorBtn = document.querySelector('.next-pastor');
+            
+            if (pastorSlides.length > 1) {
+                let currentPastorSlide = 0;
+                let pastorInterval;
+                
+                function showPastorSlide(index) {
+                    pastorSlides.forEach(slide => slide.classList.remove('active'));
+                    pastorIndicators.forEach(indicator => indicator.classList.remove('active'));
+                    
+                    currentPastorSlide = index;
+                    pastorSlides[currentPastorSlide].classList.add('active');
+                    pastorIndicators[currentPastorSlide].classList.add('active');
+                }
+                
+                function nextPastor() {
+                    let nextIndex = currentPastorSlide + 1;
+                    if (nextIndex >= pastorSlides.length) nextIndex = 0;
+                    showPastorSlide(nextIndex);
+                }
+                
+                function prevPastor() {
+                    let prevIndex = currentPastorSlide - 1;
+                    if (prevIndex < 0) prevIndex = pastorSlides.length - 1;
+                    showPastorSlide(prevIndex);
+                }
+                
+                // Navigation buttons
+                if (prevPastorBtn) prevPastorBtn.addEventListener('click', prevPastor);
+                if (nextPastorBtn) nextPastorBtn.addEventListener('click', nextPastor);
+                
+                // Indicator navigation
+                pastorIndicators.forEach((indicator, index) => {
+                    indicator.addEventListener('click', () => showPastorSlide(index));
+                });
+                
+                // Auto rotate every 4 seconds
+                function startPastorAutoSlide() {
+                    pastorInterval = setInterval(nextPastor, 4000);
+                }
+                
+                function stopPastorAutoSlide() {
+                    clearInterval(pastorInterval);
+                }
+                
+                // Pause on hover
+                const pastorSlider = document.getElementById('pastorSlider');
+                if (pastorSlider) {
+                    pastorSlider.addEventListener('mouseenter', stopPastorAutoSlide);
+                    pastorSlider.addEventListener('mouseleave', startPastorAutoSlide);
+                }
+                
+                // Start auto slide
+                showPastorSlide(0);
+                startPastorAutoSlide();
+            }
+        });
+    </script>
 </body>
 </html>

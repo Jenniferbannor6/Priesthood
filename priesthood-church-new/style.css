@@ -1748,4 +1748,47 @@ p { margin-bottom: 15px; color: var(--text-secondary); }
 .dot:hover {
   background: var(--accent-color);
   transform: scale(1.2);
+}/* ===== MOBILE MENU FIXES ===== */
+.hamburger.active i {
+    transform: rotate(180deg);
+}
+
+.mobile-nav.active {
+    display: flex !important;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Toast notifications */
+.toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.toast {
+    background: var(--accent-color);
+    color: var(--black-color);
+    padding: 12px 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.3s ease;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(0);
 }

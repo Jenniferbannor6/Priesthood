@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,6 +55,7 @@
                 <li><a href="bible-college.html" class="nav-link"><i class="fas fa-graduation-cap"></i> Bible College</a></li>
                 <li><a href="gallery.html" class="nav-link"><i class="fas fa-images"></i> Gallery</a></li>
                 <li><a href="#ministries" class="nav-link"><i class="fas fa-hands-helping"></i> Ministries</a></li>
+                <li><a href="#media" class="nav-link"><i class="fas fa-play-circle"></i> Media</a></li>
                 <li><a href="#services" class="nav-link"><i class="fas fa-church"></i> Services</a></li>
                 <li><a href="#giving" class="nav-link"><i class="fas fa-donate"></i> Giving</a></li>
                 <li><a href="#contact" class="nav-link"><i class="fas fa-phone"></i> Contact</a></li>
@@ -73,6 +74,7 @@
             <a href="bible-college.html" class="mobile-link"><i class="fas fa-graduation-cap"></i> Bible College</a>
             <a href="gallery.html" class="mobile-link"><i class="fas fa-images"></i> Gallery</a>
             <a href="#ministries" class="mobile-link"><i class="fas fa-hands-helping"></i> Ministries</a>
+            <a href="#media" class="mobile-link"><i class="fas fa-play-circle"></i> Media</a>
             <a href="#services" class="mobile-link"><i class="fas fa-church"></i> Services</a>
             <a href="#giving" class="mobile-link"><i class="fas fa-donate"></i> Giving</a>
             <a href="#contact" class="mobile-link"><i class="fas fa-phone"></i> Contact</a>
@@ -80,7 +82,7 @@
         </div>
     </nav>
     
-    <!-- Hero Section -->
+    <!-- Hero Section - SHOWS FROM TOP -->
     <header class="hero" id="home">
         <div class="hero-content">
             <h1 class="hero-title">Priesthood Family Chapel International</h1>
@@ -89,8 +91,8 @@
                 <a href="bible-college.html" class="btn btn-primary">
                     <i class="fas fa-graduation-cap"></i> Register for Bible College
                 </a>
-                <a href="#services" class="btn btn-secondary">
-                    <i class="fas fa-calendar-alt"></i> View Services
+                <a href="#media" class="btn btn-secondary">
+                    <i class="fas fa-play-circle"></i> Watch Latest Sermons
                 </a>
             </div>
         </div>
@@ -98,7 +100,7 @@
     
     <!-- Main Content -->
     <main id="main-content">
-        <!-- Events Slider - FIXED -->
+        <!-- Events Slider - SHOWS FULL IMAGES, ROTATES -->
         <section class="section" id="events">
             <div class="container">
                 <h2 class="section-title">Upcoming Events</h2>
@@ -148,6 +150,243 @@
                         <span class="dot active" data-slide="0"></span>
                         <span class="dot" data-slide="1"></span>
                         <span class="dot" data-slide="2"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Media Section -->
+        <section class="section" id="media">
+            <div class="container">
+                <h2 class="section-title">Church Media</h2>
+                <p class="section-subtitle">Watch testimonies, worship music, and recent sermons</p>
+                
+                <div class="media-tabs">
+                    <button class="tab-btn active" data-tab="testimonies">Testimonies</button>
+                    <button class="tab-btn" data-tab="worship">Worship Music</button>
+                    <button class="tab-btn" data-tab="sermons">Recent Sermons</button>
+                </div>
+                
+                <!-- Testimonies Tab -->
+                <div class="tab-content active" id="testimonies-tab">
+                    <div class="videos-grid">
+                        <div class="video-card">
+                            <div class="video-wrapper">
+                                <div class="youtube-thumbnail" onclick="window.open('https://youtu.be/4WlD8vyAJNU?si=OCLcRdbhcdTe6ycL', '_blank')">
+                                    <img src="https://img.youtube.com/vi/4WlD8vyAJNU/hqdefault.jpg" alt="Powerful Testimony">
+                                    <div class="play-button">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <h3>Powerful Testimony</h3>
+                                <p>Hear how God transformed a life through Priesthood Family Chapel</p>
+                            </div>
+                        </div>
+                        
+                        <div class="video-card">
+                            <div class="video-wrapper">
+                                <div class="youtube-thumbnail" onclick="window.open('https://youtu.be/9m97_ev5gis?si=GfXmRN7-p2NL9jgc', '_blank')">
+                                    <img src="https://img.youtube.com/vi/9m97_ev5gis/hqdefault.jpg" alt="Miracle Healing Testimony">
+                                    <div class="play-button">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <h3>Miracle Healing</h3>
+                                <p>A testimony of divine healing and restoration</p>
+                            </div>
+                        </div>
+                        
+                        <div class="video-card">
+                            <div class="video-wrapper">
+                                <div class="youtube-thumbnail" onclick="window.open('https://youtu.be/jLOzwW6tV0Y?si=7sMtvudSmC_wsw3M', '_blank')">
+                                    <img src="https://img.youtube.com/vi/jLOzwW6tV0Y/hqdefault.jpg" alt="Deliverance Testimony">
+                                    <div class="play-button">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <h3>Deliverance Story</h3>
+                                <p>Freedom from bondage through prayer and faith</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Worship Music Tab -->
+                <div class="tab-content" id="worship-tab">
+                    <div class="videos-grid">
+                        <div class="video-card">
+                            <div class="video-wrapper">
+                                <div class="youtube-thumbnail" onclick="window.open('https://youtu.be/7bMK7pb__V8?si=I4JxXkLVM-xY8Y7G', '_blank')">
+                                    <img src="https://img.youtube.com/vi/7bMK7pb__V8/hqdefault.jpg" alt="Choir Worship">
+                                    <div class="play-button">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <h3>Choir Worship</h3>
+                                <p>Our choir ministering in worship and praise</p>
+                            </div>
+                        </div>
+                        
+                        <div class="video-card">
+                            <div class="video-wrapper">
+                                <div class="youtube-thumbnail" onclick="window.open('https://youtu.be/rfLt2B4VHSg?si=1wF0yA2iB4vS3Ncr', '_blank')">
+                                    <img src="https://img.youtube.com/vi/rfLt2B4VHSg/hqdefault.jpg" alt="Praise Session">
+                                    <div class="play-button">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <h3>Praise Session</h3>
+                                <p>Live praise and worship from Sunday service</p>
+                            </div>
+                        </div>
+                        
+                        <div class="video-card">
+                            <div class="video-wrapper">
+                                <div class="youtube-thumbnail" onclick="window.open('https://youtu.be/7bMK7pb__V8?si=I4JxXkLVM-xY8Y7G', '_blank')">
+                                    <img src="https://img.youtube.com/vi/7bMK7pb__V8/hqdefault.jpg" alt="Special Music">
+                                    <div class="play-button">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <h3>Special Music</h3>
+                                <p>Anointed music ministry during night service</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recent Sermons Tab -->
+                <div class="tab-content" id="sermons-tab">
+                    <div class="videos-grid">
+                        <div class="video-card">
+                            <div class="video-wrapper">
+                                <div class="youtube-thumbnail" onclick="window.open('https://youtu.be/YuW06TblJmk?si=Q8Ln5IIClFRoI1Um', '_blank')">
+                                    <img src="https://img.youtube.com/vi/YuW06TblJmk/hqdefault.jpg" alt="Sunday Sermon">
+                                    <div class="play-button">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <h3>The Power of Faith</h3>
+                                <p>Sunday sermon on living by faith in challenging times</p>
+                            </div>
+                        </div>
+                        
+                        <div class="video-card">
+                            <div class="video-wrapper">
+                                <div class="youtube-thumbnail" onclick="window.open('https://youtu.be/ITwtb0z4RWs?si=MD8ZNRva832UFZBm', '_blank')">
+                                    <img src="https://img.youtube.com/vi/ITwtb0z4RWs/hqdefault.jpg" alt="Thursday Teaching">
+                                    <div class="play-button">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <h3>Deliverance Teaching</h3>
+                                <p>Thursday deliverance service teaching on spiritual freedom</p>
+                            </div>
+                        </div>
+                        
+                        <div class="video-card">
+                            <div class="video-wrapper">
+                                <div class="youtube-thumbnail" onclick="window.open('https://youtu.be/jLOzwW6tV0Y?si=7sMtvudSmC_wsw3M', '_blank')">
+                                    <img src="https://img.youtube.com/vi/jLOzwW6tV0Y/hqdefault.jpg" alt="Bible Study">
+                                    <div class="play-button">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <h3>Understanding Grace</h3>
+                                <p>Midweek Bible study on the grace of God</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="media-cta">
+                        <a href="https://youtube.com/@priesthoodtv547" target="_blank" class="btn btn-primary">
+                            <i class="fab fa-youtube"></i> Watch More on YouTube
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Text Testimonials Section -->
+        <section class="section testimonials-section">
+            <div class="container">
+                <h2 class="section-title">What People Are Saying</h2>
+                <p class="section-subtitle">Testimonies from our church members</p>
+                
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"Priesthood Family Chapel has transformed my spiritual life. The teachings are practical and life-changing. I've found a family here that truly cares."</p>
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <div class="testimonial-author">
+                            <h4>Mr. Foruwa</h4>
+                            <p>Accra, Ghana</p>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"The deliverance services have brought freedom to my family. We experienced miracles we never thought possible. God is truly at work here."</p>
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <div class="testimonial-author">
+                            <h4>Empress</h4>
+                            <p>Kumasi, Ghana</p>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"Even from the USA, I feel connected through the online services. The teachings are relevant and the prayer support is exceptional. This church cares globally."</p>
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <div class="testimonial-author">
+                            <h4>Mr. Mankwa</h4>
+                            <p>Texas, USA</p>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -206,7 +445,7 @@
                         </div>
                         <div class="service-details">
                             <h3>Thursday Deliverance Service</h3>
-                            <p><i class="far fa-clock"></i> 10:00 PM - 1:30 AM</p>
+                            <p><i class="far fa-clock"></i> 10:00 AM - 1:30 PM</p>
                             <p><i class="fas fa-map-marker-alt"></i> Church Premises</p>
                         </div>
                     </div>
@@ -214,7 +453,7 @@
             </div>
         </section>
         
-        <!-- Live Stream Section - WITH TIKTOK ADDED -->
+        <!-- Live Stream Section -->
         <section class="section livestream-section">
             <div class="container">
                 <h2 class="section-title">Join Our Live Stream</h2>
@@ -233,7 +472,7 @@
                             <a href="https://www.facebook.com/share/v/1AQWzoCUdF/" target="_blank" class="platform-btn facebook">
                                 <i class="fab fa-facebook"></i> Watch on Facebook
                             </a>
-                            <a href="https://www.tiktok.com/@priesthoodfamilychapel" target="_blank" class="platform-btn tiktok">
+                            <a href="https://www.tiktok.com/@priesthoodtv?_r=1&_t=ZM-92kWwDLAzPf" target="_blank" class="platform-btn tiktok">
                                 <i class="fab fa-tiktok"></i> Watch on TikTok
                             </a>
                             <a href="https://us06web.zoom.us/j/2547367600" target="_blank" class="platform-btn zoom">
@@ -261,7 +500,7 @@
             </div>
         </section>
         
-        <!-- Founder & Lead Pastor Section - FIXED LAYOUT -->
+        <!-- Founder & Lead Pastor Section -->
         <section class="section pastor-section">
             <div class="container">
                 <h2 class="section-title">Our Founder & Lead Pastor</h2>
@@ -304,13 +543,13 @@
                         </div>
                         
                         <div class="pastor-contact">
-                            <p><i class="fas fa-phone"></i> 0547367600</p>
+                            <p><i class="fas fa-phone"></i> +233547367600</p>
                             <p><i class="fas fa-envelope"></i> priesthoodschoolofministry@gmail.com</p>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Book Advertisement - FIXED LAYOUT -->
+                <!-- Book Advertisement -->
                 <div class="book-advertisement">
                     <div class="book-left">
                         <img src="images/book-cover.jpg" alt="Understanding Apostleship Book Cover" class="book-cover-img">
@@ -341,7 +580,7 @@
                         </div>
                         <h3>Grace Ministry</h3>
                         <p>Teaching believers to walk in grace and extend it to others through discipleship programs.</p>
-                        <a href="gallery.html?category=GRACE" class="ministry-link">View Gallery</a>
+                        <a href="gallery.html?category=NG" class="ministry-link">View Gallery</a>
                     </div>
                     
                     <div class="ministry-card">
@@ -350,7 +589,7 @@
                         </div>
                         <h3>Love Ministry</h3>
                         <p>Demonstrating Christ's love through practical acts of service and community outreach.</p>
-                        <a href="gallery.html?category=LOVE" class="ministry-link">View Gallery</a>
+                        <a href="gallery.html?category=NL" class="ministry-link">View Gallery</a>
                     </div>
                     
                     <div class="ministry-card">
@@ -359,7 +598,7 @@
                         </div>
                         <h3>Choir & Music</h3>
                         <p>Worshipping God through music and choir performances in our weekly services.</p>
-                        <a href="gallery.html?category=CHOIR" class="ministry-link">View Gallery</a>
+                        <a href="#media" class="ministry-link">Watch Videos</a>
                     </div>
                     
                     <div class="ministry-card">
@@ -388,7 +627,7 @@
                         </div>
                         <h3>Youth Ministry</h3>
                         <p>Engaging and empowering young people to live out their faith in practical ways.</p>
-                        <a href="gallery.html?category=YOUTH" class="ministry-link">View Gallery</a>
+                        <a href="gallery.html?category=YT" class="ministry-link">View Gallery</a>
                     </div>
                 </div>
             </div>
@@ -424,10 +663,10 @@
                         <div class="momo-details">
                             <div class="momo-info">
                                 <p><i class="fas fa-user"></i> <strong>Account Name:</strong> Emmanuel Amankwah</p>
-                                <p><i class="fas fa-phone"></i> <strong>MoMo Number:</strong> 0547367600</p>
+                                <p><i class="fas fa-phone"></i> <strong>MoMo Number:</strong> +233547367600</p>
                             </div>
                             <div class="momo-actions">
-                                <button class="btn copy-btn" data-number="0547367600">
+                                <button class="btn copy-btn" data-number="+233547367600">
                                     <i class="fas fa-copy"></i> Copy Number
                                 </button>
                                 <a href="tel:*170#" class="btn dial-btn">
@@ -440,7 +679,7 @@
             </div>
         </section>
         
-        <!-- Bible College Preview - REDUCED SIZE -->
+        <!-- Bible College Preview -->
         <section class="section college-preview" id="college-preview">
             <div class="container">
                 <div class="preview-content">
@@ -483,7 +722,7 @@
                 <div class="visit-container">
                     <div class="map-container">
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.952912260219!2d-1.6293964!3d6.465326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMjcnNTUuMiJOIDHCsDM3JzQ1LjgiVw!5e0!3m2!1sen!2sgh!4v1629261234567!5m2!1sen!2sgh"
+                            src="https://maps.app.goo.gl/H1AnakUz43YH1zPH7?g_st=am"
                             width="100%" 
                             height="300" 
                             style="border:0;" 
@@ -514,7 +753,7 @@
                                 <h3>Service Times</h3>
                                 <p><strong>Sunday:</strong> 8:30 AM - 11:30 AM</p>
                                 <p><strong>Tuesday-Friday:</strong> 9:30 AM - 11:30 AM (Online)</p>
-                                <p><strong>Thursday:</strong> 10:00 PM - 1:30 AM</p>
+                                <p><strong>Thursday:</strong> 10:00 AM - 1:30 PM</p>
                             </div>
                         </div>
                         
@@ -524,8 +763,11 @@
                             </div>
                             <div class="service-details">
                                 <h3>Contact</h3>
-                                <p><strong>Main:</strong> 0547367600</p>
-                                <p><strong>Prayer/WhatsApp:</strong> 0249392178</p>
+                                <p><strong>Main:</strong> +233547367600</p>
+                                <p><strong>Prayer/WhatsApp:</strong> +233249172148 OR +233246498337</p>
+                                <p><strong>Prayer Tower:</strong> +233235498337 OR +233247100201</p>
+                                <p><strong>WhatsApp Prayer:</strong> +233246498337 OR +233242879388</p>
+                                <p><strong>Photo Contribution:</strong> 0249172148</p>
                                 <p><strong>Email:</strong> priesthoodfamilybiblecollege@gmail.com</p>
                                 <p><strong>Bible College:</strong> priesthoodfamilybiblecollege@gmail.com</p>
                             </div>
@@ -544,15 +786,16 @@
                     <h3><i class="fas fa-church"></i> Priesthood Family Chapel</h3>
                     <p><i class="fas fa-map-marker-alt"></i> Kumasi, Ohwim School Junction</p>
                     <p><i class="fas fa-envelope"></i> priesthoodfamilybiblecollege@gmail.com</p>
-                    <p><i class="fas fa-phone"></i> 0547367600 (Main)</p>
-                    <p><i class="fab fa-whatsapp"></i> 0249392178 (Prayer & Bible College)</p>
+                    <p><i class="fas fa-phone"></i> +233547367600 (Main)</p>
+                    <p><i class="fab fa-whatsapp"></i> +233249172148 OR +233246498337 (Prayer & Bible College)</p>
+                    <p><i class="fas fa-phone"></i> +233235498337 OR +233247100201 (Prayer Tower)</p>
                 </div>
                 
                 <div class="footer-section">
                     <h3><i class="fas fa-clock"></i> Service Times</h3>
                     <p><strong>Online:</strong> Tue-Fri 9:30-11:30 AM</p>
                     <p><strong>Sunday Worship:</strong> 8:30-11:30 AM</p>
-                    <p><strong>Thursday Deliverance:</strong> 10 PM-1:30 AM</p>
+                    <p><strong>Thursday Deliverance:</strong> 10 AM-1:30 PM</p>
                 </div>
                 
                 <div class="footer-section">
@@ -561,6 +804,7 @@
                     <a href="bible-college.html"><i class="fas fa-graduation-cap"></i> Bible College</a>
                     <a href="gallery.html"><i class="fas fa-images"></i> Gallery</a>
                     <a href="#ministries"><i class="fas fa-hands-helping"></i> Ministries</a>
+                    <a href="#media"><i class="fas fa-play-circle"></i> Media</a>
                     <button class="prayer-footer-btn" style="background: none; border: none; color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 10px; font-size: 1rem; padding: 0; margin-top: 10px;" data-modal="prayerModal">
                         <i class="fas fa-hands-praying"></i> Request Prayer
                     </button>
@@ -568,9 +812,9 @@
                 
                 <div class="footer-section">
                     <h3><i class="fas fa-donate"></i> Giving</h3>
-                    <p><strong>MTN MoMo:</strong> 0547367600</p>
+                    <p><strong>MTN MoMo:</strong> +233547367600</p>
                     <p><strong>Account Name:</strong> Emmanuel Amankwah</p>
-                    <button class="copy-momo-btn" data-number="0547367600" style="background: var(--accent-color); color: var(--black-color); border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 8px; margin-top: 10px;">
+                    <button class="copy-momo-btn" data-number="+233547367600" style="background: var(--accent-color); color: var(--black-color); border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 8px; margin-top: 10px;">
                         <i class="fas fa-copy"></i> Copy MoMo Number
                     </button>
                 </div>
@@ -585,7 +829,7 @@
                     <a href="https://youtube.com/@priesthoodtv547" target="_blank" aria-label="YouTube">
                         <i class="fab fa-youtube"></i>
                     </a>
-                    <a href="https://www.tiktok.com/@priesthoodfamilychapel" target="_blank" aria-label="TikTok">
+                    <a href="https://www.tiktok.com/@priesthoodtv?_r=1&_t=ZM-92kWwDLAzPf" target="_blank" aria-label="TikTok">
                         <i class="fab fa-tiktok"></i>
                     </a>
                     <a href="https://us06web.zoom.us/j/2547367600" target="_blank" aria-label="Zoom">
@@ -596,7 +840,23 @@
         </div>
     </footer>
     
-    <!-- Quick Join Button - WITH TIKTOK ADDED -->
+    <!-- Mobile Floating Action Buttons -->
+    <div class="mobile-fab-container">
+        <button class="mobile-fab prayer-fab" data-modal="prayerModal">
+            <i class="fas fa-hands-praying"></i>
+            <span class="fab-label">Prayer</span>
+        </button>
+        <button class="mobile-fab theme-fab" id="mobileThemeToggle">
+            <i class="fas fa-moon"></i>
+            <span class="fab-label">Theme</span>
+        </button>
+        <button class="mobile-fab join-fab" id="mobileQuickJoin">
+            <i class="fas fa-video"></i>
+            <span class="fab-label">Join Service</span>
+        </button>
+    </div>
+    
+    <!-- Quick Join Button - FLOATING AT RIGHT CORNER -->
     <div class="quick-join">
         <button class="quick-join-btn" id="quickJoinBtn">
             <i class="fas fa-video"></i>
@@ -628,7 +888,7 @@
                     <small>Watch on Facebook</small>
                 </div>
             </a>
-            <a href="https://www.tiktok.com/@priesthoodfamilychapel" target="_blank" class="dropdown-item tiktok-item">
+            <a href="https://www.tiktok.com/@priesthoodtv?_r=1&_t=ZM-92kWwDLAzPf" target="_blank" class="dropdown-item tiktok-item">
                 <i class="fab fa-tiktok"></i>
                 <div>
                     <strong>TikTok Live</strong>
@@ -641,7 +901,35 @@
         </div>
     </div>
     
-    <!-- Prayer Modal - WITH SWAPPED GOOGLE FORM LINK -->
+    <!-- Quick Join Dropdown (for mobile FAB) -->
+    <div class="quick-join-dropdown mobile-only" id="mobileQuickJoinDropdown">
+        <div class="dropdown-header">
+            <h4><i class="fas fa-broadcast-tower"></i> Join Service</h4>
+        </div>
+        <a href="https://us06web.zoom.us/j/2547367600" target="_blank" class="dropdown-item">
+            <i class="fas fa-video"></i>
+            <div>
+                <strong>Join on Zoom</strong>
+                <small>ID: 2547367600</small>
+            </div>
+        </a>
+        <a href="https://youtube.com/@priesthoodtv547" target="_blank" class="dropdown-item">
+            <i class="fab fa-youtube"></i>
+            <div>
+                <strong>YouTube Live</strong>
+                <small>Watch on YouTube</small>
+            </div>
+        </a>
+        <a href="https://www.facebook.com/share/v/1AQWzoCUdF/" target="_blank" class="dropdown-item">
+            <i class="fab fa-facebook"></i>
+            <div>
+                <strong>Facebook Live</strong>
+                <small>Watch on Facebook</small>
+            </div>
+        </a>
+    </div>
+    
+    <!-- Prayer Modal -->
     <div class="modal" id="prayerModal">
         <div class="modal-content">
             <button class="modal-close">&times;</button>
@@ -658,7 +946,7 @@
                     <h3>WhatsApp Prayer Line</h3>
                     <p><i class="fas fa-clock"></i> 24/7 Response</p>
                     <p><i class="fas fa-check-circle"></i> Immediate attention</p>
-                    <p><i class="fas fa-phone"></i> 0249392178</p>
+                    <p><i class="fas fa-phone"></i> +233246498337 OR +233242879388</p>
                     <button class="btn btn-primary" id="whatsappPrayer" style="width: 100%; margin-top: 15px;">
                         <i class="fab fa-whatsapp"></i> Request via WhatsApp
                     </button>
@@ -695,7 +983,6 @@
                 <button class="back-btn" id="backToPrayerOptions">&larr; Back to Options</button>
                 <div class="form-wrapper">
                     <h3><i class="fas fa-file-alt"></i> Prayer Request Form</h3>
-                    <!-- SWAPPED: This should be the REGISTRATION form -->
                     <iframe 
                         src="https://docs.google.com/forms/d/e/1FAIpQLSe5tq91EfL9LHYUjvLfqg8L3cb1nunTNlMxe7yYSExCI_HWyw/viewform?embedded=true"
                         width="100%" 
@@ -708,14 +995,14 @@
                         <p><i class="fas fa-info-circle"></i> Your prayer request will be added to our prayer list</p>
                         <p><i class="fas fa-clock"></i> Our prayer team prays daily for all requests</p>
                         <p><i class="fas fa-heart"></i> All requests are kept confidential</p>
-                        <p><i class="fab fa-whatsapp"></i> Need urgent prayer? WhatsApp: 0249392178</p>
+                        <p><i class="fab fa-whatsapp"></i> Need urgent prayer? WhatsApp: +233246498337 OR +233242879388</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     
-    <!-- Registration Modal - WITH SWAPPED GOOGLE FORM LINK -->
+    <!-- Registration Modal -->
     <div class="modal" id="registrationModal">
         <div class="modal-content">
             <button class="modal-close">&times;</button>
@@ -769,7 +1056,6 @@
                 <button class="back-btn" id="backToRegistrationOptions">&larr; Back to Options</button>
                 <div class="form-wrapper">
                     <h3><i class="fas fa-file-alt"></i> Bible College Registration Form</h3>
-                    <!-- SWAPPED: This should be the PRAYER form -->
                     <iframe 
                         src="https://docs.google.com/forms/d/e/1FAIpQLScn8c4_bMjHRKBWLlph8uQ-qPoc31Z6UF2iibFcRMDgVfkqIw/viewform?embedded=true" 
                         width="100%" 
@@ -785,8 +1071,8 @@
                         <p><i class="fas fa-graduation-cap"></i> <strong>Program:</strong> 6-Month Intensive Bible College</p>
                         <p><i class="fas fa-money-bill-wave"></i> <strong>Ghanaian Students:</strong> ₵100 Registration + ₵1,500 Tuition = ₵1,600 Total</p>
                         <p><i class="fas fa-money-bill-wave"></i> <strong>International Students:</strong> ₵100 Registration + $150 Tuition = $250 Total</p>
-                        <p><i class="fas fa-mobile-alt"></i> <strong>MoMo Payment:</strong> 0547367600 (Emmanuel Amankwah)</p>
-                        <p><i class="fab fa-whatsapp"></i> <strong>WhatsApp Assistance:</strong> 0249392178 (Rev Paul)</p>
+                        <p><i class="fas fa-mobile-alt"></i> <strong>MoMo Payment:</strong> +233547367600 (Emmanuel Amankwah)</p>
+                        <p><i class="fab fa-whatsapp"></i> <strong>WhatsApp Assistance:</strong> +233249172148 OR +233246498337 (Rev Paul)</p>
                         <p><i class="fas fa-clock"></i> <strong>Processing:</strong> Within 24 hours after form submission</p>
                     </div>
                 </div>
@@ -800,129 +1086,34 @@
     <!-- JavaScript -->
     <script src="script.js"></script>
     
-    <!-- Slider Fix Script -->
+    <!-- JavaScript for Mobile FABs -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Events Slider Fix
-            const eventSlides = document.querySelectorAll('.event-slide');
-            const eventDots = document.querySelectorAll('.dot');
-            const prevEventBtn = document.getElementById('prevEventBtn');
-            const nextEventBtn = document.getElementById('nextEventBtn');
+            // Mobile FAB functionality
+            const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+            const mobileQuickJoin = document.getElementById('mobileQuickJoin');
+            const mobileQuickJoinDropdown = document.getElementById('mobileQuickJoinDropdown');
             
-            if (eventSlides.length > 1) {
-                let currentEventSlide = 0;
-                let eventInterval;
-                
-                function showEventSlide(index) {
-                    eventSlides.forEach(slide => slide.classList.remove('active'));
-                    eventDots.forEach(dot => dot.classList.remove('active'));
-                    
-                    currentEventSlide = index;
-                    eventSlides[currentEventSlide].classList.add('active');
-                    eventDots[currentEventSlide].classList.add('active');
-                }
-                
-                function nextEvent() {
-                    let nextIndex = currentEventSlide + 1;
-                    if (nextIndex >= eventSlides.length) nextIndex = 0;
-                    showEventSlide(nextIndex);
-                }
-                
-                function prevEvent() {
-                    let prevIndex = currentEventSlide - 1;
-                    if (prevIndex < 0) prevIndex = eventSlides.length - 1;
-                    showEventSlide(prevIndex);
-                }
-                
-                // Navigation buttons
-                if (prevEventBtn) prevEventBtn.addEventListener('click', prevEvent);
-                if (nextEventBtn) nextEventBtn.addEventListener('click', nextEvent);
-                
-                // Dot navigation
-                eventDots.forEach((dot, index) => {
-                    dot.addEventListener('click', () => showEventSlide(index));
+            if (mobileThemeToggle) {
+                mobileThemeToggle.addEventListener('click', function() {
+                    const darkModeToggle = document.getElementById('darkModeToggle');
+                    if (darkModeToggle) {
+                        darkModeToggle.click();
+                    }
                 });
-                
-                // Auto slide every 5 seconds
-                function startEventAutoSlide() {
-                    eventInterval = setInterval(nextEvent, 5000);
-                }
-                
-                function stopEventAutoSlide() {
-                    clearInterval(eventInterval);
-                }
-                
-                // Pause on hover
-                const eventsSlider = document.getElementById('eventsSlider');
-                if (eventsSlider) {
-                    eventsSlider.addEventListener('mouseenter', stopEventAutoSlide);
-                    eventsSlider.addEventListener('mouseleave', startEventAutoSlide);
-                }
-                
-                // Start auto slide
-                showEventSlide(0);
-                startEventAutoSlide();
             }
             
-            // Pastor Slider Fix
-            const pastorSlides = document.querySelectorAll('.pastor-slide');
-            const pastorIndicators = document.querySelectorAll('.indicator');
-            const prevPastorBtn = document.querySelector('.prev-pastor');
-            const nextPastorBtn = document.querySelector('.next-pastor');
-            
-            if (pastorSlides.length > 1) {
-                let currentPastorSlide = 0;
-                let pastorInterval;
-                
-                function showPastorSlide(index) {
-                    pastorSlides.forEach(slide => slide.classList.remove('active'));
-                    pastorIndicators.forEach(indicator => indicator.classList.remove('active'));
-                    
-                    currentPastorSlide = index;
-                    pastorSlides[currentPastorSlide].classList.add('active');
-                    pastorIndicators[currentPastorSlide].classList.add('active');
-                }
-                
-                function nextPastor() {
-                    let nextIndex = currentPastorSlide + 1;
-                    if (nextIndex >= pastorSlides.length) nextIndex = 0;
-                    showPastorSlide(nextIndex);
-                }
-                
-                function prevPastor() {
-                    let prevIndex = currentPastorSlide - 1;
-                    if (prevIndex < 0) prevIndex = pastorSlides.length - 1;
-                    showPastorSlide(prevIndex);
-                }
-                
-                // Navigation buttons
-                if (prevPastorBtn) prevPastorBtn.addEventListener('click', prevPastor);
-                if (nextPastorBtn) nextPastorBtn.addEventListener('click', nextPastor);
-                
-                // Indicator navigation
-                pastorIndicators.forEach((indicator, index) => {
-                    indicator.addEventListener('click', () => showPastorSlide(index));
+            if (mobileQuickJoin && mobileQuickJoinDropdown) {
+                mobileQuickJoin.addEventListener('click', function() {
+                    mobileQuickJoinDropdown.classList.toggle('show');
                 });
                 
-                // Auto rotate every 4 seconds
-                function startPastorAutoSlide() {
-                    pastorInterval = setInterval(nextPastor, 4000);
-                }
-                
-                function stopPastorAutoSlide() {
-                    clearInterval(pastorInterval);
-                }
-                
-                // Pause on hover
-                const pastorSlider = document.getElementById('pastorSlider');
-                if (pastorSlider) {
-                    pastorSlider.addEventListener('mouseenter', stopPastorAutoSlide);
-                    pastorSlider.addEventListener('mouseleave', startPastorAutoSlide);
-                }
-                
-                // Start auto slide
-                showPastorSlide(0);
-                startPastorAutoSlide();
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!mobileQuickJoin.contains(e.target) && !mobileQuickJoinDropdown.contains(e.target)) {
+                        mobileQuickJoinDropdown.classList.remove('show');
+                    }
+                });
             }
         });
     </script>

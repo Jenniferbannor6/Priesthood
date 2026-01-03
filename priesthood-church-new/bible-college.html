@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bible College | Priesthood Family Chapel International</title>
+    <title>Priesthood Family Bible College | Priesthood Family Chapel International</title>
     
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
@@ -107,13 +107,17 @@
     gap: 4px;
 }
 
+/* LECTURER COURSE TAGS - YELLOW/BLACK (SPECIFIC REQUEST) */
 .expertise-tag {
-    background: rgba(0, 64, 128, 0.2);
-    color: var(--accent-light);
-    padding: 2px 6px;
-    border-radius: 10px;
-    font-size: 0.65rem;
-    border: 1px solid rgba(255, 215, 0, 0.1);
+    background: #FFD700 !important; /* YELLOW */
+    color: #000000 !important; /* BLACK */
+    font-weight: 700 !important; /* BOLD */
+    padding: 8px 12px !important;
+    border-radius: 5px !important;
+    margin: 3px !important;
+    display: inline-block !important;
+    font-size: 0.65rem !important;
+    border: none !important;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -131,6 +135,7 @@
         gap: 20px;
     }
 }
+
         /* Fees Side by Side Layout */
         .fees-comparison {
             max-width: 1000px;
@@ -280,6 +285,100 @@
             background: linear-gradient(135deg, #EA4335, #4285F4);
         }
         
+        /* ===== BIBLE COLLEGE TESTIMONIALS ===== */
+        .testimonial-section {
+            padding: 60px 0;
+            background: linear-gradient(135deg, rgba(0,64,128,0.1) 0%, rgba(255,215,0,0.05) 100%);
+        }
+        
+        .testimonials-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .bible-testimonial-card {
+            background: var(--bg-card);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+        
+        .bible-testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .testimonial-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center center;
+            border: 3px solid var(--accent-color);
+            margin: 0 auto 20px;
+        }
+        
+        .testimonial-name {
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+        
+        .testimonial-role {
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .testimonial-rating {
+            color: #FFD700;
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+        
+        .testimonial-quote {
+            font-style: italic;
+            line-height: 1.6;
+            margin: 15px 0;
+            position: relative;
+            padding: 0 10px;
+        }
+        
+        .testimonial-quote:before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--accent-color);
+            opacity: 0.3;
+            position: absolute;
+            top: -15px;
+            left: 0;
+        }
+        
+        .testimonial-quote:after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--accent-color);
+            opacity: 0.3;
+            position: absolute;
+            bottom: -30px;
+            right: 0;
+        }
+        
+        .testimonial-class {
+            background: rgba(0, 64, 128, 0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-top: 15px;
+        }
+        
         @media (max-width: 768px) {
             .lecturers-row {
                 grid-template-columns: 1fr;
@@ -297,6 +396,15 @@
             
             .registration-methods-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .testimonials-grid-3 {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .bible-testimonial-card {
+                padding: 20px;
             }
         }
         
@@ -340,7 +448,7 @@
             <div class="logo-section">
                 <img src="images/logo.png" alt="Priesthood Family Chapel Logo" class="logo">
                 <div class="church-name">
-                    <h1>Priesthood Bible College</h1>
+                    <h1>Priesthood Family Bible College</h1>
                     <p>Ministry Training & Ordination</p>
                 </div>
             </div>
@@ -375,7 +483,7 @@
     <!-- Hero Section -->
     <header class="hero" id="home">
         <div class="hero-content">
-            <h1 class="hero-title">Priesthood Bible College</h1>
+            <h1 class="hero-title">Priesthood Family Bible College</h1>
             <p class="hero-subtitle">Professional Ministry Training & Ordination Program</p>
             <div class="hero-buttons">
                 <button class="btn btn-primary" data-modal="registrationModal">
@@ -393,7 +501,7 @@
         <!-- Why Choose Us -->
         <section class="section" id="why-choose">
             <div class="container">
-                <h2 class="section-title">Why Choose Priesthood Bible College?</h2>
+                <h2 class="section-title">Why Choose Priesthood Family Bible College?</h2>
                 <p class="section-subtitle">Experience excellence in ministry education with our proven track record</p>
                 
                 <div class="ministries-grid">
@@ -439,94 +547,90 @@
                 <p class="section-subtitle">Learn from seasoned ministers with proven ministry track records</p>
                 
                 <div class="lecturers-grid">
-                    <div class="lecturers-row">
-                        <!-- Lecturer 1: Apostle Emmanuel Amankwah -->
-                        <div class="lecturer-card">
-                            <div class="lecturer-image">
-                                <img src="images/lecturer-emmanuel.jpg" alt="Apostle Emmanuel Amankwah">
-                                <div class="lecturer-overlay">
-                                    <h3>Apostle Emmanuel Amankwah</h3>
-                                    <p>Founder & Principal Lecturer</p>
-                                </div>
-                            </div>
-                            <div class="lecturer-details">
-                                <div class="lecturer-bio">
-                                    <p>With over 20 years of ministry experience, Apostle Amankwah provides deep insights into ministry foundations and ethical leadership. He specializes in Ministry & Marriage and Practical Ministry courses.</p>
-                                </div>
-                                <div class="lecturer-expertise">
-                                    <span class="expertise-tag">Ministry & Marriage</span>
-                                    <span class="expertise-tag">Practical Ministry</span>
-                                    <span class="expertise-tag">Apostolic Ministry</span>
-                                    <span class="expertise-tag">Church Planting</span>
-                                </div>
+                    <!-- Lecturer 1: Apostle Emmanuel Amankwah -->
+                    <div class="lecturer-card">
+                        <div class="lecturer-image">
+                            <img src="images/lecturer-emmanuel.jpg" alt="Apostle Emmanuel Amankwah">
+                            <div class="lecturer-overlay">
+                                <h3>Apostle Emmanuel Amankwah</h3>
+                                <p>Founder & Principal Lecturer</p>
                             </div>
                         </div>
-                        
-                        <!-- Lecturer 2: Rev. Eric Dautey -->
-                        <div class="lecturer-card">
-                            <div class="lecturer-image">
-                                <img src="images/lecturer-eric.jpg" alt="Rev. Eric Dautey">
-                                <div class="lecturer-overlay">
-                                    <h3>Rev. Eric Dautey</h3>
-                                    <p>Senior Lecturer</p>
-                                </div>
+                        <div class="lecturer-details">
+                            <div class="lecturer-bio">
+                                <p>With over 20 years of ministry experience, Apostle Amankwah provides deep insights into ministry foundations and ethical leadership.</p>
                             </div>
-                            <div class="lecturer-details">
-                                <div class="lecturer-bio">
-                                    <p>With 15+ years of pastoral experience, Rev. Dautey brings practical wisdom and real-world ministry insights. He specializes in teaching about common pastoral mistakes and ministerial ethics.</p>
-                                </div>
-                                <div class="lecturer-expertise">
-                                    <span class="expertise-tag">Ministerial Ethics</span>
-                                    <span class="expertise-tag">Pastoral Care</span>
-                                    <span class="expertise-tag">Common Mistakes</span>
-                                    <span class="expertise-tag">Leadership</span>
-                                </div>
+                            <div class="lecturer-expertise">
+                                <span class="expertise-tag">Ministry & Marriage</span>
+                                <span class="expertise-tag">Practical Ministry</span>
+                                <span class="expertise-tag">Apostolic Ministry</span>
+                                <span class="expertise-tag">Church Planting</span>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="lecturers-row">
-                        <!-- Lecturer 3: Rev. Kwame Bannor -->
-                        <div class="lecturer-card">
-                            <div class="lecturer-image">
-                                <img src="images/lecturer-kwame.jpg" alt="Rev. Kwame Bannor">
-                                <div class="lecturer-overlay">
-                                    <h3>Rev. Kwame Bannor</h3>
-                                    <p>Lecturer</p>
-                                </div>
-                            </div>
-                            <div class="lecturer-details">
-                                <div class="lecturer-bio">
-                                    <p>With 12+ years of teaching experience, Rev. Bannor excels in homiletics and communication skills. His engaging teaching style makes complex theological concepts accessible to all students.</p>
-                                </div>
-                                <div class="lecturer-expertise">
-                                    <span class="expertise-tag">Homiletics</span>
-                                    <span class="expertise-tag">Communication</span>
-                                    <span class="expertise-tag">Teaching Methods</span>
-                                    <span class="expertise-tag">Public Speaking</span>
-                                </div>
+                    <!-- Lecturer 2: Rev. Eric Dautey -->
+                    <div class="lecturer-card">
+                        <div class="lecturer-image">
+                            <img src="images/lecturer-eric.jpg" alt="Rev. Eric Dautey">
+                            <div class="lecturer-overlay">
+                                <h3>Rev. Eric Dautey</h3>
+                                <p>Senior Lecturer</p>
                             </div>
                         </div>
-                        
-                        <!-- Lecturer 4: Rev. Paul Opoku Peprah -->
-                        <div class="lecturer-card">
-                            <div class="lecturer-image">
-                                <img src="images/lecturer-paul.jpg" alt="Rev. Paul Opoku Peprah">
-                                <div class="lecturer-overlay">
-                                    <h3>Rev. Paul Opoku Peprah</h3>
-                                    <p>Church Administrator & Lecturer</p>
-                                </div>
+                        <div class="lecturer-details">
+                            <div class="lecturer-bio">
+                                <p>With 15+ years of pastoral experience, Rev. Dautey brings practical wisdom and real-world ministry insights.</p>
                             </div>
-                            <div class="lecturer-details">
-                                <div class="lecturer-bio">
-                                    <p>With expertise in church administration and personnel management, Rev. Peprah provides practical training in church operations, administration, and organizational leadership.</p>
-                                </div>
-                                <div class="lecturer-expertise">
-                                    <span class="expertise-tag">Church Administration</span>
-                                    <span class="expertise-tag">Personnel Management</span>
-                                    <span class="expertise-tag">Operations</span>
-                                    <span class="expertise-tag">Leadership</span>
-                                </div>
+                            <div class="lecturer-expertise">
+                                <span class="expertise-tag">Ministerial Ethics</span>
+                                <span class="expertise-tag">Pastoral Care</span>
+                                <span class="expertise-tag">Common Mistakes</span>
+                                <span class="expertise-tag">Leadership</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Lecturer 3: Rev. Kwame Bannor -->
+                    <div class="lecturer-card">
+                        <div class="lecturer-image">
+                            <img src="images/lecturer-kwame.jpg" alt="Rev. Kwame Bannor">
+                            <div class="lecturer-overlay">
+                                <h3>Rev. Kwame Bannor</h3>
+                                <p>Lecturer</p>
+                            </div>
+                        </div>
+                        <div class="lecturer-details">
+                            <div class="lecturer-bio">
+                                <p>With 12+ years of teaching experience, Rev. Bannor excels in homiletics and communication skills.</p>
+                            </div>
+                            <div class="lecturer-expertise">
+                                <span class="expertise-tag">Homiletics</span>
+                                <span class="expertise-tag">Communication</span>
+                                <span class="expertise-tag">Teaching Methods</span>
+                                <span class="expertise-tag">Public Speaking</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Lecturer 4: Rev. Paul Opoku Peprah -->
+                    <div class="lecturer-card">
+                        <div class="lecturer-image">
+                            <img src="images/lecturer-paul.jpg" alt="Rev. Paul Opoku Peprah">
+                            <div class="lecturer-overlay">
+                                <h3>Rev. Paul Opoku Peprah</h3>
+                                <p>Church Administrator & Lecturer</p>
+                            </div>
+                        </div>
+                        <div class="lecturer-details">
+                            <div class="lecturer-bio">
+                                <p>With expertise in church administration and personnel management, Rev. Peprah provides practical training in church operations.</p>
+                            </div>
+                            <div class="lecturer-expertise">
+                                <span class="expertise-tag">Church Administration</span>
+                                <span class="expertise-tag">Personnel Management</span>
+                                <span class="expertise-tag">Operations</span>
+                                <span class="expertise-tag">Leadership</span>
                             </div>
                         </div>
                     </div>
@@ -534,7 +638,7 @@
             </div>
         </section>
 
-        <!-- Registration Methods - UPDATED DESIGN -->
+        <!-- Registration Methods -->
         <section class="section" id="registration">
             <div class="container">
                 <h2 class="section-title">How to Register</h2>
@@ -548,7 +652,7 @@
                         <h3>WhatsApp Registration</h3>
                         <p><strong>Fastest Method</strong> - Direct chat with Rev Paul</p>
                         <p><strong>Response:</strong> Within 1 hour</p>
-                        <p><strong>Number:</strong> 0249392178</p>
+                        <p><strong>Number:</strong> +233249172148 OR +233246498337</p>
                         <button class="btn btn-primary" id="whatsappBibleCollege" style="width: 100%; margin-top: 15px;">
                             <i class="fab fa-whatsapp"></i> Register via WhatsApp
                         </button>
@@ -586,8 +690,8 @@
                     <h3><i class="fas fa-info-circle"></i> Contact Information</h3>
                     <div class="momo-details">
                         <div class="momo-info">
-                            <p><i class="fas fa-user"></i> <strong>Rev Paul (Admin):</strong> 0249392178 (WhatsApp/Call)</p>
-                            <p><i class="fas fa-user"></i> <strong>Apostle Emmanuel (Head):</strong> 0547367600</p>
+                            <p><i class="fas fa-user"></i> <strong>Rev Paul (Admin):</strong> +233249172148 OR +233246498337 (WhatsApp/Call)</p>
+                            <p><i class="fas fa-user"></i> <strong>Apostle Emmanuel (Head):</strong> +233547367600</p>
                             <p><i class="fas fa-envelope"></i> <strong>Email:</strong> priesthoodfamilybiblecollege@gmail.com</p>
                             <p><i class="fas fa-clock"></i> <strong>Office Hours:</strong> Mon-Fri 8AM-5PM, Sat 9AM-1PM</p>
                             <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Kumasi, Ohwim School Junction</p>
@@ -776,9 +880,9 @@
                     <h3><i class="fas fa-credit-card"></i> Payment Methods</h3>
                     <div class="momo-details">
                         <div class="momo-info">
-                            <p><i class="fas fa-mobile-alt"></i> <strong>MTN MoMo:</strong> 0547367600 (Emmanuel Amankwah)</p>
+                            <p><i class="fas fa-mobile-alt"></i> <strong>MTN MoMo:</strong> +233547367600 (Emmanuel Amankwah)</p>
                             <p><i class="fas fa-university"></i> <strong>Bank Transfer:</strong> Available upon request</p>
-                            <p><i class="fab fa-whatsapp"></i> <strong>Payment Assistance:</strong> Contact Rev Paul at 0249392178</p>
+                            <p><i class="fab fa-whatsapp"></i> <strong>Payment Assistance:</strong> Contact Rev Paul at +233249172148 OR +233246498337</p>
                             <p><i class="fas fa-calendar-alt"></i> <strong>Payment Plans:</strong> Installments available upon request</p>
                         </div>
                     </div>
@@ -880,7 +984,7 @@
                         </div>
                         <div class="service-details">
                             <h3>Can I pay in installments?</h3>
-                            <p>Yes! We offer flexible payment plans. Contact Rev Paul at 0249392178 to discuss installment options. We want to make ministry training accessible to all called by God.</p>
+                            <p>Yes! We offer flexible payment plans. Contact Rev Paul at +233249172148 OR +233246498337 to discuss installment options. We want to make ministry training accessible to all called by God.</p>
                         </div>
                     </div>
                     
@@ -910,12 +1014,70 @@
                     <h3><i class="fas fa-headset"></i> Still have questions?</h3>
                     <div class="momo-details">
                         <div class="momo-info">
-                            <p><i class="fab fa-whatsapp"></i> <strong>WhatsApp:</strong> 0249392178 (Rev Paul - Fastest Response)</p>
-                            <p><i class="fas fa-phone"></i> <strong>Call:</strong> 0547367600 (Apostle Emmanuel)</p>
+                            <p><i class="fab fa-whatsapp"></i> <strong>WhatsApp:</strong> +233249172148 OR +233246498337 (Rev Paul - Fastest Response)</p>
+                            <p><i class="fas fa-phone"></i> <strong>Call:</strong> +233547367600 (Apostle Emmanuel)</p>
                             <p><i class="fas fa-envelope"></i> <strong>Email:</strong> priesthoodfamilybiblecollege@gmail.com</p>
                             <p><i class="fas fa-clock"></i> <strong>Office Hours:</strong> Mon-Fri 8AM-5PM, Sat 9AM-1PM</p>
                             <p><i class="fas fa-map-marker-alt"></i> <strong>Visit Us:</strong> Kumasi, Ohwim School Junction</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bible College Testimonials Section (NEW) -->
+        <section class="section testimonial-section">
+            <div class="container">
+                <h2 class="section-title">Graduate Testimonials</h2>
+                <p class="section-subtitle">Hear from our Bible College graduates</p>
+                
+                <div class="testimonials-grid-3">
+                    <!-- Testimonial 1 -->
+                    <div class="bible-testimonial-card">
+                        <img src="images/testimony1.jpg" alt="Rev. Kweku - Graduate" class="testimonial-photo">
+                        <h3 class="testimonial-name">Rev. Kweku</h3>
+                        <p class="testimonial-role">Pastor, Bogatanga Branch</p>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-quote">"The Bible College transformed my ministry. The practical training helped me start my own church branch successfully."</p>
+                        <span class="testimonial-class">Class of 2024</span>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="bible-testimonial-card">
+                        <img src="images/testimony2.jpg" alt="Rev. Ralph Nah - Graduate" class="testimonial-photo">
+                        <h3 class="testimonial-name">Rev. Ralph Nah</h3>
+                        <p class="testimonial-role">Minister, Accra</p>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-quote">"The ordination certificate opened doors for international ministry opportunities. Best investment in my calling!"</p>
+                        <span class="testimonial-class">Class of 2023</span>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="bible-testimonial-card">
+                        <img src="images/testimony3.jpg" alt="Rev. David Abebeu - Graduate" class="testimonial-photo">
+                        <h3 class="testimonial-name">Rev. David Abebeu</h3>
+                        <p class="testimonial-role">Youth Minister, Kumasi</p>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-quote">"The lecturers are seasoned practitioners. I gained real ministry skills, not just theoretical knowledge."</p>
+                        <span class="testimonial-class">Class of 2025</span>
                     </div>
                 </div>
             </div>
@@ -927,12 +1089,12 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3><i class="fas fa-graduation-cap"></i> Priesthood Bible College</h3>
+                    <h3><i class="fas fa-graduation-cap"></i> Priesthood Family Bible College</h3>
                     <p>A ministry of Priesthood Family Chapel International</p>
                     <p><i class="fas fa-map-marker-alt"></i> Kumasi, Ohwim School Junction</p>
                     <p><i class="fas fa-envelope"></i> priesthoodfamilybiblecollege@gmail.com</p>
-                    <p><i class="fas fa-phone"></i> 0547367600 (Apostle Emmanuel)</p>
-                    <p><i class="fab fa-whatsapp"></i> 0249392178 (Rev Paul - Admin)</p>
+                    <p><i class="fas fa-phone"></i> +233547367600 (Apostle Emmanuel)</p>
+                    <p><i class="fab fa-whatsapp"></i> +233249172148 OR +233246498337 (Rev Paul - Admin)</p>
                 </div>
                 
                 <div class="footer-section">
@@ -957,24 +1119,24 @@
                     <h3><i class="fas fa-donate"></i> Payment Information</h3>
                     <p><strong>Ghanaian:</strong> ₵100 + ₵1,500 = ₵1,600</p>
                     <p><strong>International:</strong> ₵100 + $150 = $250</p>
-                    <p><strong>MTN MoMo:</strong> 0547367600</p>
+                    <p><strong>MTN MoMo:</strong> +233547367600</p>
                     <p><strong>Account Name:</strong> Emmanuel Amankwah</p>
-                    <button class="copy-momo-btn" data-number="0547367600" style="background: var(--accent-color); color: var(--black-color); border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 8px; margin-top: 10px;">
+                    <button class="copy-momo-btn" data-number="+233547367600" style="background: var(--accent-color); color: var(--black-color); border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 8px; margin-top: 10px;">
                         <i class="fas fa-copy"></i> Copy MoMo Number
                     </button>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 Priesthood Bible College. All rights reserved.</p>
+                <p>&copy; 2025 Priesthood Family Bible College. All rights reserved.</p>
                 <div class="social-links">
-                    <a href="https://www.facebook.com/share/v/1AQWzoCUdF/" target="_blank" aria-label="Facebook">
+                    <a href="https://www.facebook.com/share/1GuP3unfs6/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
                         <i class="fab fa-facebook"></i>
                     </a>
                     <a href="https://youtube.com/@priesthoodtv547" target="_blank" aria-label="YouTube">
                         <i class="fab fa-youtube"></i>
                     </a>
-                    <a href="https://www.tiktok.com/@priesthoodfamilychapel" target="_blank" aria-label="TikTok">
+                    <a href="https://www.tiktok.com/@priesthoodtv?_r=1&_t=ZM-92kWwDLAzPf" target="_blank" aria-label="TikTok">
                         <i class="fab fa-tiktok"></i>
                     </a>
                     <a href="https://us06web.zoom.us/j/2547367600" target="_blank" aria-label="Zoom">
@@ -985,7 +1147,23 @@
         </div>
     </footer>
     
-    <!-- Quick Join Button - WITH TIKTOK ADDED -->
+    <!-- Mobile Floating Action Buttons -->
+    <div class="mobile-fab-container">
+        <button class="mobile-fab prayer-fab" data-modal="prayerModal">
+            <i class="fas fa-hands-praying"></i>
+            <span class="fab-label">Prayer</span>
+        </button>
+        <button class="mobile-fab theme-fab" id="mobileThemeToggle">
+            <i class="fas fa-moon"></i>
+            <span class="fab-label">Theme</span>
+        </button>
+        <button class="mobile-fab join-fab" id="mobileQuickJoin">
+            <i class="fas fa-video"></i>
+            <span class="fab-label">Join Service</span>
+        </button>
+    </div>
+    
+    <!-- Quick Join Button -->
     <div class="quick-join">
         <button class="quick-join-btn" id="quickJoinBtn">
             <i class="fas fa-video"></i>
@@ -1017,7 +1195,7 @@
                     <small>Watch on Facebook</small>
                 </div>
             </a>
-            <a href="https://www.tiktok.com/@priesthoodfamilychapel" target="_blank" class="dropdown-item">
+            <a href="https://www.tiktok.com/@priesthoodtv?_r=1&_t=ZM-92kWwDLAzPf" target="_blank" class="dropdown-item">
                 <i class="fab fa-tiktok"></i>
                 <div>
                     <strong>TikTok Live</strong>
@@ -1030,7 +1208,7 @@
         </div>
     </div>
     
-    <!-- Registration Modal - WITH CORRECT GOOGLE FORM LINK -->
+    <!-- Registration Modal -->
     <div class="modal" id="registrationModal">
         <div class="modal-content">
             <button class="modal-close">&times;</button>
@@ -1084,7 +1262,6 @@
                 <button class="back-btn" id="backToModalOptions">&larr; Back to Options</button>
                 <div class="form-wrapper">
                     <h3><i class="fas fa-file-alt"></i> Bible College Registration Form</h3>
-                    <!-- SWAPPED: This should be the PRAYER form -->
                     <iframe 
                         src="https://docs.google.com/forms/d/e/1FAIpQLScn8c4_bMjHRKBWLlph8uQ-qPoc31Z6UF2iibFcRMDgVfkqIw/viewform?embedded=true" 
                         width="100%" 
@@ -1100,8 +1277,8 @@
                         <p><i class="fas fa-graduation-cap"></i> <strong>Program:</strong> 6-Month Intensive Bible College</p>
                         <p><i class="fas fa-money-bill-wave"></i> <strong>Ghanaian Students:</strong> ₵100 Registration + ₵1,500 Tuition = ₵1,600 Total</p>
                         <p><i class="fas fa-money-bill-wave"></i> <strong>International Students:</strong> ₵100 Registration + $150 Tuition = $250 Total</p>
-                        <p><i class="fas fa-mobile-alt"></i> <strong>MoMo Payment:</strong> 0547367600 (Emmanuel Amankwah)</p>
-                        <p><i class="fab fa-whatsapp"></i> <strong>WhatsApp Assistance:</strong> 0249392178 (Rev Paul)</p>
+                        <p><i class="fas fa-mobile-alt"></i> <strong>MoMo Payment:</strong> +233547367600 (Emmanuel Amankwah)</p>
+                        <p><i class="fab fa-whatsapp"></i> <strong>WhatsApp Assistance:</strong> +233249172148 OR +233246498337 (Rev Paul)</p>
                         <p><i class="fas fa-clock"></i> <strong>Processing:</strong> Within 24 hours after form submission</p>
                     </div>
                 </div>
@@ -1145,7 +1322,7 @@
             // WhatsApp Registration from main page
             if (whatsappBibleCollege) {
                 whatsappBibleCollege.addEventListener('click', function() {
-                    window.open('https://wa.me/233249392178?text=Hello!%20I%20would%20like%20to%20register%20for%20Bible%20College.', '_blank');
+                    window.open('https://wa.me/233249172148?text=Hello!%20I%20would%20like%20to%20register%20for%20Bible%20College.', '_blank');
                 });
             }
             
@@ -1176,7 +1353,7 @@
             // Modal WhatsApp button
             if (whatsappModalBtn) {
                 whatsappModalBtn.addEventListener('click', function() {
-                    window.open('https://wa.me/233249392178?text=Hello!%20I%20would%20like%20to%20register%20for%20Bible%20College.', '_blank');
+                    window.open('https://wa.me/233249172148?text=Hello!%20I%20would%20like%20to%20register%20for%20Bible%20College.', '_blank');
                 });
             }
             
@@ -1200,6 +1377,20 @@
                 backToModalOptions.addEventListener('click', function() {
                     registrationOptions.style.display = 'block';
                     registrationForm.style.display = 'none';
+                });
+            }
+            
+            // Mobile FAB functionality
+            const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+            const mobileQuickJoin = document.getElementById('mobileQuickJoin');
+            const mobileQuickJoinDropdown = document.getElementById('mobileQuickJoinDropdown');
+            
+            if (mobileThemeToggle) {
+                mobileThemeToggle.addEventListener('click', function() {
+                    const darkModeToggle = document.getElementById('darkModeToggle');
+                    if (darkModeToggle) {
+                        darkModeToggle.click();
+                    }
                 });
             }
         });

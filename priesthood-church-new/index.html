@@ -25,6 +25,9 @@
         gtag('js', new Date());
         gtag('config', 'G-9M0M79KLED');
     </script>
+    
+    <!-- YouTube API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
 </head>
 <body>
     <!-- Skip to Content -->
@@ -82,7 +85,7 @@
         </div>
     </nav>
     
-    <!-- Hero Section - SHOWS FROM TOP -->
+    <!-- Hero Section - UPDATED: background-position: center top -->
     <header class="hero" id="home">
         <div class="hero-content">
             <h1 class="hero-title">Priesthood Family Chapel International</h1>
@@ -100,7 +103,7 @@
     
     <!-- Main Content -->
     <main id="main-content">
-        <!-- Events Slider - SHOWS FULL IMAGES, ROTATES -->
+        <!-- Events Slider - FIXED: object-fit: cover -->
         <section class="section" id="events">
             <div class="container">
                 <h2 class="section-title">Upcoming Events</h2>
@@ -109,7 +112,7 @@
                 <div class="events-slider" id="eventsSlider">
                     <div class="slider-wrapper">
                         <div class="event-slide active">
-                            <img src="images/event-praise.jpg" alt="Praise and Worship Night">
+                            <img src="images/event-praise.jpg" alt="Praise and Worship Night" loading="lazy">
                             <div class="event-info">
                                 <h3>Praise & Worship Night</h3>
                                 <p><i class="fas fa-calendar"></i> Every Friday at 6 PM</p>
@@ -119,7 +122,7 @@
                         </div>
                         
                         <div class="event-slide">
-                            <img src="images/event-glory.jpg" alt="Night of Glory">
+                            <img src="images/event-glory.jpg" alt="Night of Glory" loading="lazy">
                             <div class="event-info">
                                 <h3>Night of Glory</h3>
                                 <p><i class="fas fa-calendar"></i> Last Friday of Each Month</p>
@@ -129,7 +132,7 @@
                         </div>
                         
                         <div class="event-slide">
-                            <img src="images/event-31st.jpg" alt="31st Night Evangelism">
+                            <img src="images/event-31st.jpg" alt="31st Night Evangelism" loading="lazy">
                             <div class="event-info">
                                 <h3>31st Night Evangelism</h3>
                                 <p><i class="fas fa-calendar"></i> December 31st</p>
@@ -155,7 +158,7 @@
             </div>
         </section>
         
-        <!-- Media Section -->
+        <!-- Media Section (NEW) - KEPT -->
         <section class="section" id="media">
             <div class="container">
                 <h2 class="section-title">Church Media</h2>
@@ -172,46 +175,43 @@
                     <div class="videos-grid">
                         <div class="video-card">
                             <div class="video-wrapper">
-                                <div class="youtube-thumbnail" onclick="window.open('https://youtu.be/4WlD8vyAJNU?si=OCLcRdbhcdTe6ycL', '_blank')">
-                                    <img src="https://img.youtube.com/vi/4WlD8vyAJNU/hqdefault.jpg" alt="Powerful Testimony">
-                                    <div class="play-button">
-                                        <i class="fas fa-play"></i>
-                                    </div>
-                                </div>
+                                <div class="youtube-player" data-id="4WlD8vyAJNU" data-title="Powerful Testimony from Member"></div>
                             </div>
                             <div class="video-info">
                                 <h3>Powerful Testimony</h3>
                                 <p>Hear how God transformed a life through Priesthood Family Chapel</p>
+                                <div class="video-meta">
+                                    <span><i class="fas fa-clock"></i> 5:24</span>
+                                    <span><i class="fas fa-calendar"></i> 2 weeks ago</span>
+                                </div>
                             </div>
                         </div>
                         
                         <div class="video-card">
                             <div class="video-wrapper">
-                                <div class="youtube-thumbnail" onclick="window.open('https://youtu.be/9m97_ev5gis?si=GfXmRN7-p2NL9jgc', '_blank')">
-                                    <img src="https://img.youtube.com/vi/9m97_ev5gis/hqdefault.jpg" alt="Miracle Healing Testimony">
-                                    <div class="play-button">
-                                        <i class="fas fa-play"></i>
-                                    </div>
-                                </div>
+                                <div class="youtube-player" data-id="9m97_ev5gis" data-title="Miracle Healing Testimony"></div>
                             </div>
                             <div class="video-info">
                                 <h3>Miracle Healing</h3>
                                 <p>A testimony of divine healing and restoration</p>
+                                <div class="video-meta">
+                                    <span><i class="fas fa-clock"></i> 7:18</span>
+                                    <span><i class="fas fa-calendar"></i> 1 month ago</span>
+                                </div>
                             </div>
                         </div>
                         
                         <div class="video-card">
                             <div class="video-wrapper">
-                                <div class="youtube-thumbnail" onclick="window.open('https://youtu.be/jLOzwW6tV0Y?si=7sMtvudSmC_wsw3M', '_blank')">
-                                    <img src="https://img.youtube.com/vi/jLOzwW6tV0Y/hqdefault.jpg" alt="Deliverance Testimony">
-                                    <div class="play-button">
-                                        <i class="fas fa-play"></i>
-                                    </div>
-                                </div>
+                                <div class="youtube-player" data-id="jLOzwW6tV0Y" data-title="Deliverance Testimony"></div>
                             </div>
                             <div class="video-info">
                                 <h3>Deliverance Story</h3>
                                 <p>Freedom from bondage through prayer and faith</p>
+                                <div class="video-meta">
+                                    <span><i class="fas fa-clock"></i> 6:45</span>
+                                    <span><i class="fas fa-calendar"></i> 3 weeks ago</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -222,46 +222,43 @@
                     <div class="videos-grid">
                         <div class="video-card">
                             <div class="video-wrapper">
-                                <div class="youtube-thumbnail" onclick="window.open('https://youtu.be/7bMK7pb__V8?si=I4JxXkLVM-xY8Y7G', '_blank')">
-                                    <img src="https://img.youtube.com/vi/7bMK7pb__V8/hqdefault.jpg" alt="Choir Worship">
-                                    <div class="play-button">
-                                        <i class="fas fa-play"></i>
-                                    </div>
-                                </div>
+                                <div class="youtube-player" data-id="7bMK7pb__V8" data-title="Choir Worship Performance"></div>
                             </div>
                             <div class="video-info">
                                 <h3>Choir Worship</h3>
                                 <p>Our choir ministering in worship and praise</p>
+                                <div class="video-meta">
+                                    <span><i class="fas fa-clock"></i> 12:34</span>
+                                    <span><i class="fas fa-calendar"></i> 1 week ago</span>
+                                </div>
                             </div>
                         </div>
                         
                         <div class="video-card">
                             <div class="video-wrapper">
-                                <div class="youtube-thumbnail" onclick="window.open('https://youtu.be/rfLt2B4VHSg?si=1wF0yA2iB4vS3Ncr', '_blank')">
-                                    <img src="https://img.youtube.com/vi/rfLt2B4VHSg/hqdefault.jpg" alt="Praise Session">
-                                    <div class="play-button">
-                                        <i class="fas fa-play"></i>
-                                    </div>
-                                </div>
+                                <div class="youtube-player" data-id="rfLt2B4VHSg" data-title="Praise and Worship Session"></div>
                             </div>
                             <div class="video-info">
                                 <h3>Praise Session</h3>
                                 <p>Live praise and worship from Sunday service</p>
+                                <div class="video-meta">
+                                    <span><i class="fas fa-clock"></i> 15:22</span>
+                                    <span><i class="fas fa-calendar"></i> 2 weeks ago</span>
+                                </div>
                             </div>
                         </div>
                         
                         <div class="video-card">
                             <div class="video-wrapper">
-                                <div class="youtube-thumbnail" onclick="window.open('https://youtu.be/7bMK7pb__V8?si=I4JxXkLVM-xY8Y7G', '_blank')">
-                                    <img src="https://img.youtube.com/vi/7bMK7pb__V8/hqdefault.jpg" alt="Special Music">
-                                    <div class="play-button">
-                                        <i class="fas fa-play"></i>
-                                    </div>
-                                </div>
+                                <div class="youtube-player" data-id="7bMK7pb__V8" data-title="Special Music Ministry"></div>
                             </div>
                             <div class="video-info">
                                 <h3>Special Music</h3>
                                 <p>Anointed music ministry during night service</p>
+                                <div class="video-meta">
+                                    <span><i class="fas fa-clock"></i> 8:56</span>
+                                    <span><i class="fas fa-calendar"></i> 3 days ago</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -272,46 +269,43 @@
                     <div class="videos-grid">
                         <div class="video-card">
                             <div class="video-wrapper">
-                                <div class="youtube-thumbnail" onclick="window.open('https://youtu.be/YuW06TblJmk?si=Q8Ln5IIClFRoI1Um', '_blank')">
-                                    <img src="https://img.youtube.com/vi/YuW06TblJmk/hqdefault.jpg" alt="Sunday Sermon">
-                                    <div class="play-button">
-                                        <i class="fas fa-play"></i>
-                                    </div>
-                                </div>
+                                <div class="youtube-player" data-id="YuW06TblJmk" data-title="Sunday Sermon: The Power of Faith"></div>
                             </div>
                             <div class="video-info">
                                 <h3>The Power of Faith</h3>
                                 <p>Sunday sermon on living by faith in challenging times</p>
+                                <div class="video-meta">
+                                    <span><i class="fas fa-clock"></i> 45:18</span>
+                                    <span><i class="fas fa-calendar"></i> Last Sunday</span>
+                                </div>
                             </div>
                         </div>
                         
                         <div class="video-card">
                             <div class="video-wrapper">
-                                <div class="youtube-thumbnail" onclick="window.open('https://youtu.be/ITwtb0z4RWs?si=MD8ZNRva832UFZBm', '_blank')">
-                                    <img src="https://img.youtube.com/vi/ITwtb0z4RWs/hqdefault.jpg" alt="Thursday Teaching">
-                                    <div class="play-button">
-                                        <i class="fas fa-play"></i>
-                                    </div>
-                                </div>
+                                <div class="youtube-player" data-id="ITwtb0z4RWs" data-title="Thursday Deliverance Teaching"></div>
                             </div>
                             <div class="video-info">
                                 <h3>Deliverance Teaching</h3>
                                 <p>Thursday deliverance service teaching on spiritual freedom</p>
+                                <div class="video-meta">
+                                    <span><i class="fas fa-clock"></i> 52:34</span>
+                                    <span><i class="fas fa-calendar"></i> Last Thursday</span>
+                                </div>
                             </div>
                         </div>
                         
                         <div class="video-card">
                             <div class="video-wrapper">
-                                <div class="youtube-thumbnail" onclick="window.open('https://youtu.be/jLOzwW6tV0Y?si=7sMtvudSmC_wsw3M', '_blank')">
-                                    <img src="https://img.youtube.com/vi/jLOzwW6tV0Y/hqdefault.jpg" alt="Bible Study">
-                                    <div class="play-button">
-                                        <i class="fas fa-play"></i>
-                                    </div>
-                                </div>
+                                <div class="youtube-player" data-id="jLOzwW6tV0Y" data-title="Bible Study: Understanding Grace"></div>
                             </div>
                             <div class="video-info">
                                 <h3>Understanding Grace</h3>
                                 <p>Midweek Bible study on the grace of God</p>
+                                <div class="video-meta">
+                                    <span><i class="fas fa-clock"></i> 38:45</span>
+                                    <span><i class="fas fa-calendar"></i> Last Tuesday</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -320,73 +314,6 @@
                         <a href="https://youtube.com/@priesthoodtv547" target="_blank" class="btn btn-primary">
                             <i class="fab fa-youtube"></i> Watch More on YouTube
                         </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Text Testimonials Section -->
-        <section class="section testimonials-section">
-            <div class="container">
-                <h2 class="section-title">What People Are Saying</h2>
-                <p class="section-subtitle">Testimonies from our church members</p>
-                
-                <div class="testimonials-grid">
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <i class="fas fa-quote-left"></i>
-                            <p>"Priesthood Family Chapel has transformed my spiritual life. The teachings are practical and life-changing. I've found a family here that truly cares."</p>
-                            <i class="fas fa-quote-right"></i>
-                        </div>
-                        <div class="testimonial-author">
-                            <h4>Mr. Foruwa</h4>
-                            <p>Accra, Ghana</p>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <i class="fas fa-quote-left"></i>
-                            <p>"The deliverance services have brought freedom to my family. We experienced miracles we never thought possible. God is truly at work here."</p>
-                            <i class="fas fa-quote-right"></i>
-                        </div>
-                        <div class="testimonial-author">
-                            <h4>Empress</h4>
-                            <p>Kumasi, Ghana</p>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <i class="fas fa-quote-left"></i>
-                            <p>"Even from the USA, I feel connected through the online services. The teachings are relevant and the prayer support is exceptional. This church cares globally."</p>
-                            <i class="fas fa-quote-right"></i>
-                        </div>
-                        <div class="testimonial-author">
-                            <h4>Mr. Mankwa</h4>
-                            <p>Texas, USA</p>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -500,7 +427,7 @@
             </div>
         </section>
         
-        <!-- Founder & Lead Pastor Section -->
+        <!-- Founder & Lead Pastor Section - UPDATED: Flat image paths -->
         <section class="section pastor-section">
             <div class="container">
                 <h2 class="section-title">Our Founder & Lead Pastor</h2>
@@ -510,10 +437,10 @@
                     <div class="pastor-left">
                         <div class="pastor-image-slider" id="pastorSlider">
                             <div class="pastor-slide active">
-                                <img src="images/pastor.jpg" alt="Apostle Emmanuel Amankwah">
+                                <img src="images/pastor.jpg" alt="Apostle Emmanuel Amankwah" loading="lazy">
                             </div>
                             <div class="pastor-slide">
-                                <img src="images/pastor1.jpg" alt="Apostle Emmanuel Amankwah">
+                                <img src="images/pastor1.jpg" alt="Apostle Emmanuel Amankwah" loading="lazy">
                             </div>
                             <div class="slider-controls">
                                 <button class="slider-nav prev-pastor"><i class="fas fa-chevron-left"></i></button>
@@ -549,10 +476,10 @@
                     </div>
                 </div>
                 
-                <!-- Book Advertisement -->
-                <div class="book-advertisement">
+                <!-- Book Advertisement - ALWAYS VISIBLE -->
+                <div class="book-advertisement mobile-visible">
                     <div class="book-left">
-                        <img src="images/book-cover.jpg" alt="Understanding Apostleship Book Cover" class="book-cover-img">
+                        <img src="images/book-cover.jpg" alt="Understanding Apostleship Book Cover" class="book-cover-img" loading="lazy">
                     </div>
                     <div class="book-right">
                         <h3>Understanding Apostleship</h3>
@@ -628,6 +555,73 @@
                         <h3>Youth Ministry</h3>
                         <p>Engaging and empowering young people to live out their faith in practical ways.</p>
                         <a href="gallery.html?category=YT" class="ministry-link">View Gallery</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Text Testimonials Section (NEW) - UPDATED: Flat image paths -->
+        <section class="section testimonials-section">
+            <div class="container">
+                <h2 class="section-title">What People Are Saying</h2>
+                <p class="section-subtitle">Testimonies from our church members</p>
+                
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"Priesthood Family Chapel has transformed my spiritual life. The teachings are practical and life-changing. I've found a family here that truly cares."</p>
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <div class="testimonial-author">
+                            <h4>Mr. Foruwa</h4>
+                            <p>Accra, Ghana</p>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"The deliverance services have brought freedom to my family. We experienced miracles we never thought possible. God is truly at work here."</p>
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <div class="testimonial-author">
+                            <h4>Empress</h4>
+                            <p>Kumasi, Ghana</p>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"Even from the USA, I feel connected through the online services. The teachings are relevant and the prayer support is exceptional. This church cares globally."</p>
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <div class="testimonial-author">
+                            <h4>Mr. Mankwa</h4>
+                            <p>Texas, USA</p>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -840,7 +834,7 @@
         </div>
     </footer>
     
-    <!-- Mobile Floating Action Buttons -->
+    <!-- Mobile Floating Action Buttons - KEPT -->
     <div class="mobile-fab-container">
         <button class="mobile-fab prayer-fab" data-modal="prayerModal">
             <i class="fas fa-hands-praying"></i>
@@ -856,52 +850,7 @@
         </button>
     </div>
     
-    <!-- Quick Join Button - FLOATING AT RIGHT CORNER -->
-    <div class="quick-join">
-        <button class="quick-join-btn" id="quickJoinBtn">
-            <i class="fas fa-video"></i>
-            <span>Join Online Service</span>
-        </button>
-        <div class="quick-join-dropdown" id="quickJoinDropdown">
-            <div class="dropdown-header">
-                <h4><i class="fas fa-broadcast-tower"></i> Live Now</h4>
-                <p>Sunday Worship Service</p>
-            </div>
-            <a href="https://us06web.zoom.us/j/2547367600" target="_blank" class="dropdown-item">
-                <i class="fas fa-video"></i>
-                <div>
-                    <strong>Join on Zoom</strong>
-                    <small>ID: 2547367600 | Passcode: JESUS</small>
-                </div>
-            </a>
-            <a href="https://youtube.com/@priesthoodtv547" target="_blank" class="dropdown-item">
-                <i class="fab fa-youtube"></i>
-                <div>
-                    <strong>YouTube Live</strong>
-                    <small>Watch on YouTube</small>
-                </div>
-            </a>
-            <a href="https://www.facebook.com/share/v/1AQWzoCUdF/" target="_blank" class="dropdown-item">
-                <i class="fab fa-facebook"></i>
-                <div>
-                    <strong>Facebook Live</strong>
-                    <small>Watch on Facebook</small>
-                </div>
-            </a>
-            <a href="https://www.tiktok.com/@priesthoodtv?_r=1&_t=ZM-92kWwDLAzPf" target="_blank" class="dropdown-item tiktok-item">
-                <i class="fab fa-tiktok"></i>
-                <div>
-                    <strong>TikTok Live</strong>
-                    <small>Watch on TikTok</small>
-                </div>
-            </a>
-            <div class="dropdown-footer">
-                <p><i class="far fa-clock"></i> Sunday 8:30 AM | Tue-Fri 9:30-11:30 AM</p>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Quick Join Dropdown (for mobile FAB) -->
+    <!-- Quick Join Dropdown (for mobile) -->
     <div class="quick-join-dropdown mobile-only" id="mobileQuickJoinDropdown">
         <div class="dropdown-header">
             <h4><i class="fas fa-broadcast-tower"></i> Join Service</h4>
@@ -1086,9 +1035,34 @@
     <!-- JavaScript -->
     <script src="script.js"></script>
     
-    <!-- JavaScript for Mobile FABs -->
+    <!-- YouTube Video Initialization -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize YouTube players
+            const youtubePlayers = document.querySelectorAll('.youtube-player');
+            
+            youtubePlayers.forEach(player => {
+                const videoId = player.getAttribute('data-id');
+                const title = player.getAttribute('data-title');
+                
+                // Create thumbnail with play button
+                player.innerHTML = `
+                    <div class="youtube-thumbnail" style="background-image: url(https://img.youtube.com/vi/${videoId}/hqdefault.jpg)">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                `;
+                
+                // Add click event to open YouTube
+                player.addEventListener('click', function() {
+                    window.open(`https://www.youtube.com/watch?v=${videoId}`, '_blank');
+                });
+                
+                // Set title as alt attribute for accessibility
+                player.setAttribute('aria-label', `Play video: ${title}`);
+            });
+            
             // Mobile FAB functionality
             const mobileThemeToggle = document.getElementById('mobileThemeToggle');
             const mobileQuickJoin = document.getElementById('mobileQuickJoin');
